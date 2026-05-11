@@ -27,9 +27,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Link PDFs
-        run: node scripts/link-pdfs.mjs
-
       - name: Build Quartz
         run: npx quartz build
 
