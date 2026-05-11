@@ -204,13 +204,17 @@ Tập Cantor (hay còn gọi là tập Cantor tam phân - Cantor Ternary Set) đ
 
 > [!obs]
 > Cách xây dựng hình học ở trên có một mối liên hệ với đại số thông qua hệ đếm cơ số 3 (ternary expansion). Mọi số thực $x \in [0, 1]$ đều có thể được biểu diễn dưới dạng chuỗi tam phân:
-> $$x = \sum_{k=1}^{\infty} \frac{a_k}{3^k} \quad \text{với } a_k \in \{0, 1, 2\}$$
+> $$
+> x = \sum_{k=1}^{\infty} \frac{a_k}{3^k} \quad \text{với } a_k \in \{0, 1, 2\}
+> $$
 > Khi ta chia đoạn $[0,1]$ làm ba phần, đoạn đầu tiên $[0, 1/3]$ tương ứng với các số có chữ số thập phân đầu tiên $a_1 = 0$.
 > Đoạn ở giữa $(1/3, 2/3)$ tương ứng với các số có chữ số đầu tiên $a_1 = 1$.
 > Đoạn cuối $[2/3, 1]$ tương ứng với các số có chữ số đầu tiên $a_1 = 2$.
 > Việc ta loại bỏ khoảng mở ở giữa $(1/3, 2/3)$ ở Bước 1 chính là hành động loại bỏ tất cả các số thực mà khai triển tam phân của nó có $a_1 = 1$. Tiếp tục ở Bước 2, việc loại bỏ khoảng giữa của các đoạn con chính là việc loại bỏ các số có $a_2 = 1$.
 > Tập Cantor ${} T$ thu được ở cuối quá trình chính là tập hợp của tất cả các số thực trong đoạn $[0,1]$ mà biểu diễn tam phân của nó không chứa chữ số 1:
-> $$T = \left\{ x \in [0,1] \mathrel{\Big|} x = \sum_{k=1}^{\infty} \frac{a_k}{3^k}, \text{ với } a_k \in \{0, 2\} \, \forall k \in \mathbb{N} \right\}$$
+> $$
+> T = \left\{ x \in [0,1] \mathrel{\Big|} x = \sum_{k=1}^{\infty} \frac{a_k}{3^k}, \text{ với } a_k \in \{0, 2\} \, \forall k \in \mathbb{N} \right\}
+> $$
 > _(Lưu ý: Đối với các điểm mút như $1/3$, mặc dù nó có biểu diễn là $0.1_3$, nhưng ta vẫn có thể viết nó dưới dạng chuỗi vô hạn $0.02222..._3$. Vì nó có một biểu diễn không chứa số 1, nên $1/3$ vẫn thuộc tập Cantor)_
 
 > [!prp] 
@@ -229,19 +233,29 @@ Tập Cantor (hay còn gọi là tập Cantor tam phân - Cantor Ternary Set) đ
 > (a) $T$ là một tập null trong không gian độ đo Borel $(\mathbb{R}, \mathfrak{B}_\mathbb{R}, \mu_L)$
 > Tại mỗi bước xây dựng thứ $n$, tập $T_n$ bao gồm $2^n$ đoạn đóng rời nhau, và độ dài của mỗi đoạn là $\frac{1}{3^n}$.
 > Do đó, độ đo Lebesgue của tập $T_n$ là:
-> $$\mu_L(T_n) = 2^n \cdot \frac{1}{3^n} = \left(\frac{2}{3}\right)^n$$
+> $$
+> \mu_L(T_n) = 2^n \cdot \frac{1}{3^n} = \left(\frac{2}{3}\right)^n
+> $$
 > Vì $T = \bigcap_{n=0}^{\infty} T_n$ và dãy các tập hợp $(T_n)$ là một dãy giảm ($T_{n+1} \subset T_n$) với độ đo hữu hạn, theo tính chất liên tục từ trên xuống của độ đo, ta có:
-> $$\mu_L(T) = \lim_{n \to \infty} \mu_L(T_n) = \lim_{n \to \infty} \left(\frac{2}{3}\right)^n = 0$$
+> $$
+> \mu_L(T) = \lim_{n \to \infty} \mu_L(T_n) = \lim_{n \to \infty} \left(\frac{2}{3}\right)^n = 0
+> $$
 > Vì $\mu_L(T) = 0$, $T$ là một tập null (tập có độ đo không).
 > 
 > (b) $G = [0, 1] \setminus T$ là hợp của vô số đếm được các khoảng mở rời nhau; $G$ trù mật trong $[0, 1]$ và $\mu_L(G) = 1$
 > Cấu trúc của $G$: Trong quá trình xây dựng $T$, tại mỗi bước $n \ge 1$, ta cắt bỏ đi phần mở ở giữa của các đoạn trong $T_{n-1}$. Gọi họ các khoảng mở bị cắt bỏ ở bước $n$ là $G_n$. Khi đó $G_n$ gồm $2^{n-1}$ khoảng mở rời nhau, mỗi khoảng có độ dài $\frac{1}{3^n}$. Tập $G$ chính là hợp của tất cả các khoảng mở sau khi bị cắt bỏ phần ở giữa đi qua vô hạn bước:
-> $$G = \bigcup_{n=1}^{\infty} G_n$$
+> $$
+> G = \bigcup_{n=1}^{\infty} G_n
+> $$
 >  Vì đây là hợp của các họ đếm được các khoảng mở, nên $G$ là hợp của vô số đếm được các khoảng mở rời nhau trong $\mathbb{R}$.
 > Tính độ đo: Các tập $G_n$ đôi một rời nhau. Sử dụng tính $\sigma$ - cộng tính của độ đo Lebesgue:
-> $$\mu_L(G) = \sum_{n=1}^{\infty} \mu_L(G_n) = \sum_{n=1}^{\infty} 2^{n-1} \cdot \frac{1}{3^n} = \frac{1}{3} \sum_{n=1}^{\infty} \left(\frac{2}{3}\right)^{n-1} = \frac{1}{3} \sum_{k=0}^{\infty} \left(\frac{2}{3}\right)^k$$
+> $$
+> \mu_L(G) = \sum_{n=1}^{\infty} \mu_L(G_n) = \sum_{n=1}^{\infty} 2^{n-1} \cdot \frac{1}{3^n} = \frac{1}{3} \sum_{n=1}^{\infty} \left(\frac{2}{3}\right)^{n-1} = \frac{1}{3} \sum_{k=0}^{\infty} \left(\frac{2}{3}\right)^k
+> $$
 > Đây là một chuỗi hình học lùi vô hạn với công bội $q = 2/3$. Ta tính được:
-> $$\mu_L(G) = \frac{1}{3} \cdot \frac{1}{1 - 2/3} = \frac{1}{3} \cdot 3 = 1$$
+> $$
+> \mu_L(G) = \frac{1}{3} \cdot \frac{1}{1 - 2/3} = \frac{1}{3} \cdot 3 = 1
+> $$
 > Tính trù mật của $G$: Để chứng minh $G$ trù mật trong $[0,1]$, ta cần chứng minh mọi khoảng mở $(a, b) \subset [0, 1]$ với $a < b$ đều giao với $G$. Độ dài của khoảng mở này là $L = b - a > 0$.
 > Ta chọn một số tự nhiên $n$ đủ lớn sao cho $\frac{1}{3^n} < L$. Tại bước thứ $n$, tập $T_n$ chỉ còn lại các đoạn đóng có độ dài $\frac{1}{3^n}$. Vì khoảng $(a, b)$ dài hơn $\frac{1}{3^n}$, nó không thể nằm trọn vẹn bên trong bất kỳ đoạn đóng nào của $T_n$. Do đó, $(a, b)$ bắt buộc phải chứa ít nhất một điểm thuộc phần đã bị khoét đi, tức là $(a, b) \cap G \neq \emptyset$. Vậy $G$ trù mật trong $[0, 1]$.
 >
@@ -348,7 +362,9 @@ Vì $\tau_{0}$ liên tục đều trên $G$, theo tính chất của không gian
 
 > [!def] 
 > Ta ký hiệu $i(x) = x$ là hàm đồng nhất trên ${} [0,1]$. Ta định nghĩa hàm $\varphi: [0,1] \to \mathbb{R}$ như sau: 
-> $$ \varphi(x) = \tau(x) + x $$
+> $$
+> \varphi(x) = \tau(x) + x
+> $$
 
 > [!prp] 
 > Hàm $\varphi$ là một phép đồng phôi (homeomorphism) từ không gian $[0,1]$ lên không gian $[0,2]$.
