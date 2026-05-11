@@ -414,7 +414,7 @@ Vì $\tau_{0}$ liên tục đều trên $G$, theo tính chất của không gian
 
 
 
-$\pi$
+$\xi$
 
 ---
 [📄 View PDF](./Tiểu luận độ đo.pdf)
