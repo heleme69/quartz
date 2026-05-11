@@ -55,7 +55,4 @@ The Open Mapping Theorem states that under conditions of completeness and surjec
 >
 
 ---
-[📄 View PDF](./FA.pdf)
-
----
 [View PDF](./FA.pdf)

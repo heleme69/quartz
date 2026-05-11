@@ -17,13 +17,15 @@ function scanDir(dir) {
 
       if (fs.existsSync(pdfPath)) {
         let content = fs.readFileSync(fullPath, 'utf8')
-        const pdfLink = `[View PDF](./${pdfName})`
 
-        if (!content.includes(pdfLink)) {
-          content = content.trimEnd() + `\n\n---\n${pdfLink}\n`
-          fs.writeFileSync(fullPath, content, 'utf8')
-          console.log(`✅ Linked PDF in: ${entry.name}`)
-        }
+        // Remove any old PDF link lines first
+        content = content.replace(/\n---\n\[.*?View PDF\].*?\n/g, '')
+        content = content.replace(/\[📄 View PDF\].*?\n/g, '')
+
+        const pdfLink = `[View PDF](./${pdfName})`
+        content = content.trimEnd() + `\n\n---\n${pdfLink}\n`
+        fs.writeFileSync(fullPath, content, 'utf8')
+        console.log(`✅ Linked PDF in: ${entry.name}`)
       }
     }
   }

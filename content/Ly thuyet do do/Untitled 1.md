@@ -275,7 +275,4 @@ Tập Cantor (hay còn gọi là tập Cantor tam phân - Cantor Ternary Set) đ
 > Vậy $\mathring{T} = \emptyset$, đồng nghĩa với việc $T$ là một tập không đâu trù mật.
 
 ---
-[📄 View PDF](./Untitled 1.pdf)
-
----
 [View PDF](./Untitled 1.pdf)

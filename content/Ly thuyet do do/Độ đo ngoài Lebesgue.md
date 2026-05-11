@@ -180,7 +180,4 @@
 $\pi$
 
 ---
-[📄 View PDF](./Độ đo ngoài Lebesgue.pdf)
-
----
 [View PDF](./Độ đo ngoài Lebesgue.pdf)

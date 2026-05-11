@@ -133,7 +133,4 @@ Tính các đạo hàm tại $a = \frac{\pi}{4}$ ta được $f(a) = f'''(a) = \
 $\pi$
 
 ---
-[📄 View PDF](./BTGTS_Tuần 4.pdf)
-
----
 [View PDF](./BTGTS_Tuần 4.pdf)

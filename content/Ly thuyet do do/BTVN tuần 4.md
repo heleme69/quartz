@@ -96,7 +96,4 @@
 > $$
 
 ---
-[📄 View PDF](./BTVN tuần 4.pdf)
-
----
 [View PDF](./BTVN tuần 4.pdf)
