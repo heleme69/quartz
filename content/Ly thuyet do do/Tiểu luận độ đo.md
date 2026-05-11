@@ -418,3 +418,6 @@ $\xi$
 
 ---
 [📄 View PDF](./Tiểu luận độ đo.pdf)
+
+---
+[View PDF](./Tiểu luận độ đo.pdf)

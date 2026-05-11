@@ -17,7 +17,7 @@ function scanDir(dir) {
 
       if (fs.existsSync(pdfPath)) {
         let content = fs.readFileSync(fullPath, 'utf8')
-        const pdfLink = `[📄 View PDF](./${pdfName})`
+        const pdfLink = `[View PDF](./${pdfName})`
 
         if (!content.includes(pdfLink)) {
           content = content.trimEnd() + `\n\n---\n${pdfLink}\n`

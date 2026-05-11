@@ -310,3 +310,6 @@ this.container.innerHTML = finalHTML;
 
 ---
 [📄 View PDF](./BTVN tuần 3.pdf)
+
+---
+[View PDF](./BTVN tuần 3.pdf)

@@ -359,3 +359,6 @@ $\pi$
 
 ---
 [📄 View PDF](./Giữa kì Hàm biến phức.pdf)
+
+---
+[View PDF](./Giữa kì Hàm biến phức.pdf)

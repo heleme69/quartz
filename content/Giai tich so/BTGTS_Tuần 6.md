@@ -188,3 +188,6 @@ $\pi$
 
 ---
 [📄 View PDF](./BTGTS_Tuần 6.pdf)
+
+---
+[View PDF](./BTGTS_Tuần 6.pdf)

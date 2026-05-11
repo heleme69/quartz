@@ -134,3 +134,6 @@ $\pi$
 
 ---
 [📄 View PDF](./BTGTS_Tuần 4.pdf)
+
+---
+[View PDF](./BTGTS_Tuần 4.pdf)

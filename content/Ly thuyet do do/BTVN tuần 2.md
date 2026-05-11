@@ -96,3 +96,6 @@
 
 ---
 [📄 View PDF](./BTVN tuần 2.pdf)
+
+---
+[View PDF](./BTVN tuần 2.pdf)
