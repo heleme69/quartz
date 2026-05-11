@@ -1,0 +1,1 @@
+$$f_n(x) = \begin{cases} \text{đoạn thẳng nối } (-1, 0) \text{ và } (-1 + 1/n, 1) & \text{khi } x \in [-1, -1 + 1/n] \ 1 & \text{khi } x \in (-1 + 1/n, 1 - 1/n) \ \text{đoạn thẳng nối } (1 - 1/n, 1) \text{ và } (1, 0) & \text{khi } x \in [1 - 1/n, 1] \end{cases}$$

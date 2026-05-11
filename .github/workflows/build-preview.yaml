@@ -7,6 +7,8 @@ on:
 
 jobs:
   build-preview:
+    # Note: Keep an eye on the line below. 
+    # If your repo is NOT 'jackyzha0/quartz', you might need to change it to your username/repo.
     if: ${{ github.repository == 'jackyzha0/quartz' }}
     runs-on: ubuntu-latest
     name: Build Preview
@@ -28,7 +30,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - run: npm ci
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Link PDFs
+        run: node scripts/link-pdfs.mjs
 
       - name: Check types and style
         run: npm run check
