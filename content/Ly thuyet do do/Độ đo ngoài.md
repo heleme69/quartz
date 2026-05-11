@@ -199,5 +199,3 @@ $$
 
 $\pi$
 
----
-[View PDF](./Độ đo ngoài.pdf)

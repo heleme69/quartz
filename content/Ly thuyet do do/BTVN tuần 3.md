@@ -308,5 +308,3 @@ this.container.innerHTML = finalHTML;
 > d)
 > Theo tiêu chuẩn *Caratheodory*: một tập là đo được nếu với mọi tập thử $A \subset X$, ta có $\mu ^{*}(A) = \mu ^{*}(A \cap E) + \mu ^{*}(A \cap E ^{c})$. Ta có $A = (A \cap E) \cup (A \cap E ^{c})$, áp dụng kết quả câu b): $\mu ^{*}(A) = \mu ^{*} ((A \cap E) \cup (A \cap E ^{c})) = \mu ^{*} (A \cap  E) + \mu ^{*} (A \cap E^{c})$ nên ta có điều cần chứng minh.
 
----
-[View PDF](./BTVN tuần 3.pdf)

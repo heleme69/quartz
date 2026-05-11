@@ -179,5 +179,3 @@
 
 $\pi$
 
----
-[View PDF](./Độ đo ngoài Lebesgue.pdf)

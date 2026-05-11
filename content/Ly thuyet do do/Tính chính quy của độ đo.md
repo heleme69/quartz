@@ -203,5 +203,3 @@
 
 $\pi$
 
----
-[View PDF](./Tính chính quy của độ đo.pdf)

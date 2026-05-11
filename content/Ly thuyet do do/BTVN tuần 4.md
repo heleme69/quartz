@@ -95,5 +95,3 @@
 > \mathcal{B}(\mathbb{R}) \subset \mathfrak{M}_{L}
 > $$
 
----
-[View PDF](./BTVN tuần 4.pdf)

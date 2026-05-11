@@ -54,5 +54,3 @@ The Open Mapping Theorem states that under conditions of completeness and surjec
 > By the continuity of $T$, we have $Tx = y$. Thus, $B_\epsilon^Y(0) \subset T(B_2^X(0))$, proving the map is open.
 >
 
----
-[View PDF](./FA.pdf)

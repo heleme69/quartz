@@ -170,5 +170,3 @@
 
 $\pi$
 
----
-[View PDF](./Cộng tính và Liên tục.pdf)
