@@ -468,7 +468,57 @@ $math-callouts: (
 
 
 // ----------------------------------------------------------------
-// 10. CODE CALLOUT
+// 10. TITLE GAP FIX — override Quartz default callout-title padding
+//     Quartz gives .callout-title its own padding + min-height which
+//     creates a visible gap when the icon is hidden and font-size:0.
+// ----------------------------------------------------------------
+.center article {
+  $all-math-types: (
+    "thm", "theorem", "lem", "lemma", "cor", "corollary",
+    "prp", "proposition", "def", "definition", "axm", "axiom",
+    "clm", "claim", "asm", "assumption", "exm", "example",
+    "exr", "exercise", "prob", "problem", "cnj", "conjecture",
+    "hyp", "hypothesis", "rem", "remark", "obs", "observe",
+    "step", "steps", "calc", "calculation", "ans", "answer",
+    "nota", "notation", "warn", "warning", "algo", "algorithm",
+    "prf", "proof", "sol", "solution", "code"
+  );
+
+  @each $type in $all-math-types {
+    .callout[data-callout="#{$type}"] {
+      // Reset Quartz's own callout gap variable
+      --callout-fold-gap: 0;
+
+      .callout-title {
+        padding:        0;           // kill Quartz default title padding
+        min-height:     unset;       // kill min-height that keeps gap alive
+        border-bottom:  none;        // no separator line
+        margin-bottom:  var(--ac-space-xs);
+        align-items:    baseline;    // keep baseline alignment
+        gap:            0;
+      }
+
+      // Make ::before visible even when parent is font-size:0
+      .callout-title-inner {
+        display: inline;             // needed for ::before to render
+      }
+
+      .callout-title-inner::before {
+        display:   inline;
+        font-size: var(--ac-size) !important;
+      }
+
+      // Quartz wraps content in a div that may have top padding
+      .callout-content {
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+
+// ----------------------------------------------------------------
+// 11. CODE CALLOUT
 // ----------------------------------------------------------------
 .center article {
   .callout[data-callout="code"] {
