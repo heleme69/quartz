@@ -518,7 +518,43 @@ $math-callouts: (
 
 
 // ----------------------------------------------------------------
-// 11. CODE CALLOUT
+// 11. GAP FIX — first <p> inside callout-content inherits our
+//     paragraph margin-top (0.6em), creating a visible gap.
+//     Also collapse the ghost line-height of font-size:0 title-inner.
+// ----------------------------------------------------------------
+.center article {
+  $all-math-types: (
+    "thm", "theorem", "lem", "lemma", "cor", "corollary",
+    "prp", "proposition", "def", "definition", "axm", "axiom",
+    "clm", "claim", "asm", "assumption", "exm", "example",
+    "exr", "exercise", "prob", "problem", "cnj", "conjecture",
+    "hyp", "hypothesis", "rem", "remark", "obs", "observe",
+    "step", "steps", "calc", "calculation", "ans", "answer",
+    "nota", "notation", "warn", "warning", "algo", "algorithm",
+    "prf", "proof", "sol", "solution", "code"
+  );
+
+  @each $type in $all-math-types {
+    .callout[data-callout="#{$type}"] {
+      // Collapse ghost height from font-size:0 + inherited line-height
+      .callout-title-inner {
+        line-height: 1;   // normal again; ::before sets actual content height
+        font-size:   0 !important;
+      }
+
+      // Kill the paragraph top-margin on the very first child
+      .callout-content > p:first-child,
+      .callout-content > ul:first-child,
+      .callout-content > ol:first-child {
+        margin-top: 0 !important;
+      }
+    }
+  }
+}
+
+
+// ----------------------------------------------------------------
+// 12. CODE CALLOUT
 // ----------------------------------------------------------------
 .center article {
   .callout[data-callout="code"] {
