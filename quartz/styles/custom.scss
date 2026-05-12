@@ -1,1 +1,504 @@
+// ================================================================
+// custom.scss — Quartz note content styling
+// Ported from: academic.css + math-framed.css (Obsidian)
+// SCOPE: .center only — sidebar, header, footer untouched
+// ================================================================
+
 @use "./base.scss";
+
+// ----------------------------------------------------------------
+// 1. VARIABLES — scoped to .center so they don't leak out
+// ----------------------------------------------------------------
+.center {
+  // Academic scale (mirrors academic.css screen values)
+  --print-size:  10pt;
+  --scale:       1.3;
+
+  --ac-size:   calc(var(--print-size) * var(--scale));   // 13pt
+  --ac-h1:     calc(12pt * var(--scale));                // 15.6pt
+  --ac-h2:     calc(11pt * var(--scale));                // 14.3pt
+  --ac-h3:     calc(10pt * var(--scale));                // 13pt
+  --ac-lh:     1.6;
+
+  --ac-space-xs: 0.25em;
+  --ac-space-sm: 0.6em;
+  --ac-space-md: 1.2em;
+  --ac-space-lg: 1.8em;
+  --ac-space-xl: 2.5em;
+
+  --ac-block-margin: var(--ac-space-md) 0;
+
+  // Math-framed
+  --math-border-width:      1pt;   // 0.75pt * ~1.3 scale
+  --math-border-radius:     3pt;
+  --math-padding:           0.6em 0.8em;
+  --math-margin:            var(--ac-block-margin);
+}
+
+
+// ----------------------------------------------------------------
+// 2. BASE TYPOGRAPHY — article content only
+// ----------------------------------------------------------------
+.center article {
+  font-size: var(--ac-size);
+  line-height: var(--ac-lh);
+
+  p {
+    text-align: justify;
+    margin-top:    var(--ac-space-sm);
+    margin-bottom: var(--ac-space-sm);
+  }
+
+  li {
+    text-align: left;
+    margin-bottom: var(--ac-space-xs);
+  }
+
+  ul, ol {
+    margin-top:    var(--ac-space-sm);
+    margin-bottom: var(--ac-space-md);
+  }
+
+  // Callout body text inherits article size
+  .callout,
+  .callout-title,
+  .callout-content {
+    font-size: 1em;
+  }
+}
+
+
+// ----------------------------------------------------------------
+// 3. HEADINGS — scoped to article
+// ----------------------------------------------------------------
+.center article {
+  h1 {
+    font-size:     var(--ac-h1);
+    font-weight:   bold;
+    letter-spacing: 0.3px;
+    line-height:   1.3;
+    margin-top:    var(--ac-space-xl);
+    margin-bottom: var(--ac-space-md);
+  }
+
+  h2 {
+    font-size:     var(--ac-h2);
+    font-weight:   bold;
+    line-height:   1.3;
+    margin-top:    var(--ac-space-lg);
+    margin-bottom: var(--ac-space-sm);
+  }
+
+  h3 {
+    font-size:     var(--ac-h3);
+    font-weight:   bold;
+    line-height:   1.3;
+    margin-top:    var(--ac-space-md);
+    margin-bottom: var(--ac-space-sm);
+  }
+
+  h4, h5, h6 {
+    font-size:     var(--ac-size);
+    font-weight:   bold;
+    margin-top:    var(--ac-space-md);
+    margin-bottom: var(--ac-space-xs);
+  }
+}
+
+
+// ----------------------------------------------------------------
+// 4. COUNTER RESET — per page/article
+// ----------------------------------------------------------------
+.center article {
+  counter-reset: thm lem cor prp def axm clm asm exm exr prob cnj hyp rem obs step algo;
+}
+
+
+// ----------------------------------------------------------------
+// 5. CALLOUT SHARED RESET — full border box, no background
+//    Quartz uses .callout-title-icon (not .callout-icon)
+// ----------------------------------------------------------------
+
+// The long selector list — all math callout types
+$math-callouts: (
+  "thm", "theorem",
+  "lem", "lemma",
+  "cor", "corollary",
+  "prp", "proposition",
+  "def", "definition",
+  "axm", "axiom",
+  "clm", "claim",
+  "asm", "assumption",
+  "exm", "example",
+  "exr", "exercise",
+  "prob", "problem",
+  "cnj", "conjecture",
+  "hyp", "hypothesis",
+  "rem", "remark",
+  "obs", "observe",
+  "step", "steps",
+  "calc", "calculation",
+  "ans", "answer",
+  "nota", "notation",
+  "warn", "warning",
+  "algo", "algorithm",
+  "prf", "proof",
+  "sol", "solution",
+  "code"
+);
+
+// Build a single compound selector for the shared reset
+@mixin math-callout-selector {
+  @each $type in $math-callouts {
+    .callout[data-callout="#{$type}"] { @content; }
+  }
+}
+
+.center article {
+  // --- 5a. Box reset ---
+  @each $type in $math-callouts {
+    .callout[data-callout="#{$type}"] {
+      background-color:  transparent;
+      border:            var(--math-border-width) solid currentColor;
+      border-radius:     var(--math-border-radius);
+      padding:           var(--math-padding);
+      margin:            var(--math-margin);
+      box-sizing:        border-box;
+      // Strip Quartz default callout colour tint
+      --callout-color:   inherit;
+    }
+  }
+
+  // --- 5b. Hide Quartz callout icon ---
+  @each $type in $math-callouts {
+    .callout[data-callout="#{$type}"] .callout-title-icon {
+      display: none;
+    }
+  }
+
+  // --- 5c. Callout title last-child cleanup ---
+  .callout-content > p:last-child,
+  .callout-content > ul:last-child,
+  .callout-content > ol:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+
+// ----------------------------------------------------------------
+// 6. TITLE STYLE — bold for theorem-type boxes
+// ----------------------------------------------------------------
+.center article {
+  $bold-title-types: (
+    "thm", "theorem", "lem", "lemma", "cor", "corollary",
+    "prp", "proposition", "def", "definition", "axm", "axiom",
+    "clm", "claim", "asm", "assumption", "exm", "example",
+    "exr", "exercise", "prob", "problem", "cnj", "conjecture",
+    "hyp", "hypothesis", "rem", "remark", "obs", "observe",
+    "step", "steps", "calc", "calculation", "nota", "notation",
+    "warn", "warning", "algo", "algorithm"
+  );
+
+  @each $type in $bold-title-types {
+    .callout[data-callout="#{$type}"] .callout-title {
+      font-weight:   bold;
+      margin-bottom: var(--ac-space-xs);
+      // Keep Quartz's flex layout but remove gap caused by hidden icon
+      gap: 0;
+    }
+  }
+}
+
+
+// ----------------------------------------------------------------
+// 7. ITALIC CONTENT — statement-type callouts
+// ----------------------------------------------------------------
+.center article {
+  $italic-content-types: (
+    "thm", "theorem", "lem", "lemma", "cor", "corollary",
+    "prp", "proposition", "cnj", "conjecture", "clm", "claim"
+  );
+
+  @each $type in $italic-content-types {
+    .callout[data-callout="#{$type}"] .callout-content {
+      font-style: italic;
+    }
+  }
+}
+
+
+// ----------------------------------------------------------------
+// 8. PROOF / SOLUTION / ANSWER — left-border only
+// ----------------------------------------------------------------
+.center article {
+  $left-border-types: ("prf", "proof", "sol", "solution", "ans", "answer");
+
+  @each $type in $left-border-types {
+    .callout[data-callout="#{$type}"] {
+      border-top:    none;
+      border-right:  none;
+      border-bottom: none;
+      border-radius: 0;
+    }
+  }
+
+  // Italic title (no bold)
+  @each $type in $left-border-types {
+    .callout[data-callout="#{$type}"] .callout-title {
+      font-weight:   normal;
+      font-style:    italic;
+      margin-bottom: var(--ac-space-xs);
+      gap: 0;
+    }
+  }
+
+  // Hide the title text — replaced by ::before pseudo-content
+  @each $type in $left-border-types {
+    .callout[data-callout="#{$type}"] .callout-title-inner {
+      font-size: 0 !important;
+    }
+  }
+
+  // Proof label + QED
+  .callout[data-callout="prf"],
+  .callout[data-callout="proof"] {
+    .callout-title-inner::before {
+      content:    "Proof. ";
+      font-size:  var(--ac-size) !important;
+      font-style: italic;
+    }
+    .callout-content::after {
+      content:     "∎";
+      display:     block;
+      text-align:  right;
+      font-size:   1.1em;
+      line-height: 1;
+      margin-top:  var(--ac-space-sm);
+    }
+  }
+
+  // Solution label
+  .callout[data-callout="sol"],
+  .callout[data-callout="solution"] {
+    .callout-title-inner::before {
+      content:    "Solution. ";
+      font-size:  var(--ac-size) !important;
+      font-style: italic;
+    }
+  }
+
+  // Answer label
+  .callout[data-callout="ans"],
+  .callout[data-callout="answer"] {
+    .callout-title-inner::before {
+      content:    "Answer. ";
+      font-size:  var(--ac-size) !important;
+      font-style: italic;
+    }
+  }
+}
+
+
+// ----------------------------------------------------------------
+// 9. AUTO-LABELS (counter-based) — hide title text, prepend label
+//    Same pattern: font-size:0 on inner, content via ::before
+// ----------------------------------------------------------------
+.center article {
+
+  // Helper mixin
+  // (SCSS doesn't allow dynamic counter names in content easily,
+  //  so we list each type explicitly)
+
+  // Theorem
+  .callout[data-callout="thm"],
+  .callout[data-callout="theorem"] {
+    counter-increment: thm;
+    .callout-title-inner { font-size: 0 !important; }
+    .callout-title-inner::before { content: "Theorem " counter(thm) ". "; font-size: var(--ac-size) !important; }
+  }
+
+  // Lemma
+  .callout[data-callout="lem"],
+  .callout[data-callout="lemma"] {
+    counter-increment: lem;
+    .callout-title-inner { font-size: 0 !important; }
+    .callout-title-inner::before { content: "Lemma " counter(lem) ". "; font-size: var(--ac-size) !important; }
+  }
+
+  // Corollary
+  .callout[data-callout="cor"],
+  .callout[data-callout="corollary"] {
+    counter-increment: cor;
+    .callout-title-inner { font-size: 0 !important; }
+    .callout-title-inner::before { content: "Corollary " counter(cor) ". "; font-size: var(--ac-size) !important; }
+  }
+
+  // Proposition
+  .callout[data-callout="prp"],
+  .callout[data-callout="proposition"] {
+    counter-increment: prp;
+    .callout-title-inner { font-size: 0 !important; }
+    .callout-title-inner::before { content: "Proposition " counter(prp) ". "; font-size: var(--ac-size) !important; }
+  }
+
+  // Definition
+  .callout[data-callout="def"],
+  .callout[data-callout="definition"] {
+    counter-increment: def;
+    .callout-title-inner { font-size: 0 !important; }
+    .callout-title-inner::before { content: "Definition " counter(def) ". "; font-size: var(--ac-size) !important; }
+  }
+
+  // Axiom
+  .callout[data-callout="axm"],
+  .callout[data-callout="axiom"] {
+    counter-increment: axm;
+    .callout-title-inner { font-size: 0 !important; }
+    .callout-title-inner::before { content: "Axiom " counter(axm) ". "; font-size: var(--ac-size) !important; }
+  }
+
+  // Claim
+  .callout[data-callout="clm"],
+  .callout[data-callout="claim"] {
+    counter-increment: clm;
+    .callout-title-inner { font-size: 0 !important; }
+    .callout-title-inner::before { content: "Claim " counter(clm) ". "; font-size: var(--ac-size) !important; }
+  }
+
+  // Assumption
+  .callout[data-callout="asm"],
+  .callout[data-callout="assumption"] {
+    counter-increment: asm;
+    .callout-title-inner { font-size: 0 !important; }
+    .callout-title-inner::before { content: "Assumption " counter(asm) ". "; font-size: var(--ac-size) !important; }
+  }
+
+  // Example
+  .callout[data-callout="exm"],
+  .callout[data-callout="example"] {
+    counter-increment: exm;
+    .callout-title-inner { font-size: 0 !important; }
+    .callout-title-inner::before { content: "Example " counter(exm) ". "; font-size: var(--ac-size) !important; }
+  }
+
+  // Exercise
+  .callout[data-callout="exr"],
+  .callout[data-callout="exercise"] {
+    counter-increment: exr;
+    .callout-title-inner { font-size: 0 !important; }
+    .callout-title-inner::before { content: "Exercise " counter(exr) ". "; font-size: var(--ac-size) !important; }
+  }
+
+  // Problem
+  .callout[data-callout="prob"],
+  .callout[data-callout="problem"] {
+    counter-increment: prob;
+    .callout-title-inner { font-size: 0 !important; }
+    .callout-title-inner::before { content: "Problem " counter(prob) ". "; font-size: var(--ac-size) !important; }
+  }
+
+  // Conjecture
+  .callout[data-callout="cnj"],
+  .callout[data-callout="conjecture"] {
+    counter-increment: cnj;
+    .callout-title-inner { font-size: 0 !important; }
+    .callout-title-inner::before { content: "Conjecture " counter(cnj) ". "; font-size: var(--ac-size) !important; }
+  }
+
+  // Hypothesis
+  .callout[data-callout="hyp"],
+  .callout[data-callout="hypothesis"] {
+    counter-increment: hyp;
+    .callout-title-inner { font-size: 0 !important; }
+    .callout-title-inner::before { content: "Hypothesis " counter(hyp) ". "; font-size: var(--ac-size) !important; }
+  }
+
+  // Remark
+  .callout[data-callout="rem"],
+  .callout[data-callout="remark"] {
+    counter-increment: rem;
+    .callout-title-inner { font-size: 0 !important; }
+    .callout-title-inner::before { content: "Remark " counter(rem) ". "; font-size: var(--ac-size) !important; }
+  }
+
+  // Observation
+  .callout[data-callout="obs"],
+  .callout[data-callout="observe"] {
+    counter-increment: obs;
+    .callout-title-inner { font-size: 0 !important; }
+    .callout-title-inner::before { content: "Observation " counter(obs) ". "; font-size: var(--ac-size) !important; }
+  }
+
+  // Step
+  .callout[data-callout="step"],
+  .callout[data-callout="steps"] {
+    counter-increment: step;
+    .callout-title-inner { font-size: 0 !important; }
+    .callout-title-inner::before { content: "Step " counter(step) ". "; font-size: var(--ac-size) !important; }
+  }
+
+  // Algorithm
+  .callout[data-callout="algo"],
+  .callout[data-callout="algorithm"] {
+    counter-increment: algo;
+    .callout-title-inner { font-size: 0 !important; }
+    .callout-title-inner::before { content: "Algorithm " counter(algo) ". "; font-size: var(--ac-size) !important; }
+  }
+
+  // Non-counted labels
+  .callout[data-callout="calc"],
+  .callout[data-callout="calculation"] {
+    .callout-title-inner { font-size: 0 !important; }
+    .callout-title-inner::before { content: "Calculation. "; font-size: var(--ac-size) !important; }
+  }
+
+  .callout[data-callout="nota"],
+  .callout[data-callout="notation"] {
+    .callout-title-inner { font-size: 0 !important; }
+    .callout-title-inner::before { content: "Notation. "; font-size: var(--ac-size) !important; }
+  }
+
+  .callout[data-callout="warn"],
+  .callout[data-callout="warning"] {
+    .callout-title-inner { font-size: 0 !important; }
+    .callout-title-inner::before { content: "Warning. "; font-size: var(--ac-size) !important; }
+  }
+}
+
+
+// ----------------------------------------------------------------
+// 10. CODE CALLOUT
+// ----------------------------------------------------------------
+.center article {
+  .callout[data-callout="code"] {
+    padding: var(--math-padding);
+    margin:  var(--math-margin);
+
+    .callout-title {
+      font-weight:   bold;
+      font-style:    italic;
+      margin-bottom: var(--ac-space-xs);
+      gap: 0;
+    }
+
+    .callout-title-inner {
+      font-size: 1em !important;
+    }
+
+    .callout-title-inner::before {
+      content:      "⌨ ";
+      font-style:   normal;
+      margin-right: var(--ac-space-xs);
+    }
+
+    .callout-content {
+      padding: 0;
+
+      pre {
+        margin:      0;
+        font-size:   inherit;
+      }
+    }
+  }
+}
