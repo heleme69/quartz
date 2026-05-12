@@ -119,31 +119,18 @@
 //    .callout-icon   { ... }                       correct icon class
 //    .callout-content > :first-child { margin-top: 0 } already handled by Quartz
 // ================================================================
+// ================================================================
+// 5. MATH CALLOUT SHARED RESET
+// ================================================================
 $math-types: (
-  "thm", "theorem",
-  "lem", "lemma",
-  "cor", "corollary",
-  "prp", "proposition",
-  "def", "definition",
-  "axm", "axiom",
-  "clm", "claim",
-  "asm", "assumption",
-  "exm", "example",
-  "exr", "exercise",
-  "prob", "problem",
-  "cnj", "conjecture",
-  "hyp", "hypothesis",
-  "rem", "remark",
-  "obs", "observe",
-  "step", "steps",
-  "calc", "calculation",
-  "ans", "answer",
-  "nota", "notation",
-  "warn", "warning",
-  "algo", "algorithm",
-  "prf", "proof",
-  "sol", "solution",
-  "code"
+  "thm", "theorem", "lem", "lemma", "cor", "corollary",
+  "prp", "proposition", "def", "definition", "axm", "axiom",
+  "clm", "claim", "asm", "assumption", "exm", "example",
+  "exr", "exercise", "prob", "problem", "cnj", "conjecture",
+  "hyp", "hypothesis", "rem", "remark", "obs", "observe",
+  "step", "steps", "calc", "calculation", "ans", "answer",
+  "nota", "notation", "warn", "warning", "algo", "algorithm",
+  "prf", "proof", "sol", "solution", "code"
 );
 
 .center article {
@@ -152,29 +139,29 @@ $math-types: (
       background-color: transparent;
       border:           var(--math-border-width) solid currentColor;
       border-radius:    var(--math-border-radius);
-      // Keep Quartz horizontal padding (0 1rem), add our vertical
       padding-top:      var(--math-padding-y);
       padding-bottom:   var(--math-padding-y);
 
       // ── THE GAP FIX ──
-      // callouts.scss sets .callout-title { padding: 1rem 0 }
-      // padding-bottom:1rem is the entire gap between title and content.
-      // padding-top also removed since .callout now handles top spacing.
       > .callout-title {
         padding-top:    0 !important;
         padding-bottom: 0 !important;
-        margin-bottom:  var(--ac-space-xs);
-        gap:            0;  // remove 5px gap left by hidden icon
+        margin-bottom:  0 !important; // CHANGED: Was var(--ac-space-xs)
+        gap:            0; 
       }
 
-      // ── Hide icon — correct class is .callout-icon per callouts.scss line 167 ──
+      // ── Hide icon ──
       > .callout-title > .callout-icon {
         display: none;
       }
 
-      // ── Trim last child bottom margin ──
+      // ── Trim child margins to eliminate content gap ──
+      > .callout-content > :first-child {
+        margin-top: 0 !important; // ADDED: Forces paragraph top-margin to 0
+      }
+
       > .callout-content > :last-child {
-        margin-bottom: 0;
+        margin-bottom: 0 !important;
         padding-bottom: 0;
       }
     }
