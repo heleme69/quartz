@@ -518,7 +518,44 @@ $math-callouts: (
 
 
 // ----------------------------------------------------------------
-// 11. GAP FIX — first <p> inside callout-content inherits our
+// 11. DEFINITIVE GAP FIX — Quartz base.scss sets padding on both
+//     .callout-title (bottom) and .callout-content (top), which
+//     stack into the visible gap. Must use !important to win.
+// ----------------------------------------------------------------
+.center article {
+  $all-math-types: (
+    "thm", "theorem", "lem", "lemma", "cor", "corollary",
+    "prp", "proposition", "def", "definition", "axm", "axiom",
+    "clm", "claim", "asm", "assumption", "exm", "example",
+    "exr", "exercise", "prob", "problem", "cnj", "conjecture",
+    "hyp", "hypothesis", "rem", "remark", "obs", "observe",
+    "step", "steps", "calc", "calculation", "ans", "answer",
+    "nota", "notation", "warn", "warning", "algo", "algorithm",
+    "prf", "proof", "sol", "solution", "code"
+  );
+
+  @each $type in $all-math-types {
+    .callout[data-callout="#{$type}"] > .callout-title {
+      padding-bottom: 0 !important;
+      margin-bottom:  var(--ac-space-xs) !important;
+    }
+
+    .callout[data-callout="#{$type}"] > .callout-content {
+      padding-top: 0 !important;
+      margin-top:  0 !important;
+
+      > p:first-child,
+      > ul:first-child,
+      > ol:first-child {
+        margin-top: 0 !important;
+      }
+    }
+  }
+}
+
+
+// ----------------------------------------------------------------
+// 12. OLD GAP FIX — first <p> inside callout-content inherits our
 //     paragraph margin-top (0.6em), creating a visible gap.
 //     Also collapse the ghost line-height of font-size:0 title-inner.
 // ----------------------------------------------------------------
