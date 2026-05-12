@@ -112,15 +112,6 @@
 
 // ================================================================
 // 5. MATH CALLOUT SHARED RESET
-//
-//  Key findings from callouts.scss:
-//    .callout        { padding: 0 1rem }           horizontal only
-//    .callout-title  { padding: 1rem 0; gap: 5px } 1rem top AND bottom ← THE GAP
-//    .callout-icon   { ... }                       correct icon class
-//    .callout-content > :first-child { margin-top: 0 } already handled by Quartz
-// ================================================================
-// ================================================================
-// 5. MATH CALLOUT SHARED RESET
 // ================================================================
 $math-types: (
   "thm", "theorem", "lem", "lemma", "cor", "corollary",
@@ -139,35 +130,19 @@ $math-types: (
       background-color: transparent;
       border:           var(--math-border-width) solid currentColor;
       border-radius:    var(--math-border-radius);
-      padding-top:      var(--math-padding-y);
-      padding-bottom:   var(--math-padding-y);
+      padding:          var(--math-padding-y) 1rem; // Simplified to Quartz defaults
 
-      // ── THE GAP FIX ──
       > .callout-title {
-        padding-top:    0 !important;
-        padding-bottom: 0 !important;
-        margin-bottom:  0 !important; // CHANGED: Was var(--ac-space-xs)
-        gap:            0; 
+        margin: 0; 
       }
 
-      // ── Hide icon ──
+      // Hide icon
       > .callout-title > .callout-icon {
         display: none;
-      }
-
-      // ── Trim child margins to eliminate content gap ──
-      > .callout-content > :first-child {
-        margin-top: 0 !important; // ADDED: Forces paragraph top-margin to 0
-      }
-
-      > .callout-content > :last-child {
-        margin-bottom: 0 !important;
-        padding-bottom: 0;
       }
     }
   }
 }
-
 
 // ================================================================
 // 6. BOLD TITLE — statement boxes
@@ -209,172 +184,91 @@ $math-types: (
 
 
 // ================================================================
-// 8. AUTO-LABELS — font-size:0 hides user text, ::before injects label
-//    line-height:0 collapses ghost height from inherited line-height
+// 8. AUTO-LABELS (Simplified, no font-size overrides)
 // ================================================================
 .center article {
-
   .callout[data-callout="thm"], .callout[data-callout="theorem"] {
     counter-increment: thm;
-    > .callout-title > .callout-title-inner {
-      font-size: 0; line-height: 0;
-      &::before { content: "Theorem " counter(thm) ". "; font-size: var(--ac-size); line-height: var(--ac-lh); font-weight: bold; }
-    }
+    > .callout-title > .callout-title-inner::before { content: "Theorem " counter(thm) ". "; font-weight: bold; }
   }
-
   .callout[data-callout="lem"], .callout[data-callout="lemma"] {
     counter-increment: lem;
-    > .callout-title > .callout-title-inner {
-      font-size: 0; line-height: 0;
-      &::before { content: "Lemma " counter(lem) ". "; font-size: var(--ac-size); line-height: var(--ac-lh); font-weight: bold; }
-    }
+    > .callout-title > .callout-title-inner::before { content: "Lemma " counter(lem) ". "; font-weight: bold; }
   }
-
   .callout[data-callout="cor"], .callout[data-callout="corollary"] {
     counter-increment: cor;
-    > .callout-title > .callout-title-inner {
-      font-size: 0; line-height: 0;
-      &::before { content: "Corollary " counter(cor) ". "; font-size: var(--ac-size); line-height: var(--ac-lh); font-weight: bold; }
-    }
+    > .callout-title > .callout-title-inner::before { content: "Corollary " counter(cor) ". "; font-weight: bold; }
   }
-
   .callout[data-callout="prp"], .callout[data-callout="proposition"] {
     counter-increment: prp;
-    > .callout-title > .callout-title-inner {
-      font-size: 0; line-height: 0;
-      &::before { content: "Proposition " counter(prp) ". "; font-size: var(--ac-size); line-height: var(--ac-lh); font-weight: bold; }
-    }
+    > .callout-title > .callout-title-inner::before { content: "Proposition " counter(prp) ". "; font-weight: bold; }
   }
-
   .callout[data-callout="def"], .callout[data-callout="definition"] {
     counter-increment: def;
-    > .callout-title > .callout-title-inner {
-      font-size: 0; line-height: 0;
-      &::before { content: "Definition " counter(def) ". "; font-size: var(--ac-size); line-height: var(--ac-lh); font-weight: bold; }
-    }
+    > .callout-title > .callout-title-inner::before { content: "Definition " counter(def) ". "; font-weight: bold; }
   }
-
   .callout[data-callout="axm"], .callout[data-callout="axiom"] {
     counter-increment: axm;
-    > .callout-title > .callout-title-inner {
-      font-size: 0; line-height: 0;
-      &::before { content: "Axiom " counter(axm) ". "; font-size: var(--ac-size); line-height: var(--ac-lh); font-weight: bold; }
-    }
+    > .callout-title > .callout-title-inner::before { content: "Axiom " counter(axm) ". "; font-weight: bold; }
   }
-
   .callout[data-callout="clm"], .callout[data-callout="claim"] {
     counter-increment: clm;
-    > .callout-title > .callout-title-inner {
-      font-size: 0; line-height: 0;
-      &::before { content: "Claim " counter(clm) ". "; font-size: var(--ac-size); line-height: var(--ac-lh); font-weight: bold; }
-    }
+    > .callout-title > .callout-title-inner::before { content: "Claim " counter(clm) ". "; font-weight: bold; }
   }
-
   .callout[data-callout="asm"], .callout[data-callout="assumption"] {
     counter-increment: asm;
-    > .callout-title > .callout-title-inner {
-      font-size: 0; line-height: 0;
-      &::before { content: "Assumption " counter(asm) ". "; font-size: var(--ac-size); line-height: var(--ac-lh); font-weight: bold; }
-    }
+    > .callout-title > .callout-title-inner::before { content: "Assumption " counter(asm) ". "; font-weight: bold; }
   }
-
   .callout[data-callout="exm"], .callout[data-callout="example"] {
     counter-increment: exm;
-    > .callout-title > .callout-title-inner {
-      font-size: 0; line-height: 0;
-      &::before { content: "Example " counter(exm) ". "; font-size: var(--ac-size); line-height: var(--ac-lh); font-weight: bold; }
-    }
+    > .callout-title > .callout-title-inner::before { content: "Example " counter(exm) ". "; font-weight: bold; }
   }
-
   .callout[data-callout="exr"], .callout[data-callout="exercise"] {
     counter-increment: exr;
-    > .callout-title > .callout-title-inner {
-      font-size: 0; line-height: 0;
-      &::before { content: "Exercise " counter(exr) ". "; font-size: var(--ac-size); line-height: var(--ac-lh); font-weight: bold; }
-    }
+    > .callout-title > .callout-title-inner::before { content: "Exercise " counter(exr) ". "; font-weight: bold; }
   }
-
   .callout[data-callout="prob"], .callout[data-callout="problem"] {
     counter-increment: prob;
-    > .callout-title > .callout-title-inner {
-      font-size: 0; line-height: 0;
-      &::before { content: "Problem " counter(prob) ". "; font-size: var(--ac-size); line-height: var(--ac-lh); font-weight: bold; }
-    }
+    > .callout-title > .callout-title-inner::before { content: "Problem " counter(prob) ". "; font-weight: bold; }
   }
-
   .callout[data-callout="cnj"], .callout[data-callout="conjecture"] {
     counter-increment: cnj;
-    > .callout-title > .callout-title-inner {
-      font-size: 0; line-height: 0;
-      &::before { content: "Conjecture " counter(cnj) ". "; font-size: var(--ac-size); line-height: var(--ac-lh); font-weight: bold; }
-    }
+    > .callout-title > .callout-title-inner::before { content: "Conjecture " counter(cnj) ". "; font-weight: bold; }
   }
-
   .callout[data-callout="hyp"], .callout[data-callout="hypothesis"] {
     counter-increment: hyp;
-    > .callout-title > .callout-title-inner {
-      font-size: 0; line-height: 0;
-      &::before { content: "Hypothesis " counter(hyp) ". "; font-size: var(--ac-size); line-height: var(--ac-lh); font-weight: bold; }
-    }
+    > .callout-title > .callout-title-inner::before { content: "Hypothesis " counter(hyp) ". "; font-weight: bold; }
   }
-
   .callout[data-callout="rem"], .callout[data-callout="remark"] {
     counter-increment: rem;
-    > .callout-title > .callout-title-inner {
-      font-size: 0; line-height: 0;
-      &::before { content: "Remark " counter(rem) ". "; font-size: var(--ac-size); line-height: var(--ac-lh); font-weight: bold; }
-    }
+    > .callout-title > .callout-title-inner::before { content: "Remark " counter(rem) ". "; font-weight: bold; }
   }
-
   .callout[data-callout="obs"], .callout[data-callout="observe"] {
     counter-increment: obs;
-    > .callout-title > .callout-title-inner {
-      font-size: 0; line-height: 0;
-      &::before { content: "Observation " counter(obs) ". "; font-size: var(--ac-size); line-height: var(--ac-lh); font-weight: bold; }
-    }
+    > .callout-title > .callout-title-inner::before { content: "Observation " counter(obs) ". "; font-weight: bold; }
   }
-
   .callout[data-callout="step"], .callout[data-callout="steps"] {
     counter-increment: step;
-    > .callout-title > .callout-title-inner {
-      font-size: 0; line-height: 0;
-      &::before { content: "Step " counter(step) ". "; font-size: var(--ac-size); line-height: var(--ac-lh); font-weight: bold; }
-    }
+    > .callout-title > .callout-title-inner::before { content: "Step " counter(step) ". "; font-weight: bold; }
   }
-
   .callout[data-callout="algo"], .callout[data-callout="algorithm"] {
     counter-increment: algo;
-    > .callout-title > .callout-title-inner {
-      font-size: 0; line-height: 0;
-      &::before { content: "Algorithm " counter(algo) ". "; font-size: var(--ac-size); line-height: var(--ac-lh); font-weight: bold; }
-    }
+    > .callout-title > .callout-title-inner::before { content: "Algorithm " counter(algo) ". "; font-weight: bold; }
   }
-
   .callout[data-callout="calc"], .callout[data-callout="calculation"] {
-    > .callout-title > .callout-title-inner {
-      font-size: 0; line-height: 0;
-      &::before { content: "Calculation. "; font-size: var(--ac-size); line-height: var(--ac-lh); font-weight: bold; }
-    }
+    > .callout-title > .callout-title-inner::before { content: "Calculation. "; font-weight: bold; }
   }
-
   .callout[data-callout="nota"], .callout[data-callout="notation"] {
-    > .callout-title > .callout-title-inner {
-      font-size: 0; line-height: 0;
-      &::before { content: "Notation. "; font-size: var(--ac-size); line-height: var(--ac-lh); font-weight: bold; }
-    }
+    > .callout-title > .callout-title-inner::before { content: "Notation. "; font-weight: bold; }
   }
-
   .callout[data-callout="warn"], .callout[data-callout="warning"] {
-    > .callout-title > .callout-title-inner {
-      font-size: 0; line-height: 0;
-      &::before { content: "Warning. "; font-size: var(--ac-size); line-height: var(--ac-lh); font-weight: bold; }
-    }
+    > .callout-title > .callout-title-inner::before { content: "Warning. "; font-weight: bold; }
   }
 }
 
 
 // ================================================================
-// 9. PROOF / SOLUTION / ANSWER — left border only, italic label
+// 9. PROOF / SOLUTION / ANSWER
 // ================================================================
 .center article {
   .callout[data-callout="prf"],
@@ -387,27 +281,20 @@ $math-types: (
     border-right:  none;
     border-bottom: none;
     border-radius: 0;
-
-    > .callout-title > .callout-title-inner {
-      font-size:   0;
-      line-height: 0;
-    }
   }
 
   .callout[data-callout="prf"],
   .callout[data-callout="proof"] {
     > .callout-title > .callout-title-inner::before {
-      content:     "Proof. ";
-      font-size:   var(--ac-size);
-      line-height: var(--ac-lh);
-      font-style:  italic;
+      content: "Proof. ";
+      font-style: italic;
       font-weight: normal;
     }
     > .callout-content::after {
-      content:    "∎";
-      display:    block;
+      content: "∎";
+      display: block;
       text-align: right;
-      font-size:  1.1em;
+      font-size: 1.1em;
       margin-top: var(--ac-space-sm);
     }
   }
@@ -415,10 +302,8 @@ $math-types: (
   .callout[data-callout="sol"],
   .callout[data-callout="solution"] {
     > .callout-title > .callout-title-inner::before {
-      content:     "Solution. ";
-      font-size:   var(--ac-size);
-      line-height: var(--ac-lh);
-      font-style:  italic;
+      content: "Solution. ";
+      font-style: italic;
       font-weight: normal;
     }
   }
@@ -426,10 +311,8 @@ $math-types: (
   .callout[data-callout="ans"],
   .callout[data-callout="answer"] {
     > .callout-title > .callout-title-inner::before {
-      content:     "Answer. ";
-      font-size:   var(--ac-size);
-      line-height: var(--ac-lh);
-      font-style:  italic;
+      content: "Answer. ";
+      font-style: italic;
       font-weight: normal;
     }
   }
