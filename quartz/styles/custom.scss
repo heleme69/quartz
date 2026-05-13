@@ -179,7 +179,7 @@ $math-types: (
       > .callout-title > .callout-title-inner {
         display:     inline;
         font-weight: normal;
-
+	color:       var(--secondary);
         > p {
           display: inline;
           margin:  0;
