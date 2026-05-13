@@ -183,7 +183,7 @@ $math-types: (
         > p {
           display: inline;
           margin:  0;
-          color:   var(--color); // keep Quartz callout accent colour
+          color:   inherit;
         }
       }
 
