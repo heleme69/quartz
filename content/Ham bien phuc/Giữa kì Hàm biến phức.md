@@ -352,6 +352,62 @@ this.container.innerHTML = finalHTML;
 > $$
 > Vậy ta kết luận $\frac{\partial^2 f}{\partial z \partial \bar{z}} = 0$.
 
+> [!prob] 
+> Xét $\Omega \subset \mathbb{C}$ là tập mở đối xứng qua trục thực. Giả sử cặp hàm $(u(x,y),v(x,y))$ được xác định trên $\Omega$ thỏa hệ thức Cauchy-Riemann tại điểm $(x_{0}, y_{0}) \in \Omega$. Chứng minh rằng cặp hàm $(U(x,y),V(x,y))$ được xác định như sau:
+> $$
+> U(x,y)= u(x, - y), V(x,y) = -v(x, -y)
+> $$
+> cũng thỏa hệ thức Cauchy-Riemann tại $(x_{0}, -y_{0})$.
+
+> [!ans]
+> Trên miền mở $\Omega \subset \mathbb{C}$, ta có giả thiết $u(x,y)$ và $v(x,y)$ thỏa hệ thức Cauchy-Riemann:
+> $$
+> \begin{cases}
+> u_{x}(x_{0}, y_{0}) = v_{y}(x_{0}, y_{0}) \\
+> u_{y}(x_{0}, y_{0}) = -v_{x}(x_{0}, y_{0})
+> \end{cases} 
+> $$
+> Trên tập mở đối xứng qua trục thực, ta xét ánh xạ đối xứng qua trục thực:
+> $$
+> \begin{align}
+> T : \mathbb{R}^2 &\longrightarrow \mathbb{R}^2 \\
+> (x,y) &\longmapsto (x, -y)
+> \end{align}
+> $$
+> Do $T$ là một ánh xạ tuyến tính nên trơn và khả vị tại mọi điểm trên $\mathbb{R}^2$. Ta viết lại $U,V$: 
+> $$
+> \begin{cases}
+> U(x,y) = u(T(x,y)) \\
+> V(x,y) = -v(T(x,y))
+> \end{cases}
+> $$
+> Do $u,v$ thỏa Cauchy-Riemann nên $u,v$ khả vi thực tại ${} (x_{0}, y_{0}) {}$. Vì ánh xạ bên trong $T$ khả vi tại $(x_0, -y_0)$ và các hàm bên ngoài $u, v$ khả vi tại $T(x_0, -y_0) = (x_0, y_0)$, suy ra $U,V$ khả vi tại $(x_{0}, -y_{0})$ do tính chất khả vi của ánh xạ  hợp. 
+> Ta tính đạo hàm riêng của $U$ và $V$ tại $(x,y)$ bất kì:
+> - Với $U(x,y) = u(x, -y)$: 
+> $$
+> \begin{align}
+> U_x(x,y) &=  \frac{\partial}{\partial x} u(x, -y) = u_x(x, -y) \\
+> U_y(x,y) &=  \frac{\partial}{\partial y} u(x, -y) = u_{y'}(x, y') \cdot \frac{\partial y'}{\partial y} = -u_y(x, -y) 
+> \end{align}
+> $$
+> - Với  hàm $V(x,y) = -v(x, -y)$: 
+> $$
+> \begin{align}
+> V_x(x,y) &=  \frac{\partial}{\partial x} [-v(x, -y)] = -v_x(x, -y) \\
+> V_y(x,y) &=  \frac{\partial}{\partial y} [-v(x, -y)] = -\left( v_{y'}(x, y') \cdot \frac{\partial y'}{\partial y} \right) = - (v_y(x, -y) \cdot (-1)) = v_y(x, -y)
+> \end{align}
+> $$
+> 
+> Thay $(x_{0}, y_{0})$ vào công thức $U_{x}(x,y)$ và $V_{y}(x,y)$ và sử dụng giả thiết hệ thức Cauchy-Riemann: 
+> $$
+> \begin{cases}
+> U_x(x_0, -y_0) &=  u_x(x_0, y_0) = v_y(x_0, y_0) = V_y(x_0, -y_0) \\
+> U_y(x_0, -y_0) &=  -u_y(x_0, y_0) = -(-v_x(x_0, y_0)) = v_x(x_0, y_0) = -(-v_x(x_0, y_0)) = -V_{x}(x_{0}, -y_{0})
+> \end{cases}
+> $$
+> 
+> Vậy ta có $U_{x}(x_{0}, -y_{0}) = V_{y}(x_{0}, -y_{0})$ và $U_y(x_0, -y_0) =-V_{x}(x_{0}, -y_{0})$ nên kết luận $(U,V)$ thỏa hệ thức Cauchy-Riemann tại $(x_{0}, y_{0})$
+
 
 
 
