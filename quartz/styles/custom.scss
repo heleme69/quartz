@@ -508,3 +508,14 @@ $math-types: (
     }
   }
 }
+
+
+// ================================================================
+// SECTION 11 — HOME PAGE BANNER
+// ================================================================
+.center article img:first-child {
+  width:	   100%;
+  object-fit:	   cover;
+  border-radius:   var(--box-border-radius);
+  margin-bottom:   var(--space-4);
+}
