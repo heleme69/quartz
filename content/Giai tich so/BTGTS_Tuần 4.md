@@ -41,7 +41,7 @@ Tính các đạo hàm tại $a = \frac{\pi}{4}$ ta được $f(a) = f'''(a) = \
 > 	- Với $n=4$: $|R_4| \le \frac{1}{120} \times (0.01)^5 = \frac{1}{120} \times 10^{-10} \approx 0.00833 \times 10^{-10} < 10^{-10}$ (Thỏa mãn)
 > Vậy, để đảm bảo sai số chặt cụt nhỏ hơn $10^{-10}$, ta cần chọn **$n = 4$**.
 > 
-> > [!code]- 
+> > [!code]- Matlab
 > > ```matlab
 > > % Định nghĩa khoảng vẽ đồ thị
 > >  x = linspace(-pi/2, pi/2, 1000);
