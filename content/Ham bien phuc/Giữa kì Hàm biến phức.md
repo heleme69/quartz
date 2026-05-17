@@ -163,8 +163,9 @@ if (CONFIG.showTOC) {
 // Đổ toàn bộ kết quả ra giao diện
 this.container.innerHTML = finalHTML;
 ```
+# Phần câu hỏi
 
-> [!prob]
+> [!prob] (Bài 1)
 > Tìm ảnh của tam giác vuông có ba đỉnh là 0,2,2+2i qua phép biến đổi hình học $w = f(z) = z^{2} + 1 + i$.
 
 > [!ans]
@@ -195,7 +196,7 @@ this.container.innerHTML = finalHTML;
 > 	- Ảnh đoạn $BO$ ($y = x, 0 \le x \le 2$):
 > 		Thế $y=x$ vào hệ, ta được $u_1 = 0$ và $v_1 = 2x^2$.
 > 		Vì $x \in [0,2]$ nên $v_{1} \in [0,8]$.
-> 		Vậy ảnh là đoạn thẳng nằm trên trục ảo, nối từ điểm ${} (8i)$ về điểm $(0)$.
+> 		Vậy ảnh là đoạn thẳng nằm trên trục ảo, nối từ điểm $(8i)$ về điểm $(0)$.
 > 		
 > Kết luận bước 1: Miền $D$ được ánh xạ thành $D_{1}$ giới hạn bởi hai đoạn thẳng vuông góc $(0 \to 4)$ và $(0 \to 8i)$ và cung parabol $u_{1} = 4 - \frac{v_{1}^{2}}{16}$.
 > 
@@ -210,7 +211,7 @@ this.container.innerHTML = finalHTML;
 > 	- Ảnh đoạn thẳng $OA$ ($v_{1} = 0, 0 \le u_{1} \le 4$):
 > 		Thế $(v_{1} = 0)$, ta được $v = 1$.
 > 		Vì $u_{1} \in [0,4]$ nên $u \in [0,5]$.
-> 		Vậy ảnh là đoạn thẳng nằm ngang nối từ $(1 + i)$ tới ${} (5 + i) {}$.
+> 		Vậy ảnh là đoạn thẳng nằm ngang nối từ $(1 + i)$ tới ${} (5 + i)$.
 > 	- Ảnh đoạn thẳng $BO$:
 > 		Thế $u_{1} = 0$, ta được $v = 1$.
 > 		Vì $v_{1} \in [0,8]$ nên $v \in [1, 9]$.
@@ -221,8 +222,12 @@ this.container.innerHTML = finalHTML;
 > 		Vậy ảnh là một cung parabol $u = 5 - \frac{(v-1)^{2}}{16}$, nối từ điểm ${} (5 + i)$ tới điểm $(1+9i)$.
 > 		
 > Kết luận sau cùng: Miền $D_{1}$ được ánh xạ thành $D'$ giới hạn bởi hai đoạn thẳng vuông góc ${} (1 + i)$ tới $(5 + i)$, đoạn $(1+i)$ tới $(1+9i)$ và cung parabol $u = 5 - \frac{(v - 1)^2}{16}$.
+>
+>
+>
+![[image.webp]]
 
-> [!prob] 
+> [!prob] (Bài 2)
 > Tìm hàm phức $f(z)$ thỏa mãn $\lim_{ z \to 2+i } \mathrm{Re}(f(z)) = 4$ và $\lim_{ z \to 2+i } \mathrm{Im}(f(z)) = -1$.
 
 > [!ans]
@@ -241,7 +246,59 @@ this.container.innerHTML = finalHTML;
 >   
 > Vậy $f(z) = \bar{z} + 2$ thỏa yêu cầu bài toán.
 
-> [!Prob]
+> [!prob] (Bài 3)
+> Tìm hàm nguyên $f$ sao cho có phần thực là $u(x,y) = e^{4x}\cos(4y)$, với $(x,y) \in \mathbb{R}^{2}$.
+
+> [!ans]
+> Gọi hàm nguyên cần tìm là $f(z) = u(x,y) + iv(x,y)$, với $z = x + iy$.  Theo giả thiết, ta có phần thực: $u(x,y) = e^{4x}\cos(4y)$. 
+> Ta tính các đạo hàm riêng của $u$: 
+> $$
+> \begin{align}
+> u_{x} &=  4e^{4x}\cos(4y) \\
+> u_{y} &=  -4e^{4x}\sin(4y)
+> \end{align}
+> $$
+> Ta kiểm tra và thấy $u$ thỏa điều kiện cần là hàm điều hòa: 
+> $$
+> \Delta u = u_{xx} + u_{yy} = 16e^{4x}\cos(4y) - 16e^{4x}\cos(4y) = 0
+> $$
+> Vì $f$ là hàm nguyên (chỉnh hình trên toàn $\mathbb{C}$), nó thỏa hệ thức Cauchy-Riemann:
+> $$
+> \begin{align}
+> \begin{cases}
+> u_x = v_y \\
+> v_x = -u_y 
+> \end{cases}
+> &\;\;\Longrightarrow\;\;
+> \begin{cases}
+> v_y = 4e^{4x}\cos(4y) \\
+> v_x = 4e^{4x}\sin(4y)
+> \end{cases}
+> \end{align}
+> $$
+> Lấy nguyên hàm $v_{y}$ theo biến $y$ (coi $x$ là hằng): 
+> $$
+> v(x,y) = \int 4e^{4x} \cos(4y) \,dy = e^{4x} \sin(4y) + C(x)
+> $$
+> Lấy đạo hàm của $v(x,y)$ theo biến $x$ và ép nó nó bằng $v_{x}$ ở điều kiện cần: 
+> $$
+> 4e^{4x} \sin(4y) + C'(x) = 4e^{4x} \sin(4y)
+> $$
+> Ta suy ra $C'(x) = 0$ hay $C(x) = 0$, $\mathbb{C} \in \mathbb{R}$ là hàm hằng. Khi đó ta có
+> $$
+> f(z) = u + iv = e^{4x} \cos(4y) + i \left( e^{4x} \sin(4y) + C \right)
+> $$
+> Sử dụng $e^{i\theta} = \cos \theta + i \sin \theta$, ta có: 
+> $$
+> \begin{align}
+> f(z) &=  e^{4x} (\cos(4y) + i\sin(4y)) + iC \\
+> &= e^{4x} \cdot e^{i4y} + iC  \\
+> &= e^{4(x+iy)} + iC
+> \end{align}
+> $$
+> Vậy hàm $f$ nguyên cần tìm là $f(z) = e^{4z} + iC$, với $C \in \mathbb{R}$ là hàm hằng.
+
+> [!prob] (Bài 7)
 > Xét hàm phức $f(z) = u(x,y) + iv(x,y)$ được xác định trên tập mở $\Omega$ và giả sử các hàm $u,v$ khả vi liên tục cấp một trên $\Omega$. Ta định nghĩa: 
 > $$
 > \frac{ \partial f }{ \partial z } = \frac{1}{2} \left( \frac{ \partial f }{ \partial x } - i\frac{ \partial f }{ \partial y }  \right)
@@ -250,9 +307,9 @@ this.container.innerHTML = finalHTML;
 > $$
 > \frac{\partial f}{\partial \bar{z}} = \frac{1}{2} \left( \frac{\partial f}{\partial x} + i\frac{\partial f}{\partial y} \right)
 > $$
-> a) Nếu $f(z) = z^{2}$, hãy tính $\frac{\partial f}{\partial z}, \frac{\partial f}{\partial \bar{z}}$.
-> b) Chứng minh rằng $f$ chỉnh hình nếu và chỉ nếu $\frac{ \partial f }{ \partial \bar{z} } = 0$.
-> c) Giả sử $f$ chỉnh hình, chứng minh rằng $\frac{ \partial f }{ \partial z }(z) = f'(z)$.
+> a) Nếu $f(z) = z^{2}$, hãy tính $\frac{\partial f}{\partial z}, \frac{\partial f}{\partial \bar{z}}$.  
+> b) Chứng minh rằng $f$ chỉnh hình nếu và chỉ nếu $\frac{ \partial f }{ \partial \bar{z} } = 0$.  
+> c) Giả sử $f$ chỉnh hình, chứng minh rằng $\frac{ \partial f }{ \partial z }(z) = f'(z)$.  
 > d) Chỉ thêm điều kiện là các hàm $u,v$ là các hàm điều hòa (theo nghĩa cổ điển), chứng minh rằng:
 > $$
 > \frac{\partial^2 f}{\partial z \partial \bar{z}} = 0
@@ -266,6 +323,7 @@ this.container.innerHTML = finalHTML;
 > \frac{\partial f}{\partial y} &=  u_y + iv_y
 > \end{align}
 > $$
+> 
 > a)
 > Ta viết $f(z) = z^{2} = (x + iy)^{2} = (x^{2} - y^{2}) +i(2xy)$, ta có phần thực và phần ảo lần lượt là: $u(x,y) = x^{2} - y^{2}$ và $v(x,y) = 2xy$. 
 > Ta tính các đạo hàm riêng: 
@@ -281,6 +339,7 @@ this.container.innerHTML = finalHTML;
 > \frac{\partial f}{\partial z} &=  \frac{1}{2} \left( \frac{\partial f}{\partial x} - i\frac{\partial f}{\partial y} \right) = \frac{1}{2} (2z - i(2iz)) = \frac{1}{2} (2z + 2z) = 2z  \\
 > \frac{\partial f}{\partial \bar{z}} &=  \frac{1}{2} \left( \frac{\partial f}{\partial x} + i\frac{\partial f}{\partial y} \right) = \frac{1}{2} (2z + i(2iz)) = \frac{1}{2} (2z - 2z) = 0
 > \end{align}
+> 
 > $$
 > b)
 > Thay biểu thức của $\frac{\partial f}{\partial x}$ và $\frac{\partial f}{\partial y}$ vào định nghĩa của $\frac{\partial f}{\partial \bar{z}}$: 
@@ -308,8 +367,10 @@ this.container.innerHTML = finalHTML;
 > 
 > c)
 > Khi $f(z)$ là hàm chỉnh hình, ta có các tính chất sau:
+> 
 > i) Hàm $u, v$ thỏa mãn hệ thức Cauchy-Riemann: $v_y = u_x$ và $u_y = -v_x$.
 > ii) Đạo hàm của $f(z)$ được tính bằng công thức: $f'(z) = \frac{\partial f}{\partial x} = u_x + iv_x$.
+> 
 > Thay biểu thức của $\frac{\partial f}{\partial x}$ và $\frac{\partial f}{\partial y}$ vào định nghĩa của ${} \frac{\partial f}{\partial z} {}$: 
 > $$
 > \begin{align}
@@ -325,7 +386,7 @@ this.container.innerHTML = finalHTML;
 > \end{align}
 > $$
 > Đây chính là công thức đạo hàm: $f'(z) = u_x + iv_x$, ta suy ra $\frac{\partial f}{\partial z} = f'(z)$.
->
+> 
 > d)
 > Dựa theo định nghĩa đề bài, ta có: 
 > $$
@@ -352,7 +413,36 @@ this.container.innerHTML = finalHTML;
 > $$
 > Vậy ta kết luận $\frac{\partial^2 f}{\partial z \partial \bar{z}} = 0$.
 
-> [!prob] 
+> [!prob] (Bài 4)
+> Chứng minh rằng nếu hàm phức $f$ thỏa mãn điều kiện là các hàm $\mathrm{Re}(f(z))$, $\mathrm{Im}(f(z))$, $\mathrm{Re}(zf(z))$, $\mathrm{Im}(zf(z))$ là các hàm điều hòa trên cả $\mathbb{R}^2$ thì hàm $f$ là hàm nguyên.
+
+> [!ans]
+> Sử dụng kết quả Bài 7-câu d), ta biết được một hàm phức $H$ có phần thưc và phần ảo là các hàm điều hòa thì ta có $\frac{\partial^2 H}{\partial z \partial \bar{z}} = 0$. Áp dụng với $H = f(z)$ và $H = zf(z)$, ta có:
+> 
+> i) $f(z)$ có phần thực và ảo điều hòa $\implies \frac{\partial^2 f}{\partial z \partial \bar{z}} = 0$.
+> ii) $z f(z)$ có phần thực và ảo điều hòa $\implies \frac{\partial^2}{\partial z \partial \bar{z}} (zf) = 0$.
+>
+> Mục tiêu: ta sẽ cố gắng chứng minh $\frac{ \partial f }{ \partial \bar{z} } = 0$ để chỉ ra hàm $f$ là hàm chỉnh hình (theo tính chất Bài 7-câu b) .
+> Từ giả thiết ii), ta khai triển và đạo hàm hợp từ phải qua trái: 
+> $$
+> \frac{\partial^2}{\partial z \partial \bar{z}} (zf) = \frac{\partial}{\partial z} \left( \frac{\partial}{\partial \bar{z}} (z \cdot f)  \right) 
+> $$
+> Lấy đạo hàm theo $\bar{z}$ trước, ta sử dụng quy tắc đạo hàm hợp và nhờ tính độc lập của $z$ và $\bar{z}$ nên $\frac{\partial z}{\partial \bar{z}} = 0$, ta có: 
+> $$
+> \frac{\partial}{\partial \bar{z}} (z \cdot f) = z \cdot \frac{\partial f}{\partial \bar{z}}
+> $$
+> Tiếp tục lấy đạo hàm theo $z$, ta có: 
+> $$
+> \begin{align}
+> \frac{\partial}{\partial z} \left( z \cdot \frac{\partial f}{\partial \bar{z}} \right) &=  \left( \frac{\partial z}{\partial z} \right) \cdot \frac{\partial f}{\partial \bar{z}} + z \cdot \frac{\partial}{\partial z} \left( \frac{\partial f}{\partial \bar{z}} \right) \\
+> &=  1 \cdot \frac{\partial f}{\partial \bar{z}} + z \cdot \frac{\partial^2 f}{\partial z \partial \bar{z}}
+> \end{align}
+> $$
+> Sử dụng giả thiết i), ta biết $\frac{\partial^2 f}{\partial z \partial \bar{z}} = 0$ nên vế phải còn lại $\frac{\partial f}{\partial \bar{z}} + 0 = \frac{\partial f}{\partial \bar{z}}$
+> Mà theo giải thiết ii), biểu thức ban đầu $\frac{\partial^2}{\partial z \partial \bar{z}} (zf) = 0$, nên $\frac{ \partial z }{ \partial \bar{z} }$ cũng phải bằng $0$.
+> Vậy ta có $\frac{ \partial f }{ \partial \bar{z} } = 0$ trên $\mathbb{R}^{2}$ nên $f$ là hàm chỉnh hình trên $\mathbb{R}^{2}$ hay $f$ là hàm nguyên.
+
+> [!prob] (Bài 6)
 > Xét $\Omega \subset \mathbb{C}$ là tập mở đối xứng qua trục thực. Giả sử cặp hàm $(u(x,y),v(x,y))$ được xác định trên $\Omega$ thỏa hệ thức Cauchy-Riemann tại điểm $(x_{0}, y_{0}) \in \Omega$. Chứng minh rằng cặp hàm $(U(x,y),V(x,y))$ được xác định như sau:
 > $$
 > U(x,y)= u(x, - y), V(x,y) = -v(x, -y)
@@ -398,7 +488,7 @@ this.container.innerHTML = finalHTML;
 > \end{align}
 > $$
 > 
-> Thay $(x_{0}, y_{0})$ vào công thức $U_{x}(x,y)$ và $V_{y}(x,y)$ và sử dụng giả thiết hệ thức Cauchy-Riemann: 
+> Thay $(x_{0}, y_{0})$ vào công thức $U_{x}(x,y)$ và $V_{y}(x,y)$ và sử dụng Cauchy-Riemann: 
 > $$
 > \begin{cases}
 > U_x(x_0, -y_0) &=  u_x(x_0, y_0) = v_y(x_0, y_0) = V_y(x_0, -y_0) \\
@@ -408,7 +498,155 @@ this.container.innerHTML = finalHTML;
 > 
 > Vậy ta có $U_{x}(x_{0}, -y_{0}) = V_{y}(x_{0}, -y_{0})$ và $U_y(x_0, -y_0) =-V_{x}(x_{0}, -y_{0})$ nên kết luận $(U,V)$ thỏa hệ thức Cauchy-Riemann tại $(x_{0}, y_{0})$
 
-$\xi$
+> [!prob] (Bài 5)
+> Xét hàm phức $f(z) = u(x,y) + iv(x,y)$ chỉnh hình trên một tập mở liên thông $\Omega \subset \mathbb{C}$. Giả sử các số thực $a,b,c$ trong đó $a$ và $b$ không đồng thời bằng không, sao cho $au(x,y) + bv(x,y) + c = 0$ trên $\Omega$. Tìm hàm $f$.
 
+> [!ans]
+> Ta sẽ sử dụng định lý sau đây (đã chứng minh trên lớp) để giải, phát biểu:
+> > [!thm] 
+> > Cho $\Omega$ nằm trong $\mathbb{R}^{2}$, $\Omega$ là miền trong nghĩa là $\Omega$ mở và liên thông đường. Nếu:
+> > 
+> > i) $u \in C^{1}(\Omega)$ (nghĩa là $\frac{ \partial u }{ \partial x }$ và $\frac{ \partial u }{ \partial y }$ tồn tại và liên tục.)
+> > ii) ${} \nabla u = \mathbf{0} {}$ trên $\Omega$.
+> >
+> > thì ta kết luận $u$ là hàm hằng trên $\Omega$.
+>
+>
+> Mục tiêu: ta sẽ chứng minh $u$ và $v$ là các hàm hằng trên miền $\Omega$, từ đó kết luận $f$ là hàm hằng trên miền $\Omega$.
+> Ta lấy đạo hàm hai vế phương trình  $au+bv+c = 0$ theo $x$ và $y$: 
+> $$
+> \begin{cases}
+> au_{x} + bv_{x} = 0 \\
+> au_{y} + bv_{y} = 0 
+> \end{cases}
+> $$
+> Sử dụng hệ thức Cauchy Riemann (${} v_{x} = −u_{y}$, $v_{y} = u_{x}$): 
+> $$
+> \begin{cases}
+> a u_x - b u_y &= 0 \\
+> b u_x + a u_y &= 0
+> \end{cases}
+> $$
+> Hệ phương trình tuyến tính này có định thức là $\Delta = a^2 + b^2$. Vì theo giả thiết $a,b$ không đồng thời bằng không, nên hệ chỉ có nghiệm tầm thường: 
+> $$
+> \begin{cases}
+> u_{x} = 0 \\
+> u_{y} = 0
+> \end{cases}
+> $$
+> Theo định lý trên, ta xác định được $u = C_{1}$ là hàm hằng trên miền $\Omega$, tức là $u(x,y) \equiv C_1$ (với $C_1 \in \mathbb{R}$).
+> Từ hệ thức Cauchy-Riemann, ta lại có $v_x = -u_y = 0$ và $v_y = u_x = 0$, nên suy ra $\nabla v = \mathbf{0}$ trên toàn bộ $\Omega$. Áp dụng định lý một lần nữa, $v$ cũng là hàm hằng trên miền $\Omega$, tức là $v(x,y) \equiv C_2$ (với $C_2 \in \mathbb{R}$).
+> Vậy hàm số $f(z) = u(x,y) + iv(x,y) = C_1 + iC_2$ là một hàm hằng trên miền $\Omega$.
 
+# Phần tiểu luận
 
+> [!prob] (Tiểu luận)
+> Hãy viết một bài luận ngắn (tới đa 3 trang giấy A-4) về sự hiểu biết của sinh viên đối với hàmphức, sự khả vi phức, hệ thức Cauchy-Riemann và sự khác biệt với hàm thực ở môn Vi tích phân 1A, Vi tích phân 2A.
+
+> [!ans]
+> Trong các môn Vi tích phân 1A và 2A, ta đã xây dựng lý thuyết đạo hàm trên $\mathbb{R}$ và $\mathbb{R}^n$. Bài tiểu luận này, ta xem xét sự chuyển đổi tù trường thực sang trường số phức $\mathbb{C}$ và nêu ra các nhận định so sánh giữa kết quả ở hàm biến thực so với hàm biến phức
+> 
+> **1. Cấu trúc đại số và đối tượng nghiên cứu**
+> 
+> 1.1. Từ $\mathbb{R}$ đến $\mathbb{C}$: Mở rộng trường số
+> Giải tích thực làm việc trên trường $(\mathbb{R}, +, \cdot)$. Trường số phức được xây dựng bằng cách bổ sung phần tử $i$ thoả $i^2 = -1$:
+> $$ \mathbb{C} = \{x + iy \mid x, y \in \mathbb{R}\}, $$
+> với phép nhân $(x_1 + iy_1)(x_2 + iy_2) = (x_1 x_2 - y_1 y_2) + i(x_1 y_2 + x_2 y_1)$. Về mặt tập hợp $\mathbb{C} \cong \mathbb{R}^2$ là không gian vector thực hai chiều. Nhưng $\mathbb{C}$ còn mang thêm phép nhân giao hoán khiến nó thành một trường: mỗi phần tử $z \neq 0$ có nghịch đảo $z^{-1} = \bar{z}/|z|^2$. Đây là sự khác biệt lớn $\mathbb{R}^2$ chỉ là không gian vector, còn $\mathbb{C}$ là trường, cho phép chia hai số phức.
+> 
+> Sự khác biệt này dẫn đến sự phân biệt giữa các lớp hàm ta nghiên cứu qua từng môn:
+> - Vi tích phân 1A:
+> 	Đối tượng: $f : \mathbb{R} \to \mathbb{R}$
+> 	Không gian: Trường thực
+> - Vi tích phân 2A:
+> 	Đối tượng: $\mathbf{F} : \mathbb{R}^2 \to \mathbb{R}^2$
+> 	Không gian: Không gian vector thực
+> - Hàm biến phức:
+> 	Đối tượng: $f : \mathbb{C} \to \mathbb{C}$
+> 	Không gian: Trường phức
+> 	  
+> Viết $z = x + iy$ và $f(z) = u(x,y) + iv(x,y)$, ta thấy $f$ về mặt tập hợp cũng là ánh xạ $\mathbb{R}^2 \to \mathbb{R}^2$, nhưng được nhìn qua lăng kính của trường phức, ta sẽ thấy các điểm khác biệt của nó, trước hết là về giá trị hàm:
+> 
+> 1.2. Tính tầm thường của hàm chỉnh hình $f : \Omega \subset \mathbb{C} \to \mathbb{R}$
+> Trong giải tích thực, các hàm $g : \mathbb{R} \to \mathbb{R}$ hay $h : \mathbb{R}^2 \to \mathbb{R}$ rất phong phú và đa dạng. Ngược lại, với giải tích phức, một hàm chỉnh hình chỉ nhận giá trị thực sẽ tự động suy biến thành hàm hằng.  Ta có định lý sau:
+>
+> > [!thm] Định lý Ánh xạ Mở (không chứng minh)
+> > Cho $\Omega \subset \mathbb{C}$ là một miền (tức là tập mở và liên thông). Nếu $f: \Omega \to \mathbb{C}$ là một hàm chỉnh hình và không phải là hàm hằng trên $\Omega$, thì $f$ biến các tập mở thành tập mở. Nghĩa là ảnh $f(U)$ của bất kỳ tập mở $U \subset \Omega$ nào cũng là một tập mở trong $\mathbb{C}$.
+>
+> > [!cor] Hệ quả
+> > Nếu $f: \Omega \to \mathbb{C}$ là một hàm chỉnh hình trên miền $\Omega$ và tập giá trị $f(\Omega)$ nằm trọn trên một tập hợp không có phần trong (empty interior) trên mặt phẳng phức, ví dụ như trục thực $\mathbb{R}$, trục ảo $i\mathbb{R}$, một đường tròn, hay một đường thẳng bất kỳ thì $f$ bắt buộc phải là hàm hằng.
+>
+> Chứng minh:
+> Áp dụng ngay cho hàm $f: \Omega \to \mathbb{R}$, ta thấy tập giá trị của hàm là $f(\Omega) \subset \mathbb{R}$. Vì trục thực $\mathbb{R}$ bản chất là một đường thẳng nằm trong mặt phẳng phức $\mathbb{C}$, nó hoàn toàn không có điểm trong (không thể chứa bất kỳ một đĩa tròn mở nào). Do đó $f(\Omega)$ không thể là một tập mở. Theo Định lý Ánh xạ mở, $f$ bắt buộc phải suy biến thành hàm hằng.
+>
+> Nhận xét (Liên hệ Bài 5):
+> Bài 5 chính là sự mở rộng trực tiếp của tính chất trên. Hệ thức $a u(x,y) + b v(x,y) + c = 0$ (với $a, b$ không đồng thời bằng $0$) là phương trình của một đường thẳng bất kỳ. Việc ép ảnh của hàm chỉnh hình $f(z) = u + iv$ nằm trọn trên đường thẳng này cũng khiến tập giá trị có phần trong rỗng. Cấu trúc phức buộc hàm $f$ phải suy biến thành hàm hằng. Đây chính là đặc trưng hoàn toàn khác biệt của hàm phức so với hàm thực.
+>
+> 
+> **2. Khả vi phức, Ma trận Jacobi và Hệ thức Cauchy–Riemann**
+> 
+> 2.1. Hai định nghĩa khả vi
+> Khả vi thực (Vi tích phân 2A): Hàm $\mathbf{F} = (u, v) : \mathbb{R}^2 \to \mathbb{R}^2$ khả vi tại $(x_0, y_0)$ nếu tồn tại ánh xạ tuyến tính $J$ sao cho:
+> $$ \mathbf{F}(x_0 + \Delta x, y_0 + \Delta y) = \mathbf{F}(x_0, y_0) + J\begin{pmatrix}\Delta x \\ \Delta y\end{pmatrix} + o\left(\|(\Delta x, \Delta y)\|\right). $$
+> Ma trận Jacobi $J = \begin{pmatrix} u_x & u_y \\ v_x & v_y \end{pmatrix}$ là bất kỳ ma trận $2 \times 2$ và không có ràng buộc nào giữa các đạo hàm riêng. Về mặt hình học, đạo hàm thực có thể là co giãn không đều theo nhiều hướng, hay phản chiếu tuỳ ý.
+> 
+> Khả vi phức: Hàm $f : \mathbb{C} \to \mathbb{C}$ khả vi phức (chỉnh hình) tại $z_0$ nếu giới hạn:
+> $$ f'(z_0) = \lim_{\Delta z \to 0} \frac{f(z_0 + \Delta z) - f(z_0)}{\Delta z} $$
+> tồn tại và là một số phức duy nhất, bất kể $\Delta z$ tiến $0$ theo hướng nào. Điều kiện này mạnh hơn rất nhiều so với giới hạn thực: $\Delta x \to 0$ chỉ theo hai phía, còn $\Delta z \to 0$ theo vô số hướng, tương tự yêu cầu trong Vi tích phân 2A cho không gian hai chiều.
+> 
+> 2.2. Ràng buộc của hàm phức và liên hệ tới ma trận Jacobi
+> Đặt $A = f'(z_0) = a + ib$. Điều kiện khả vi phức tương đương:
+> $$ f(z_0 + \Delta z) = f(z_0) + A \cdot \Delta z + o(|\Delta z|). $$
+> Phép nhân $\Delta z \mapsto A \cdot \Delta z$ là một ánh xạ tuyến tính $\mathbb{R}^2 \to \mathbb{R}^2$. Với $\Delta z = \Delta x + i\Delta y$, ta khai triển:
+> $$ A \cdot \Delta z = (a + ib)(\Delta x + i\Delta y) = (a\Delta x - b\Delta y) + i(b\Delta x + a\Delta y). $$
+> Biểu diễn lại dưới dạng ma trận, ta đồng nhất ma trận Jacobi của $f$ với ma trận của phép nhân $A$:
+> $$ \underbrace{\begin{pmatrix} u_x & u_y \\ v_x & v_y \end{pmatrix}}_{= J} = \underbrace{\begin{pmatrix} a & -b \\ b & a \end{pmatrix}}_{= J_{\mathbb{C}}}. $$
+> Đồng nhất từng thành phần, ta thu được hệ thức Cauchy–Riemann
+> Nếu $f = u + iv$ khả vi phức tại $z_0 = x_0 + iy_0$, thì tại điểm đó:
+> $$ u_x = v_y, \qquad u_y = -v_x. $$
+> 
+> Như vậy, hệ thức Cauchy–Riemann không phải điều kiện ngẫu nhiên, mà là kết quả ràng buộc: ma trận Jacobi của ánh xạ khả vi phức buộc phải có cấu trúc của phép nhân số phức, như ta đã trình bày ở trên
+> 
+> 2.3. Ý nghĩa hình học: biến đổi bảo giác
+> Ma trận $J_{\mathbb{C}} = \begin{pmatrix} a & -b \\ b & a \end{pmatrix}$ có thể viết lại thành:
+> $$ J_{\mathbb{C}} = |A|\begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}, \quad |A| = \sqrt{a^2 + b^2}, \; \theta = \arg(A). $$
+> 
+> Đây là phép vị tự kết hợp quay: co giãn đồng đều theo mọi hướng với tỉ số $|A|$ và quay một góc $\theta$ cố định. Hệ quả là ánh xạ chỉnh hình bảo toàn góc giữa các đường cong (conformal), trừ các điểm kỳ dị $f'(z_0) = 0$. Đây là điều không hề có với ma trận Jacobi thực tổng quát.
+>
+> 2.4. Điều kiện cần, đủ ở hàm thực và Định lý thuận, đảo ở hàm phức
+> 
+> Trong Vi tích phân 2A, mối liên hệ giữa tính khả vi và tính tồn tại của đạo hàm riêng liên tục được xác định thông qua:
+> 
+> Điều kiện cần: Hàm vector $\mathbf{F} = (u,v)$ khả vi thì các đạo hàm riêng tồn tại. Tuy nhiên, sự tồn tại này chỉ phản ánh độ biến thiên độc lập của hàm số dọc theo các trục tọa độ. Đối với hướng bất kì đồ thị không được đảm bảo và có thể bị đứt gãy, nghĩa là không tồn tại mặt phẳng tiếp diện xấp xỉ tuyến tính
+>
+> Điều kiện đủ: Để khắc phục sự đứt gãy ở các hướng bất kì và đảm bảo hàm số khả vi, giải tích thực đòi hỏi các đạo hàm riêng không những tồn tại mà còn phải liên tục (thuộc lớp $C^1$). 
+> 
+> Sơ đồ thể hiện chiều theo dấu suy ra:
+> $$\text{Đạo hàm riêng } C^1 \implies \text{Khả vi} \implies \text{Hàm số } C^0$$
+> 
+> Khi chuyển sang hàm biến phức, trên miền mở $\Omega \subset \mathbb{C}$ với $f(z) = u(x,y) + iv(x,y)$, điều kiện cần và đủ trên thực đươc phát biểu tương đương bằng cặp định lý Thuận - Đảo trên trường phức, bổ sung thêm ràng buộc hệ thức Cauchy-Riemann:
+> 
+> Định lý thuận: Giả sử $f$ khả vi cấp 1 tại mọi $z \in \Omega$ và đạo hàm $f'$ liên tục tại mọi $z \in \Omega$. Khi đó ta có: 
+> 
+>   i. $u, v \in C^1$ trên $\Omega$.
+>   ii. $u, v$ thỏa mãn hệ thức Cauchy-Riemann trên $\Omega$.
+>   
+> Định lý đảo: Giả sử $u, v \in C^1$ trên $\Omega$ và thỏa mãn hệ thức Cauchy-Riemann. Khi đó, đạo hàm phức $f'(z)$ tồn tại tại mọi $z \in \Omega$ (tức là $f$ khả vi phức) và được tính bởi: $f'(z) = u_x + iv_x = v_y - iu_y$.
+> 
+> Kết quả trong hàm biến phức cho ta sơ đồ điều kiện cần và đủ rất mạnh (hình như ta phải chứng minh bằng tích phân Cauchy):
+> $$\text{Khả vi phức} \iff \text{Đạo hàm liên tục } (C^1) \iff \text{Khả vi vô hạn lần } (C^\infty).$$
+>
+>
+> **3. Tổng kết so sánh**
+> 
+> Không gian: Khả vi thực làm việc trên $\mathbb{R}^2 \to \mathbb{R}^2$ (không gian vector); khả vi phức làm việc trên $\mathbb{C} \to \mathbb{C}$ (trường phức).
+> Ma trận Jacobi: Với khả vi thực, $J$ là ma trận $2 \times 2$ hoàn toàn tự do; với khả vi phức, $J$ buộc phải có dạng $\begin{pmatrix} a & -b \\ b & a \end{pmatrix}$.
+> 
+> Ràng buộc: Khả vi thực không có ràng buộc nào giữa các đạo hàm riêng; khả vi phức đòi hỏi $u_x = v_y$ và $u_y = -v_x$.
+> 
+> Ý nghĩa hình học: Khả vi thực cho phép biến đổi tuyến tính tùy ý; khả vi phức chỉ cho phép vị tự kết hợp quay (bảo giác).
+> 
+> Hàm nhận giá trị thực: Trong giải tích thực rất phong phú; trong giải tích phức bắt buộc là hằng số (theo Định lý Ánh xạ Mở).
+> 
+> Điều kiện cần và đủ: Tương tự như hàm thực, nhưng yêu cầu ràng buộc Cauchy-Riemann nên định lý thuận và đảo yêu cầu chặt hơn trong hàm biến thực
+> 
+> Sự khác biệt giữa giải tích thực và phức bắt nguồn từ cấu trúc đại số của $\mathbb{C}$: đòi hỏi đạo hàm là phép nhân số phức là một biến đổi tuyến tính đặc biệt sinh ra hệ thức Cauchy-Riemann và có tính bảo giác. Định lý Ánh xạ Mở cho thấy, hàm chỉnh hình nhận giá trị thực không tầm thường thì phải là hằng số, điều hoàn toàn không xảy ra trong giải tích thực.
