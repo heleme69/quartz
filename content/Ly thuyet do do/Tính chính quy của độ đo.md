@@ -83,24 +83,24 @@
 > 5. Xấp xỉ từ bên trong: $(i)$ $\implies$ $(iv)$ $\implies$ $(v)$ $\implies$ $(i)$
 > 	- $((i) \implies (iv))$
 > 	Vì họ các tập đo được $\mathfrak{M}_L$ là một $\sigma$-đại số, ta có $E \in \mathfrak{M}_L$ nên $E^c \in \mathfrak{M}_L$. 
-> 	Vì $E^{c}$ là tập đo được, áp dụng ${} (ii)$, ta tìm được tập mở $O \supset E^c$ sao cho $\mu_L^*(O \setminus E^c) \le \epsilon$.
-> 	Đặt $C = O^c$,
+> 	Vì $E^{c}$ là tập đo được, áp dụng $(ii)$, ta tìm được tập mở $O \supset E^c$ sao cho $\mu_L^*(O \setminus E^c) \le \epsilon$.
+> 	Đặt $C = O^c$:
 > 		- Vì $O$ là tập mở, suy ra lõi $C$ là tập đóng.
 > 		- Vì $O \supset E^c$ nên $C \subset E$.
 > 		- Ta có $$O \setminus E^c = O \cap (E^c)^c = O \cap E = E \cap C^c = E \setminus C$$
 > 		- Vậy ta có $\mu_L^*(E \setminus C) \le \epsilon$.
 > 	- $((iv) \implies (v))$
-> 	Ta cần tìm một tập ${} F$ là hợp của vô hạn tập đóng nằm trong $E$ sao cho $\mu_L^*(E \setminus F) = 0$.
+> 	Ta cần tìm một tập $F$ là hợp của vô hạn tập đóng nằm trong $E$ sao cho $\mu_L^*(E \setminus F) = 0$.
 > 	Tương ứng với mỗi $\frac{1}{n}$, tồn tại một tập đóng $C_n \subset E$ sao cho: $\mu_L^*(E \setminus C_n) \le \frac{1}{n}$.
 > 	Đặt $F = \bigcup_{n=1}^\infty C_n$, ta có $E \setminus F \subseteq E \setminus C_n \quad \forall n \in \mathbb{N}$ với mỗi $n \in \mathbb{N}$.
 > 	Áp dụng tính đơn điệu của độ đo ngoài:
 > 	$$\mu_L^*(E \setminus F) \le \mu_L^*(E \setminus C_n) \le \frac{1}{n}$$
 > 	Cho $n \to \infty$, ta thu được $\mu_L^*(E \setminus F) = 0$.
 > 	- $((v) \implies (i))$
-> 	Giả sử ta có ${} F \subset E$ và ${} \mu_L^*(E \setminus F) = 0 {}$, ta cần chỉ ra  $E \in \mathfrak{M}_{L}$.
+> 	Giả sử ta có $F \subset E$ và ${} \mu_L^*(E \setminus F) = 0$, ta cần chỉ ra  $E \in \mathfrak{M}_{L}$.
 > 	Vì $F \subseteq E$, ta có $E = F \cup (E \setminus F)$:
 > 		- Tập ${} F$ là hợp đếm được các tập mở nên ${} F$ là một tập Borel, ta đã chứng minh mọi tập Borel đều Lebesgue đo được nên ${} F \in \mathfrak{M}_{L}$
-> 		- ${} E \setminus F$ có độ đo ngoài bằng 0 (theo giả thiết). Mà mọi tập có độ đo ngoài bằng 0 đều tự động là tập đo được nên ${} (E \setminus F) \in \mathfrak{M}_L {}$
+> 		- ${} E \setminus F$ có độ đo ngoài bằng 0 (theo giả thiết). Mà mọi tập có độ đo ngoài bằng 0 đều tự động là tập đo được nên ${} (E \setminus F) \in \mathfrak{M}_L$
 > 		- Vì họ $\mathfrak{M}_L$ là một $\sigma$-đại số nên nó đóng kín với phép hiệu và hợp hai tập hợp, vậy $E \in \mathfrak{M}_L$.
 
 # [V] Độ đo Lebesgue trong
@@ -130,7 +130,7 @@
 > - Chiều $(\ge)$: $\inf \{\mu_L(O) : O \supset E, O \in \mathfrak{O}_\mathbb{R}\} \le \mu_L^*(E)$
 > 	Mục tiêu là ta cần dùng định nghĩa $\ell(I)$ để xây dựng tập mở $O$ xấp xỉ $E$.
 > 	-  Nếu $\mu ^{*}_{L} (E) = \infty$, chiều bất đẳng thức hiển nhiên đúng, ta xét trường hợp $\mu ^{*}_{L} < \infty$.
-> 	- Theo định nghĩa gốc của độ đo ngoài, với $\epsilon >0$ cho trước, ta tìm được dãy khoảng mở  $(I_{n}: n \in \mathbb{N}) \subset \mathfrak{J_{o}} {}$ sao cho $\bigcup_{n \in \mathbb{N}} I_{n} \supset E$ và $\sum_{n \in \mathbb{N}} \ell(I_{n}) \le \mu ^{*} _{L}(E) + \epsilon$.
+> 	- Theo định nghĩa gốc của độ đo ngoài, với $\epsilon >0$ cho trước, ta tìm được dãy khoảng mở  $(I_{n}: n \in \mathbb{N}) \subset \mathfrak{J_{o}}$ sao cho $\bigcup_{n \in \mathbb{N}} I_{n} \supset E$ và $\sum_{n \in \mathbb{N}} \ell(I_{n}) \le \mu ^{*} _{L}(E) + \epsilon$.
 > 	- Đặt $O = \bigcup_{n \in \mathbb{N}} I_{n}$, vì mỗi ${} I_{n}$ là khoảng mở nên hội đếm được các tập mở là tập mở, nên $O \in \mathfrak{O}_{\mathbb{R}}$.
 > 	- Sử dụng tính chất $\sigma$ - dưới cộng tính và bổ đề: $\mu ^{*}_{L}(I) = \ell(I)$: $$\mu_L(O) = \mu_L \left( \bigcup_{n \in \mathbb{N}} I_n \right) \le \sum_{n \in \mathbb{N}} \mu_L(I_n) = \sum_{n \in \mathbb{N}} \ell(I_n)$$
 > 	- Vậy ta có $\mu_L(O) \le \mu_L^*(E) + \epsilon$, nên ta cũng có: $$\inf \{\mu_L(O) : O \supset E, O \in \mathfrak{O}_\mathbb{R}\} \le \mu_L(O) \le \mu_L^*(E) + \epsilon$$
@@ -179,10 +179,10 @@
 > - Đặt $E = \bigcup_{n = 1}E_{n}$ với ${} E_{n}$ rời nhau từng đôi một.
 > 	- Nếu tồn tại $E_{k}$ sao cho $\mu_{*,L}(E_{k}) = \infty$ thì do tính đơn điệu, $E_{k} \subset E$ dẫn tới $\mu_{*,L}(E) = \infty$, bất đẳng thức hiển nhiên đúng.
 > 	- Giả sử ${} \mu_{*,L} (E_{n})<\infty$ với mọi $n \in \mathbb{N}$
-> 	- Cho một số thực $\epsilon > 0$ tùy ý. Theo định nghĩa của độ đo trong (bằng supremum của tập compact), với mỗi tập $E_n$, sẽ luôn tồn tại một tập compact $K_n \subset E_n$ sao cho: $$\mu_L(K_n) > \mu_{*,L}(E_n) - \frac{\epsilon}{2^n}$$
-> 	- Đặt $K^{(N)} = \bigcup_{n=1}^N K_n$, ta có $\mu_{*,L}(E) \ge \mu_L(K^{(N)})$
-> 	- Do các $K_n$ là các tập (compact) rời nhau và đo được, tính cộng tính hữu hạn của độ đo Lebesgue: $$\mu_L(K^{(N)}) = \mu_L \left( \bigcup_{n=1}^N K_n \right) = \sum_{n=1}^N \mu_L(K_n)$$
-> 	- Thế các đẳng thức vào bất đẳng thức gần nhất ở trên: $$\mu_{*,L}(E) \ge \sum_{n=1}^N \mu_L(K_n) > \sum_{n=1}^N \left( \mu_{*,L}(E_n) - \frac{\epsilon}{2^n} \right)$$
+> 	- Cho một số thực $\epsilon > 0$ tùy ý. Theo định nghĩa của độ đo trong (bằng supremum của tập compact), với mỗi tập $E_n$, sẽ luôn tồn tại một tập compact $K_n \subset E_n$ sao cho: $$\mu_L(K_n) > \mu_{*,L}(E_n) - \frac{\epsilon}{2^n} \tag{1}$$
+> 	- Đặt $K^{(N)} = \bigcup_{n=1}^N K_n$, ta có: $$\mu_{*,L}(E) \ge \mu_L(K^{(N)}) \tag{2}$$ 
+> 	- Do các $K_n$ là các tập (compact) rời nhau và đo được, tính cộng tính hữu hạn của độ đo Lebesgue: $$\mu_L(K^{(N)}) = \mu_L \left( \bigcup_{n=1}^N K_n \right) = \sum_{n=1}^N \mu_L(K_n) \tag{3}$$
+> 	- Thay $(1)$, $(3)$ vào $(2)$: $$\mu_{*,L}(E) \ge \sum_{n=1}^N \mu_L(K_n) > \sum_{n=1}^N \left( \mu_{*,L}(E_n) - \frac{\epsilon}{2^n} \right)$$
 > 	- Vậy ta có $\mu_{*,L}(E) > \sum_{n=1}^N \mu_{*,L}(E_n) - \epsilon$
 > 	- Cho $N \to \infty$, $\epsilon \to 0$, ta được: $$\mu_{*,L}(E) \ge \sum_{n=1}^\infty \mu_{*,L}(E_n)$$
 

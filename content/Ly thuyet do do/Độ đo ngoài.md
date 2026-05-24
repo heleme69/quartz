@@ -126,15 +126,15 @@ $$
 >     là một độ đo ngoài trên $X$.
 
 > [!prf]
-> 2. Đo của tập rỗng:
+> 1. Đo của tập rỗng:
 >    - Chọn dãy phủ $V_{n} = \emptyset$ $\forall n \in \mathbb{N}$. Rõ ràng $\bigcup_{n \in \mathbb{N}}V_{N} = \emptyset \supset \emptyset$.
 >    - Theo định nghĩa infimum, ta có $\mu ^{*}(\emptyset) \le \sum_{n \in \mathbb{N}} \gamma(V_{N}) = \sum_{n \in \mathbb{N}} 0 = 0$
 >    - Lại có $\gamma \ge 0 \implies \mu ^{*}(\emptyset) \ge 0$. Suy ra $\mu ^{*} (\emptyset) = 0$.
-> 3. Tính đơn điệu: Giả sử $A \subset B$, Cần chứng minh $\mu ^{*} (A) \le \mu ^{*} (B)$.
+> 2. Tính đơn điệu: Giả sử $A \subset B$, Cần chứng minh $\mu ^{*} (A) \le \mu ^{*} (B)$.
 >    - Giả sử $\mu ^{*} (B) < \infty$, lấy $(V_{n}) \subset \mathfrak{V}$ là dãy phủ bất kì của $B \left( \bigcup_{n \in \mathbb{N}}V_{n} \supset B \right)$.
 >    - Vì $A \subseteq B$ nên $\bigcup_{n \in \mathbb{N}} V_{n} \supset A$ nên ${} (V_{n})$ cũng là dãy phủ $A$. Vậy $\mu ^{*} (A) \le \sum_{n \in \mathbb{N}} \gamma(V_{n})$. 
 >    - Vì bất đẳng thức đúng với mọi dãy phủ $B$, lấy infimum hai vế, ta có $\mu ^{*}(A) \le \mu ^{*} (B)$.
-> 4. Tính $\sigma$ - dưới cộng tính:
+> 3. Tính $\sigma$ - dưới cộng tính:
 >    - Đặt $A = \bigcup_{k \in \mathbb{N}} A_{k}$. Giả sử $\mu ^{*} (A_{k}) < \infty \forall k$.
 >    - Cho $\epsilon > 0$. Với mỗi ${} A_{k}$, tồn tại dãy phủ $(V_{k,n})_{n \in \mathbb{N}}$ sao cho:
 >    $\sum_{n \in \mathbb{N}} \gamma(V_{k,n}) < \mu ^{*} (A_{k})+ \frac{\epsilon}{2 ^{k}}$

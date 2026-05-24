@@ -1,4 +1,4 @@
-# Tính đo được
+# [I] Tính đo được
 
 > [!def] ($\mathfrak{A}$-measureable)
 > Let $(X,\mathfrak{A})$ be an arbitrary measureable space and let $D \in \mathfrak{A}$. An extended real-valued function $f$ defined on $D$ is said to be $\mathfrak{A}$-measureable on $D$ if it satisfies the condition that $\{ x \in D: f(x) \le \alpha\} \in \mathfrak{A}$, that is, $f^{-1}([-\infty, \alpha]) \in \mathfrak{A}$ for every $\alpha \in \mathbb{R}$.
@@ -130,7 +130,7 @@
 > Theo giả thiết, $f$ đo được trên từng $D_n$, nên mỗi tập $\{x \in D_n : f(x) \le \alpha\}$ đều thuộc $\mathfrak{A}$ với mọi $n \in \mathbb{N}$.
 > Vì $\mathfrak{A}$ là một $\sigma$-đại số đóng kín với phép hợp vô hạn đếm được, ta có $f$ đo được trên toàn miền $D$. 
 
-# Phép toán với hàm đo được
+# [II] Phép toán với hàm đo được
 
 > [!prp] Các phép toán trên hàm đo được
 > Giả thiết: Cho không gian đo được $(X, \mathfrak{A})$ và tập $D \in \mathfrak{A}$. Cho $f, g: D \to \overline{\mathbb{R}}$ là các hàm $\mathfrak{A}$-đo được.
@@ -142,6 +142,7 @@
 > (d) Tập xác định $\mathfrak{D}(g/f) \in \mathfrak{A}$ và hàm thương $g/f: \mathfrak{D}(g/f) \to \overline{\mathbb{R}}$ là hàm $\mathfrak{A}$-đo được.
 
 > [!prf] 
+> 
 > 1. Ý a)
 >    
 > **Phần 1: Tìm miền xác định $\mathfrak{D}(cf)$**
@@ -172,7 +173,7 @@
 > 
 > **Phần 2: Chứng minh $f+g$ đo được trên $\mathfrak{D}(f+g)$**
 > 
-> Ta chia $\mathfrak{D}(f+g)$ thành các tập rời nhau và chứng minh hàm đo được trên từng phần: , khi hợp lại ta sẽ có tính đo được của toàn miền (Bổ đề 4.7):
+> Ta chia $\mathfrak{D}(f+g)$ thành các tập rời nhau và chứng minh hàm đo được trên từng phần, khi hợp lại ta sẽ có tính đo được của toàn miền (Bổ đề 4.7):
 > 
 > - Trường hợp 1: Trên các tập mà $f$ hoặc $g$ nhận giá trị vô cực: Hàm tổng $f+g$ nhận giá trị hằng số (bằng $\infty$ hoặc $-\infty$) nên là hàm đo được.
 > 
@@ -238,7 +239,7 @@
 > 
 > Theo chứng minh ý c) (nhân hai hàm đo được) Ta có $g/f = g \cdot (1/f)$ trên miền $\mathfrak{D}(g/f)$.  Vì $g$ đo được và $1/f$ đo được như chứng minh ở trên, ta kết luận $g/f$ là hàm $\mathfrak{A}$-đo được.
 
-> [!thm] Định lý 4.16 
+> [!thm] (Định lý 4.16)
 > Cho $(X, \mathfrak{A})$ là một không gian đo được và $f, g$ là hai hàm nhận giá trị thực mở rộng $\mathfrak{A}$-đo được trên tập $D \in \mathfrak{A}$. Khi đó các tập hợp sau đây đều thuộc $\mathfrak{A}$:
 > (1) $\{x \in D : f(x) = g(x)\}$
 > (2) $\{x \in D : f(x) < g(x)\}$
@@ -250,7 +251,7 @@
 > Tập này có thể được tách thành hợp của 3 tập rời nhau: 
 > $\{f = g = \infty\} \cup \{f = g = -\infty\} \cup \{x \in D : f(x) = g(x) \in \mathbb{R}\}$
 > 
-> Theo Hệ quả 4.5, hai tập vô cực thuộc $\mathfrak{A}$. 
+>    Theo Hệ quả 4.5, hai tập vô cực thuộc $\mathfrak{A}$. 
 >  Ta có $\{x \in D : f(x) = g(x) \in \mathbb{R}\} =\{f - g = 0\}$ nên $\{f - g = 0\}$ thuộc $\mathfrak{A} {}$.
 > Ta kết luận $\{f = g\} \in \mathfrak{A}$.
 > 
@@ -269,7 +270,7 @@
 > $$\{f \neq g\} = D \setminus \{f = g\}$$
 > Do $\mathfrak{A}$ là $\sigma$-đại số nên nó đóng kín với phép lấy phần bù. Vì $\{f = g\} \in \mathfrak{A}$ (theo ý 1), ta suy ra tập $\{f \neq g\}$ cũng thuộc $\mathfrak{A}$.
 
-# Bằng nhau hầu khắp nơi 
+# [III] Bằng nhau hầu khắp nơi 
 
 > [!def] (Định nghĩa 4.17)
 > Cho không gian độ đo $(X, \mathfrak{A}, \mu)$. Hai hàm $f$ và $g$ xác định trên tập $D \in \mathfrak{A}$ được gọi là bằng nhau hầu khắp nơi trên $D$, ký hiệu $f = g$ a.e., nếu tồn tại một tập null $N$ (tập có độ đo bằng 0) sao cho $N \subset D$ và $f(x) = g(x)$ với mọi $x \in D \setminus N$.

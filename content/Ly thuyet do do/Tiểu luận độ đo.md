@@ -430,6 +430,7 @@ Vì $\tau_{0}$ liên tục đều trên $G$, theo tính chất của không gian
 > [!prf]
 > Theo định nghĩa, một không gian đo là đầy đủ nếu mọi tập con của một tập có độ đo không (null set) đều phải là một tập đo được (tức là phải thuộc $\sigma$ - đại số tương ứng của không gian đó). Xét tập Cantor $T$. Vì $T$ là một tập compact (đóng và bị chặn) trong $\mathbb{R}$, ta có ${} T \in \mathcal{B}(\mathbb{R}) {}$. Đồng thời, ta đã biết $\mu_B(T) = \mu_L(T) = 0$. Vậy $T$ là một tập có độ đo không trong không gian Borel. Theo định lý ở trên, ta xây dựng được tập $A$ thỏa: $A \subset T$ và $A \notin \mathcal{B}(\mathbb{R})$. Như vậy, tồn tại một tập con ($A$) của một tập có độ đo không ($T$) nhưng bản thân nó lại không phải là tập Borel. Điều này vi phạm trực tiếp định nghĩa về sự đầy đủ. Do đó, không gian đo Borel $(\mathbb{R}, \mathcal{B}(\mathbb{R}), \mu_B)$ không đầy đủ.
 
+
  Hệ quả trên đã chỉ ra khuyết điểm của cấu trúc $\sigma$ - đại số Borel. Sự tồn tại của tập $A$ không đo được Borel nhưng đo được Lebesgue cho thấy tính chất không gian Lebesgue mạnh hơn Borel? Chương tiếp theo sẽ chỉ ra cách mở rộng một không gian đo bất kỳ (như hệ Borel) thành một $\sigma$-đại số lớn hơn sao cho nó có thể "nuốt trọn" mọi tập con của các tập có độ đo không để mang tính chất đầy đủ như một $\sigma$ - đại số Lebesgue $\mathfrak{M}_{L}$
 
 # 4. Sử đầy đủ hóa của không gian đo

@@ -153,9 +153,9 @@ Vì $\tau_0$ liên tục đều trên $G$, theo tính chất của không gian m
 > 
 > - (a) **Tính liên tục của $\tau(x)$ trên $[0, 1]$** được xây dựng dựa trên Định lý Mở rộng liên tục trong không gian metric.
 > 
-> Thật vậy, ta đã chứng minh $G$ là một tập con trù mật trong đoạn $[0, 1]$, và $\tau_0$ là một hàm liên tục đều trên $G$. Lấy một điểm tùy ý $x \in [0, 1] \setminus G$ (tức $x \in \mathcal{C}$). Do tính trù mật của $G$, luôn tồn tại một dãy $(x_n) \subset G$ sao cho $\lim_{n \to \infty} x_n = x$.
+>    Thật vậy, ta đã chứng minh $G$ là một tập con trù mật trong đoạn $[0, 1]$, và $\tau_0$ là một hàm liên tục đều trên $G$. Lấy một điểm tùy ý $x \in [0, 1] \setminus G$ (tức $x \in \mathcal{C}$). Do tính trù mật của $G$, luôn tồn tại một dãy $(x_n) \subset G$ sao cho $\lim_{n \to \infty} x_n = x$.
 > 
-> Vì dãy $(x_n)$ hội tụ nên nó là một dãy Cauchy. Vì $\tau_0$ liên tục đều trên $G$, nó bảo toàn tính chất Cauchy; do đó $(\tau_0(x_n))$ là một dãy Cauchy trong không gian metric $\mathbb{R}$. Vì $\mathbb{R}$ là một không gian đầy đủ, dãy này chắc chắn hội tụ về một giới hạn duy nhất. Ta định nghĩa giá trị của hàm mở rộng là: $$ \tau(x) := \lim_{n \to \infty} \tau_0(x_n) $$ Do tính duy nhất của giới hạn này tại mọi điểm thuộc bao đóng $\overline{G} = [0,1]$, hàm mở rộng $\tau(x)$ được xác định tốt và liên tục trên toàn bộ không gian $[0, 1]$.
+>    Vì dãy $(x_n)$ hội tụ nên nó là một dãy Cauchy. Vì $\tau_0$ liên tục đều trên $G$, nó bảo toàn tính chất Cauchy; do đó $(\tau_0(x_n))$ là một dãy Cauchy trong không gian metric $\mathbb{R}$. Vì $\mathbb{R}$ là một không gian đầy đủ, dãy này chắc chắn hội tụ về một giới hạn duy nhất. Ta định nghĩa giá trị của hàm mở rộng là: $$ \tau(x) := \lim_{n \to \infty} \tau_0(x_n) $$ Do tính duy nhất của giới hạn này tại mọi điểm thuộc bao đóng $\overline{G} = [0,1]$, hàm mở rộng $\tau(x)$ được xác định tốt và liên tục trên toàn bộ không gian $[0, 1]$.
 > 
 > - (b) **Tính tăng và các giá trị biên:** Để chứng minh $\tau$ tăng trên $[0, 1]$, lấy hai điểm bất kỳ $x', x'' \in [0, 1]$ sao cho $x' < x''$. Vì $G$ là tập trù mật trong $[0, 1]$, ta luôn có thể chọn được hai dãy điểm $(a_n)$ và $(b_n)$ nằm hoàn toàn trong $G$ sao cho $a_n < b_n$ với mọi $n$, và $a_n \to x'$, $b_n \to x''$ khi $n \to \infty$. Do $\tau_0$ là hàm tăng trên $G$, ta có $\tau_0(a_n) \le \tau_0(b_n)$. Lấy giới hạn hai vế và sử dụng tính liên tục của hàm mở rộng $\tau$, ta thu được: $$ \lim_{n \to \infty} \tau(a_n) \le \lim_{n \to \infty} \tau(b_n) \implies \tau(x') \le \tau(x'') $$ Vậy $\tau$ là hàm tăng không ngặt. Để tính $\tau(0)$, ta xét các dãy điểm là trung điểm của khoảng mở đầu tiên bên trái $I_{k,1} = \left( \frac{1}{3^{k}}, \frac{2}{3^{k}} \right)$: chọn $x_{k} = \frac{1.5}{3^{k}} \in I_{k,1}$. Khi $k \to \infty$ thì $x_{k} \to 0$. Theo định nghĩa, ta có $\tau_0(x_{k}) = \frac{1}{2^{k}}$. Do đó $\tau$ liên tục tại $0$ dẫn tới: $$ \tau(0) = \lim_{k \to \infty} \tau(x_{k}) = \lim_{k \to \infty} \frac{1}{2^{k}} = 0 $$ Hoàn toàn tương tự, bằng cách xét các khoảng mở tận cùng bên phải $I_{k, 2^{k-1}}$, ta có $\tau(x_k) = \frac{2^k - 1}{2^k} = 1 - \frac{1}{2^k}$. Cho $k \to \infty$, ta thu được $\tau(1) = 1$.
 >     
@@ -220,15 +220,10 @@ Mục tiêu của phần này là thông qua các tính chất giải tích củ
 > Không gian độ đo Borel $(\mathbb{R}, \mathcal{B}(\mathbb{R}), \mu_B)$, trong đó $\mu_B$ là thu hẹp của độ đo Lebesgue $\mu_L$ trên $\mathcal{B}(\mathbb{R})$, là một không gian không đầy đủ.
 
 > [!prf] 
-> Theo định nghĩa, một không gian đo là đầy đủ nếu mọi tập con của một tập có độ đo không (null set) đều phải là một tập đo được (tức là phải thuộc $\sigma$-đại số tương ứng của không gian đó). Xét tập Cantor $T$. Vì $T$ là một tập compact (đóng và bị chặn) trong $\mathbb{R}$, ta có $T \in \mathcal{B}(\mathbb{R})$. Đồng thời, ta đã biết $\mu_B(T) = \mu_L(T) = 0$. Vậy $T$ là một tập có độ đo không trong không gian Borel. Theo định lý ở trên, ta xây dựng được tập $A$ thỏa: $A \subset T$ và $A \notin \mathcal{B}(\mathbb{R})$. Như vậy, tồn tại một tập con ($A$) của một tập có độ đo không ($T$) nhưng bản thân nó lại không phải là tập Borel. Điều này vi phạm trực tiếp định nghĩa về sự đầy đủ. Do đó, không gian đo Borel $(\mathbb{R}, \mathcal{B}(\mathbb{R}), \mu_B)$ không đầy đủ.   
+> Theo định nghĩa, một không gian đo là đầy đủ nếu mọi tập con của một tập có độ đo không (null set) đều phải là một tập đo được (tức là phải thuộc $\sigma$-đại số tương ứng của không gian đó). Xét tập Cantor $T$. Vì $T$ là một tập compact (đóng và bị chặn) trong $\mathbb{R}$, ta có $T \in \mathcal{B}(\mathbb{R})$. Đồng thời, ta đã biết $\mu_B(T) = \mu_L(T) = 0$. Vậy $T$ là một tập có độ đo không trong không gian Borel. Theo định lý ở trên, ta xây dựng được tập $A$ thỏa: $A \subset T$ và $A \notin \mathcal{B}(\mathbb{R})$. Như vậy, tồn tại một tập con ($A$) của một tập có độ đo không ($T$) nhưng bản thân nó lại không phải là tập Borel. Điều này vi phạm trực tiếp định nghĩa về sự đầy đủ. Do đó, không gian đo Borel $(\mathbb{R}, \mathcal{B}(\mathbb{R}), \mu_B)$ không đầy đủ.
+ 
 
 Hệ quả trên đã chỉ ra khuyết điểm của $\sigma$-đại số Borel. Sự tồn tại của tập $A$ không đo được Borel nhưng đo được Lebesgue cho thấy không gian Lebesgue mạnh hơn Borel. Chương tiếp theo sẽ chỉ ra cách mở rộng một không gian đo bất kỳ (như hệ Borel) thành một $\sigma$-đại số lớn hơn sao cho có thể chứa mọi tập con của các tập có độ đo không, để mang tính chất đầy đủ như một $\sigma$-đại số Lebesgue $\mathfrak{M}_L$.
-
-
-
-
-
-
 
 
 # Sự đầy đủ hóa của không gian đo
@@ -315,9 +310,11 @@ Hai kết quả sau đây làm rõ thêm tính chất của không gian đầy �
 > - (b) Gọi $\overline{\overline{\mathfrak{A}}}$ là sự đầy đủ hóa của $\sigma$-đại số $\overline{\mathfrak{A}}$ đối với độ đo $\overline{\mu}$. Khi đó $\overline{\overline{\mathfrak{A}}} = \overline{\mathfrak{A}}$.
 
 > [!prf] 
-> 
-> - (a) Giả sử $E$ là tập rỗng trong $(X, \overline{\mathfrak{A}}, \overline{\mu})$, viết $E = A \cup C$ với $A \in \mathfrak{A}$, $C \subset B \in \mathfrak{N}$ và $\overline{\mu}(E) = \mu(A) = 0$. Khi đó $A \cup B \in \mathfrak{N}$ và $E \subset A \cup B$, chứng tỏ $E$ là tập con của tập rỗng $A \cup B$ trong $(X, \mathfrak{A}, \mu)$.
-> - (b) Theo định nghĩa, mỗi phần tử của $\overline{\overline{\mathfrak{A}}}$ có dạng $A \cup C$ với $A \in \overline{\mathfrak{A}}$ và $C$ là tập con của một tập rỗng trong $(X, \overline{\mathfrak{A}}, \overline{\mu})$. Do $(X, \overline{\mathfrak{A}}, \overline{\mu})$ đầy đủ, $C \in \overline{\mathfrak{A}}$, suy ra $A \cup C \in \overline{\mathfrak{A}}$, tức là $\overline{\overline{\mathfrak{A}}} \subset \overline{\mathfrak{A}}$. Chiều ngược lại hiển nhiên vì $\overline{\overline{\mathfrak{A}}}$ là mở rộng của $\overline{\mathfrak{A}}$. Vậy $\overline{\overline{\mathfrak{A}}} = \overline{\mathfrak{A}}$.
+>  _(a):_
+> - Giả sử $E$ là tập rỗng trong $(X, \overline{\mathfrak{A}}, \overline{\mu})$, viết $E = A \cup C$ với $A \in \mathfrak{A}$, $C \subset B \in \mathfrak{N}$ và $\overline{\mu}(E) = \mu(A) = 0$. Khi đó $A \cup B \in \mathfrak{N}$ và $E \subset A \cup B$, chứng tỏ $E$ là tập con của tập rỗng $A \cup B$ trong $(X, \mathfrak{A}, \mu)$.
+>   
+>  _(b):_
+> - Theo định nghĩa, mỗi phần tử của $\overline{\overline{\mathfrak{A}}}$ có dạng $A \cup C$ với $A \in \overline{\mathfrak{A}}$ và $C$ là tập con của một tập rỗng trong $(X, \overline{\mathfrak{A}}, \overline{\mu})$. Do $(X, \overline{\mathfrak{A}}, \overline{\mu})$ đầy đủ, $C \in \overline{\mathfrak{A}}$, suy ra $A \cup C \in \overline{\mathfrak{A}}$, tức là $\overline{\overline{\mathfrak{A}}} \subset \overline{\mathfrak{A}}$. Chiều ngược lại hiển nhiên vì $\overline{\overline{\mathfrak{A}}}$ là mở rộng của $\overline{\mathfrak{A}}$. Vậy $\overline{\overline{\mathfrak{A}}} = \overline{\mathfrak{A}}$.
 
 Vì $\mathfrak{A} \subset \overline{\mathfrak{A}}$, một hàm đo được theo $\overline{\mathfrak{A}}$ trên một tập $D \in \mathfrak{A}$ có thể không đo được theo $\mathfrak{A}$ trên $D$. Định lý sau chỉ ra rằng sự khác biệt này chỉ xảy ra trên một tập rỗng, tức là tại hầu khắp nơi, hàm vẫn có tính đo được theo nghĩa ban đầu.
 
@@ -366,6 +363,7 @@ Cuối cùng, dựa trên Định lý 4.1 về mối liên hệ của hàm đo �
 
 > [!prf] 
 > Vì $(\mathbb{R}, \mathfrak{M}_L, \mu_L)$ chính là sự đầy đủ hóa của $(\mathbb{R}, \mathcal{B}(\mathbb{R}), \mu_L)$, mệnh đề này chính là một trường hợp cụ thể của định lý về sự tồn tại hàm xấp xỉ $g$ hầu khắp nơi đối với sự mở rộng $\sigma$-đại số (đã được chứng minh chi tiết tại Định lý 4.1).
+
 
 $\xi$
 
