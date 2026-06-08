@@ -10,6 +10,38 @@
 > 1. Closure under complementation: If $A \in \mathfrak{A}$, then its complement $D \setminus A \in \mathfrak{A}$.
 > 2. Closure under countable intersection: If a sequence $A_{n} \in \mathfrak{A}$, then their countable intersection $\bigcap_{n \in \mathbb{N}} A_{n} \in \mathfrak{A}$.
 
+> [!thm] (Prob 4.3)
+> Xét không gian đo được $(\mathbb{R}, \mathcal{B}(\mathbb{R}))$.
+> (a) Chứng minh rằng nếu $E \subset \mathbb{R}$ là một tập đếm được thì $E \in \mathcal{B}(\mathbb{R})$.
+> (b) Chứng minh rằng mọi hàm nhận giá trị thực mở rộng $f$ xác định trên một tập đếm được $E \subset \mathbb{R}$ đều là hàm $\mathcal{B}(\mathbb{R})$-đo được trên $E$.
+
+> [!prf] 
+> (a) Chứng minh $E \in \mathcal{B}(\mathbb{R})$ với $E$ là tập đếm được:
+> 
+> Vì $E$ là một tập đếm được, ta có thể liệt kê các phần tử của $E$ thành một dãy: $E = \{x_1, x_2, \dots, x_n, \dots\}$.
+> Từ đó, $E$ có thể được biểu diễn dưới dạng hợp đếm được của các tập hợp chỉ chứa một phần tử (singleton sets):
+> $$E = \bigcup_{n=1}^{\infty} \{x_n\}$$
+> 
+> Trong không gian tôpô $\mathbb{R}$, mỗi tập một phần tử $\{x_n\}$ là một tập đóng. Theo định nghĩa, đại số $\sigma$ Borel $\mathcal{B}(\mathbb{R})$ chứa tất cả các tập mở, do đó nó cũng chứa phần bù của các tập mở (chính là các tập đóng). Suy ra $\{x_n\} \in \mathcal{B}(\mathbb{R})$ với mọi $n \in \mathbb{N}$.
+> 
+> Theo tiên đề của một đại số $\sigma$, $\mathcal{B}(\mathbb{R})$ đóng kín dưới phép hợp đếm được. Do đó, hợp đếm được của các tập $\{x_n\}$ cũng phải thuộc $\mathcal{B}(\mathbb{R})$:
+> $$E = \bigcup_{n=1}^{\infty} \{x_n\} \in \mathcal{B}(\mathbb{R})$$
+> Ta có điều phải chứng minh.
+> 
+> (b) Chứng minh $f$ là hàm $\mathcal{B}(\mathbb{R})$-đo được trên $E$:
+> 
+> Theo định nghĩa, hàm $f: E \to \overline{\mathbb{R}}$ là $\mathcal{B}(\mathbb{R})$-đo được trên $E$ nếu với mọi số thực $\alpha \in \mathbb{R}$, tập mức (level set) sau đây đo được (tức là thuộc $\mathcal{B}(\mathbb{R})$):
+> $$A_\alpha = \{x \in E : f(x) \le \alpha\}$$
+> 
+> Xét tập $A_\alpha$. Rõ ràng $A_\alpha$ là một tập con của $E$ (vì chỉ xét những $x \in E$).
+> Do $E$ là một tập đếm được, mọi tập con của nó cũng phải là tập đếm được (hoặc hữu hạn, hoặc rỗng). Suy ra, $A_\alpha$ là một tập đếm được.
+> 
+> Áp dụng trực tiếp kết quả đã chứng minh từ câu (a), mọi tập con đếm được của $\mathbb{R}$ đều thuộc $\mathcal{B}(\mathbb{R})$. Do đó:
+> $$A_\alpha \in \mathcal{B}(\mathbb{R}) \quad \forall \alpha \in \mathbb{R}$$
+> 
+> Vậy $f$ thỏa mãn định nghĩa và là hàm $\mathcal{B}(\mathbb{R})$-đo được trên $E$. 
+> Ta có điều phải chứng minh.
+
 > [!lem] (Bổ đề 4.4)
 >Let $(X, \mathfrak{A})$ be a measurable space and $f$ be an extended real-valued function defined on $D \in \mathfrak{A}$. Then the following conditions are all equivalent: 
 >
@@ -147,7 +179,7 @@
 >    
 > **Phần 1: Tìm miền xác định $\mathfrak{D}(cf)$**
 > 
-> Phép nhân với hằng số xác định tại mọi điểm trừ trường hợp vô định $c = 0$,  khi rơi vào các dạng vô cực nhân với $0$. 
+> Phép nhân với hằng số xác định tại mọi điểm trừ trường hợp vô định $c = 0$,  khi rơi vào các dạng vô cùng nhân với $0$. 
 > Do đó khi $c = 0$, hàm chỉ xác định tại các điểm $f(x)$ là số thực. Ta có $\mathfrak{D}(cf) = \{x \in D : f(x) \in \mathbb{R}\}$. Theo 4.5(b), tập này cũng thuộc $\mathfrak{A}$.
 > 
 > **Phần 2: Kiểm tra tính đo được của hàm $cf$**

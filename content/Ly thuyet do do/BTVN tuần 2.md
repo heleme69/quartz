@@ -94,3 +94,4 @@
 > $$
 > Vậy $\mu\left( \bigcup_{n=1}^{\infty}B_{n} \right)=\sum_{n=1}^{\infty}\mu(B_{n})$ nên $\mu$ là $\sigma$ - cộng tính
 
+$\xi$

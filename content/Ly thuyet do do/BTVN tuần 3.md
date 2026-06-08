@@ -148,12 +148,15 @@ this.container.innerHTML = finalHTML;
 ```
 # Problems
 
-> [!exr] Prob 1.23
-> Let $(X, \mathfrak{A})$ be a measureable space. Let $\mu_{k}$ be a measure on the $\sigma$ - algebra of $X$ and let $\alpha_{k} \ge 0$ for every $k \in \mathbb{N}$. Define a set function $\mu$ on a $\mathfrak{A}$ by setting $\mu = \sum_{k \in \mathbb{N}} \alpha_{k} \mu_{k}$. Show that $\mu$ is a measure on $\mathfrak{A}$.
+> [!exr] (Prob 1.23)
+> Cho $(X, \mathfrak{A}, \mu)$ là một không gian đo. Với mỗi $k \in \mathbb{N}$, giả sử $\mu_k$ là một độ đo trên $\sigma$-đại số ${} \mathfrak{A} {}$ và $\alpha_k \ge 0$.  
+> Định nghĩa một hàm tập $\mu$ trên $\mathfrak{A}$ bằng cách đặt  
+> $$\mu = \sum_{k \in \mathbb{N}} \alpha_k \mu_k.$$  
+> Khi đó $\mu$ là một độ đo trên $\mathfrak{A}$.
 
 > [!prf]
 > Ta cần chứng minh các tính chất thỏa định nghĩa độ đo: tính không âm, độ đo không và tính $\sigma$ - cộng tính:
-> - Vì $\mu_{k}$ là độ đo trên $X$, ta có $\mu_{k} \ge 0$, vậy ${} \mu = \sum_{k \in \mathbb{N}}\alpha_{k} \mu_{k} \ge 0$.
+> - Vì $\mu_{k}$ là độ đo trên $\mathfrak{A}$, ta có $\mu_{k} \ge 0$, vậy ${} \mu = \sum_{k \in \mathbb{N}}\alpha_{k} \mu_{k} \ge 0$.
 > - Ta có $\mu_{k} = 0$ với mọi tập rỗng trên $X$, vậy $\mu(\emptyset) = \sum_{k \in \mathbb{N}} \alpha_{k} \mu_{k} = \sum_{k \in \mathbb{N}}\alpha_{k} \cdot 0 = 0$.
 > - Lấy $E_{n}: n \in \mathbb{N}$ là dãy các tập rời nhau, ta có:
 > $$

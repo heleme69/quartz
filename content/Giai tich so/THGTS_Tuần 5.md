@@ -216,7 +216,8 @@
 
 > [!exr]
 > Viết code MATLAB tính giá trị xấp xỉ hàm nội suy Lagrange bậc 1, trên đoạn $[-1,1]$
-> 
+
+> [!sol]
 > > [!code]- Matlab
 > > ```matlab
 > > clc; clear; close all;

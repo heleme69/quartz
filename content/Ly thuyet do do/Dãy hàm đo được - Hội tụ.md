@@ -1,54 +1,58 @@
 
 # [IV] Dãy hàm đo được
 
-> [!rem]
-> - Xét dãy $(f_{n}: n \in \mathbb{N})$, $f_{n} : D \to \overline{\mathbb{R}}$: $\limsup_{ n \to \infty }f_{n}$ và $\liminf_{  \to \infty }f_{n}$ luôn tồn tại và bằng $\lim_{ n \to \infty }f_{n}$ nếu $\limsup_{ n \to \infty }f_{n} = \liminf_{ n \to \infty }f_{n}$.
-> - $f_{n}(x)$ hội tụ nếu $\lim_{ n \to \infty }f_{n}(x)$ tồn tại và thuộc $\overline{\mathbb{R}}$.
+> [!rem] (Nhắc lại)
+> Xét dãy $(f_{n}: n \in \mathbb{N})$, $f_{n} : D \to \overline{\mathbb{R}}$: $\limsup_{ n \to \infty }f_{n}$ và $\liminf_{  \to \infty }f_{n}$ luôn tồn tại và bằng $\lim_{ n \to \infty }f_{n}$ nếu $\limsup_{ n \to \infty }f_{n} = \liminf_{ n \to \infty }f_{n}$.
+> $f_{n}(x)$ hội tụ nếu $\lim_{ n \to \infty }f_{n}(x)$ tồn tại và thuộc $\overline{\mathbb{R}}$.
 
 > [!thm] (Định lý 4.21)
-> Let $(X, \mathfrak{A})$ be a measureable space and let ${} f_{n} {}$ be a monotone sequence of extended real-valued $\mathfrak{A}$-measureable functions on a set $D \in \mathfrak{A}$. Then $\lim_{ n \to \infty }f_{n}$ exists on $D$ and is $\mathfrak{A}$-measureable on $D$.
+> Cho $(X, \mathfrak{A})$ là một không gian đo và $f_n$ là một dãy hàm đơn điệu nhận giá trị thực mở rộng, $\mathfrak{A}$- đo được trên tập $D \in \mathfrak{A}$.  
+> Khi đó $\lim_{n \to \infty} f_n$ tồn tại trên $D$ và là một hàm ${} \mathfrak{A} {}$-đo được trên $D$.
 
 > [!prf]
-> - Giả sử $f_{n}$ là dãy tăng, ta sẽ chứng minh đẳng thức:
->     $$
->     \{x \in D : \lim_{n \to \infty} f_n(x) > \alpha\} = \bigcup_{n=1}^{\infty} \{x \in D : f_n(x) > \alpha\} 
->      $$
+> 1. Với mỗi $x \in D$ cố định, do $(f_n(x))$ là một dãy đơn điệu nhận giá trị trong tập số thực mở rộng $\overline{\mathbb{R}}$, theo tính chất cơ bản của dãy đơn điệu, giới hạn $\lim_{n \to \infty} f_n(x)$ luôn luôn tồn tại trong $\overline{\mathbb{R}}$. (Cụ thể: bằng $\sup f_n(x)$ nếu dãy tăng, và $\inf f_n(x)$ nếu dãy giảm).
+> 
+> 2. Giả sử $f_{n}$ là dãy tăng, ta sẽ chứng minh đẳng thức:
+> 	$$
+> 	\{x \in D : \lim_{n \to \infty} f_n(x) > \alpha\} = \bigcup_{n=1}^{\infty} \{x \in D : f_n(x) > \alpha\} 
+> 	 $$
 > 	- Chiều $(\subset)$: Vì giới hạn tại điểm $x$ lớn hơn $\alpha$, ta tìm được $k$ sao cho $f_{k}(x) > \alpha$, nên $x$ nằm trong hợp của các tập vế phải.
 > 	- Chiều $(\supset)$: Vì $x$ nằm ở vế phải, ta tìm được $k$ sao cho $f_k(x) > \alpha$. Vì dãy $(f_n)$ là dãy tăng, nên hàm giới hạn $\lim_{n \to \infty} f_n(x)$ chắc chắn phải lớn hơn hoặc bằng $f_k(x)$, hay $\lim_{n \to \infty} f_n(x) > \alpha$. Vậy $x$ thuộc vế trái.
-> - Vì $f_{n}$ đo được nên $A_{n} = \{ x \in D: f_{n}(x) > \alpha \}$ là một tập đo được thuộc $\mathfrak{A}$. Vì $\mathfrak{A}$ là $\sigma$-đại số, nó đóng kín dưới phép hợp đếm được.
-> - Nếu $f_{n}$ là dãy giảm, $-f_{n}$ là dãy tăng. Vì $\lim_{ n \to \infty }-f_{n} = - \lim_{ n \to \infty }f_{n}$, mà $f_{n}$ là hàm đo được nên $-1 \cdot f_{n}$ là hàm đo được.
+>  
+> Vì $f_{n}$ đo được nên $A_{n} = \{ x \in D: f_{n}(x) > \alpha \}$ là một tập đo được thuộc $\mathfrak{A}$. Vì $\mathfrak{A}$ là $\sigma$-đại số, nó đóng kín dưới phép hợp đếm được.
+> Nếu $f_{n}$ là dãy giảm, $-f_{n}$ là dãy tăng. Vì $\lim_{ n \to \infty }-f_{n} = - \lim_{ n \to \infty }f_{n}$, mà $f_{n}$ là hàm đo được nên $-1 \cdot f_{n}$ là hàm đo được.
 
 > [!thm] (Định lý 4.22)
-> Let $(X, \mathfrak{A})$ be a measureable space and let $f_{n}$ be a sequence of extended real-valued $\mathfrak{A}$-measureable on a set $D \in \mathfrak{A}$:
-> a) $\min_{n=1,\ldots,N} f_n, \; \max_{n=1,\ldots,N} f_n, \; \inf_{n \in \mathbb{N}} f_n, \; \sup_{n \in \mathbb{N}} f_n$ are $\mathfrak{A}$-measureable on $D$.
-> b) $\liminf_{n \in \mathbb{N}} f_n, \; \limsup_{n \in \mathbb{N}} f_n$ are $\mathfrak{A}$-measureable on $D$.
-> c) Let $D_{e} = \{ D: \lim_{ n \to \infty }f_{n} \in \overline{\mathbb{R}}\}$. Then $D_{e} \in \mathfrak{A}$ and $\lim_{ n \to \infty }f_{n}$ is $\mathfrak{A}$-measureable on $D_{e}$.
+> Cho $(X, \mathfrak{A})$ là một không gian đo và $f_n$ là một dãy hàm nhận giá trị thực mở rộng, $\mathfrak{A}$- đo được trên tập $D \in \mathfrak{A}$:
+> a) $\min_{n=1,\ldots,N} f_n, \; \max_{n=1,\ldots,N} f_n, \; \inf_{n \in \mathbb{N}} f_n, \; \sup_{n \in \mathbb{N}} f_n$ là các hàm $\mathfrak{A}$-đo được trên $D$.
+> b) $\liminf_{n \in \mathbb{N}} f_n, \; \limsup_{n \in \mathbb{N}} f_n$ là $\mathfrak{A}$-đo được trên $D$
+> c) Đặt $D_{e} = \{ D: \lim_{ n \to \infty }f_{n} \in \overline{\mathbb{R}}\}$. Khi đó $D_{e} \in \mathfrak{A}$ và $\lim_{ n \to \infty }f_{n}$  $\mathfrak{A}$-đo được trên $D_{e}$.
 
 > [!prf]
 > a)
 > Ta chứng minh các hàm cho theo giả thiết được biểu diễn bởi hợp đếm được các hàm đo được, nên là hàm đo được:
-> 1. Hàm $\min$:
+> 3. Hàm $\min$:
 > 	Với mỗi $\alpha \in \mathbb{R}$, ta có:
 >	$$
 > 	\{x \in D : \min_{n=1,\dots,N} f_n(x) < \alpha\} = \bigcup_{n=1}^N \{x \in D : f_n(x) < \alpha\} \in \mathfrak{A}
 >	$$
 >	- Chiều $(\subset)$: Nếu giá trị nhỏ nhất của một tập hữu hạn số $\{f_1(x), \dots, f_N(x)\}$ nhỏ hơn $\alpha$, ta tìm được ít nhất một phần tử $f_k(x)$ nhỏ hơn $\alpha$, nên $x$ nằm trong hợp ở vế phải.
 >	- Chiều $(\supset)$: Nếu $x$ thuộc vế phải, ta tìm được $k$ sao cho $f_k(x) < \alpha$. Vì $\min f_n(x)$ luôn nhỏ hơn hoặc bằng bất kỳ phần tử nào trong tập, ta có $\min f_n(x) \le f_k(x) < \alpha$. Vậy $x$ thuộc vế trái.
-> 2. Hàm $\inf$:
+> 4. Hàm $\inf$:
 > 	Với mỗi $\alpha \in \mathbb{R}$, ta có:
 > 	$$
 > 	\{x \in D : \inf_{n \in \mathbb{N}} f_n(x) < \alpha\} = \bigcup_{n=1}^{\infty} \{x \in D : f_n(x) < \alpha\} \in \mathfrak{A}
 > 	$$
 > 	- Chiều $(\subset)$: Vì $\inf f_{n}(x)$ là cận đưới đúng của $\alpha$, ta luôn tìm được $f_{k}(x)$ sao cho $f_{k}(x) < \alpha$. Vậy $x$ thuộc vế phải.
 > 	- Chiều $(\supset)$: - Nếu $x$ thuộc vế phải, ta tìm được một $k$ sao cho $f_k(x) < \alpha$. Theo định nghĩa, cận dưới đúng luôn bé hơn hoặc bằng mọi phần tử: $\inf f_n(x) \le f_k(x)$, nên $\inf f_n(x) < \alpha$. Vậy $x$ thuộc vế trái.
-> 3. Hàm $\max$:
+> 5. Hàm $\max$:
 > 	Với mỗi $\alpha \in \mathbb{R}$, ta có:
 > 	$$
 > 	\{x \in D : \max_{n=1,\dots,N} f_n(x) > \alpha\} = \bigcup_{n=1}^N \{x \in D : f_n(x) > \alpha\} \in \mathfrak{A}
 > 	$$
 > 	- Chiều $(\subset)$: Nếu giá trị lớn nhất trong các số $f_n(x)$ lớn hơn $\alpha$, ta tìm được nhất một số $f_k(x)$ lớn hơn $\alpha$. Vậy $x$ thuộc vế phải.
 > 	- Chiều $(\supset)$: Nếu $x$ thuộc vế phải, có một $f_k(x) > \alpha$. Vì $\max f_n(x) \ge f_k(x)$, nên $\max f_n(x) > \alpha$. Vậy $x$ thuộc vế trái
-> 4. Hàm $\sup$:
+> 6. Hàm $\sup$:
 > Với mỗi $\alpha \in \mathbb{R}$, ta có: 
 > $$
 > \{x \in D : \sup_{n \in \mathbb{N}} f_n(x) > \alpha\} = \bigcup_{n=1}^{\infty} \{x \in D : f_n(x) > \alpha\} \in \mathfrak{A}
@@ -76,13 +80,13 @@
 > Vì $\liminf f_n$ là hàm đo được trên toàn bộ $D$, thì nó hiển nhiên cũng đo được trên miền $D_e$. Vậy $\lim f_n$ (${} = \liminf f_{n}= \limsup f_{n} {}$) là hàm đo được trên $D_e$.
 
 > [!thm] (Định lý 4.23)
-> Let $(X, \mathfrak{A})$ be a measureable space and let $f_{n}$ be a sequence of extended real-valued $\mathfrak{A}$-measureable fucntions on a set $D \in \mathfrak{A}$. Let:
-> 1. ${} D_{e} = \{ x \in D: \lim_{ n \to \infty }f_{n} \in \overline{\mathbb{R}} \} {}$,
+> Cho $(X, \mathfrak{A})$ là một không gian đo và $f_n$ là một dãy hàm nhận giá trị thực mở rộng, $\mathfrak{A}$- đo được trên tập $D \in \mathfrak{A}$. Đặt:
+> 1. $D_{e} = \{ x \in D: \lim_{ n \to \infty }f_{n} \in \overline{\mathbb{R}} \}$,
 > 2. $D_{c} = \{ x \in D: \lim_{ n \to \infty }f_{n} \in \mathbb{R} \}$,
 > 3. ${} D_{\infty} = \{ x \in D: \lim_{ n \to \infty }f_{n} = \infty\} {}$,
 > 4. $D_{-\infty} = \{ x \in D: \lim_{ n \to \infty }f_{n} = -\infty\}$,
-> 5. ${} D_{ne} = \{ x \in D: \lim_{ n \to \infty }f_{n} \text{ does not exist}\} {}$,
-> so that $D_{e}$ and $D_{ne}$ are disjoint and $D_{e} \cup D_{ne} = D$, $D_{c}, D_{-\infty}, D_{\infty}$ are disjoint and $D_{c} \cup D_{\infty} \cup D_{-\infty} = D_{e}$. Then $D_{e}, D_{c}, D_{\infty}, D_{-\infty} \in \mathfrak{A}$ and $\lim_{ n \to \infty } f_{n}$ is $\mathfrak{A}$-measureable on each $D_{e}, D_{c}, D_{\infty}$ and $D_{-\infty}$.
+> 5. $D_{ne} = \{ x \in D: \lim_{ n \to \infty }f_{n} \text{ does not exist}\}$,
+> khi đó $D_{e}$ và $D_{ne}$ rời nhau và $D_{e} \cup D_{ne} = D$, $D_{c}, D_{-\infty}, D_{\infty}$ rời nhau cũng như $D_{c} \cup D_{\infty} \cup D_{-\infty} = D_{e}$. Ta có $D_{e}, D_{c}, D_{\infty}, D_{-\infty} \in \mathfrak{A}$ và $\lim_{ n \to \infty } f_{n}$ is $\mathfrak{A}$-đo được trên mỗi tập $D_{e}, D_{c}, D_{\infty}$ and $D_{-\infty}$.
 
 > [!prf]
 > 1. Tập $D_{e}$:
@@ -118,7 +122,7 @@
 # [I] Hội tụ hầu khắp nơi
 
 > [!def] (Hội tụ hầu khắp nơi)
-> Dãy hàm $f_{n}$ hội tụ a.e (almost everywhere) về một hàm hữu hạn trên $D$ nếu nó chỉ phân kỳ (tiến ra vô cực) trên một tập có độ đo bằng không:
+> Dãy hàm $f_{n}$ hội tụ a.e (almost everywhere) về một hàm hữu hạn trên $D$ nếu nó chỉ phân kỳ (tiến ra vô cùng) trên một tập có độ đo bằng không:
 > $$
 > \exists \text{ null }N: \forall x \in D \setminus N,\lim_{ n \to \infty } f_{n}(x) \in \mathbb{R} 
 > $$
@@ -203,7 +207,7 @@
 > $$ 
 > Định lý được chứng minh hoàn tất.
 
-> [!rem] (Borel-Cantelli Lemma)
+> [!thm] (Định lý 6.6: Borel-Cantelli Lemma)
 > Cho không gian đo $(X, \mathfrak{A}, \mu)$. Với mọi dãy các tập đo được $(A_n)_{n \in \mathbb{N}}$, nếu tổng các độ đo của chúng là hữu hạn:
 > $$
 > \sum_{n=1}^{\infty} \mu(A_n) < \infty
@@ -213,8 +217,8 @@
 > \mu\left( \limsup_{n \to \infty} A_n \right) = 0
 > $$
 
-> [!thm] (Định lý 6.7 - Tiêu chuẩn hội tụ hầu khắp nơi)
-> Cho ${} (X, \mathfrak{A}, \mu) {}$ là một không gian đo được. Cho $f_n$ là một dãy các hàm đo được nhận giá trị thực mở rộng trên tập ${} D \in \mathfrak{A} {}$ và $f$ là một hàm đo được nhận giá trị thực trên $D$. Giả sử tồn tại một dãy số dương $(\varepsilon_n)_{n \in \mathbb{N}}$ thỏa mãn hai điều kiện sau:
+> [!thm] (Định lý 6.7: Tiêu chuẩn hội tụ hầu khắp nơi)
+> Cho $(X, \mathfrak{A}, \mu)$ là một không gian đo được. Cho $f_n$ là một dãy các hàm đo được nhận giá trị thực mở rộng trên tập ${} D \in \mathfrak{A} {}$ và $f$ là một hàm đo được nhận giá trị thực trên $D$. Giả sử tồn tại một dãy số dương $(\varepsilon_n)_{n \in \mathbb{N}}$ thỏa mãn hai điều kiện sau:
 > 3. $\lim_{n \to \infty} \varepsilon_n = 0$
 > 4. $\sum_{n \in \mathbb{N}} \mu(\{x \in D : |f_n(x) - f(x)| \ge \varepsilon_n\}) < \infty$
 > Khi đó, dãy hàm $f_n$ hội tụ về $f$ hầu khắp nơi (a.e.) trên $D$.
@@ -243,10 +247,130 @@
 > $$
 > Định lý được chứng minh hoàn tất.
 
+> [!thm] (Tiêu chuẩn hội tụ hầu khắp nơi: Cách 2)
+> Cho $(X, \mathfrak{A}, \mu)$ là một không gian độ đo. Cho $f_n$ là một dãy các hàm đo được nhận giá trị thực mở rộng trên tập $D \in \mathfrak{A}$ và $f$ là một hàm đo được nhận giá trị thực trên $D$. Giả sử tồn tại một dãy số dương ${} (\varepsilon_n)_{n \in \mathbb{N}}$ thỏa mãn hai điều kiện sau:
+> 1. $\lim_{n \to \infty} \varepsilon_n = 0$
+> 2. $\sum_{n \in \mathbb{N}} \mu(\{x \in D : |f_n(x) - f(x)| \ge \varepsilon_n\}) < \infty$
+> 
+> Khi đó, dãy hàm $f_n$ hội tụ về $f$ hầu khắp nơi (a.e.) trên $D$.
+
+> [!prf] 
+> 
+> **Bước 1: Chuyển độ đo thành tích phân của hàm chỉ thị**
+> Đặt $A_n = \{x \in D : |f_n(x) - f(x)| \ge \varepsilon_n\}$. Độ đo của tập $A_n$ chính là tích phân của hàm chỉ thị $\chi_{A_n}$ trên $D$:
+> $$\mu(A_n) = \int_D \chi_{A_n}(x) d\mu$$
+> Theo giả thiết thứ hai, ta có chuỗi tích phân hội tụ:
+> $$\sum_{n \in \mathbb{N}} \int_D \chi_{A_n}(x) d\mu < \infty$$
+> 
+> **Bước 2: Đổi chỗ tổng và tích phân**
+> Vì hàm chỉ tiêu $\chi_{A_n}(x) \ge 0$, ta áp dụng tính $\sigma$-cộng tính của tích phân, đưa dấu tổng vào bên trong dấu tích phân:
+> $$\int_D \left( \sum_{n \in \mathbb{N}} \chi_{A_n}(x) \right) d\mu < \infty$$
+> 
+> **Bước 3: Tính hữu hạn a.e của tích phân hàm không âm**
+> Xét hàm tổng $g(x) = \sum_{n \in \mathbb{N}} \chi_{A_n}(x)$. Rõ ràng $g(x) \ge 0$ với mọi $x \in D$.
+> Vì tích phân của hàm $g(x)$ trên $D$ là một số hữu hạn, theo Bổ đề 8.2, hàm $g(x)$ bắt buộc phải có giá trị hữu hạn hầu khắp nơi trên $D$.
+> 
+> Nói cách khác, tồn tại một tập null $N \subset D$ (với $\mu(N) = 0$) sao cho với mọi điểm $x \in D \setminus N$, ta có:
+> $$\sum_{n \in \mathbb{N}} \chi_{A_n}(x) < \infty$$
+> 
+> **Bước 4: Điều kiện cần của chuỗi hội tụ**
+> Cố định một điểm $x \in D \setminus N$. Chuỗi số $\sum \chi_{A_n}(x)$ là tổng của các giá trị chỉ gồm $0$ và $1$. 
+> Để một chuỗi của các số $0$ và $1$ có tổng hữu hạn, số lượng chữ số $1$ xuất hiện bắt buộc phải hữu hạn. Điều này đồng nghĩa với việc tồn tại một chỉ số $N_x$ đủ lớn sao cho:
+> - $\chi_{A_n}(x) = 0 \quad (\forall n \ge N_x)$
+> - Suy ra $x \notin A_n \quad (\forall n \ge N_x)$
+> 
+> Lắp lại định nghĩa của tập $A_n$, ta có bất đẳng thức sau đúng với mọi $n \ge N_x$:
+> $$|f_n(x) - f(x)| < \varepsilon_n$$
+> 
+> **Bước 5: Kết luận**
+> Theo giả thiết thứ nhất, $\lim_{n \to \infty} \varepsilon_n = 0$. 
+> Do khoảng cách $|f_n(x) - f(x)|$ bị chặn trên bởi $\varepsilon_n$ từ một lúc nào đó trở đi, áp dụng nguyên lý kẹp, ta suy ra:
+> $$\lim_{n \to \infty} |f_n(x) - f(x)| = 0 \implies \lim_{n \to \infty} f_n(x) = f(x)$$
+> Vì lập luận này đúng với mọi $x \in D \setminus N$, ta kết luận dãy $f_n$ hội tụ về $f$ hầu khắp nơi trên $D$. 
+
+> [!thm] (Prob 8.17: Hội tụ hầu khắp nơi từ hội tụ trong $L^p$)
+> Cho $(X, \mathcal{A}, \mu)$ là một không gian độ đo. Cho $f_n$ và $f$ là các hàm nhận giá trị thực mở rộng, $\mathcal{A}$-đo được trên $D \in \mathcal{A}$, và giả sử $f$ nhận giá trị thực hầu khắp nơi trên $D$. 
+> Giả sử tồn tại một dãy số dương ${} (\varepsilon_n)_{n \in \mathbb{N}}$ sao cho:
+> 1. $\sum_{n \in \mathbb{N}} \varepsilon_n < \infty$;
+> 2. $\int_D |f_n - f|^p d\mu < \varepsilon_n$ với mọi $n \in \mathbb{N}$, với một $p \in (0, \infty)$ cố định.
+> Chứng minh rằng $f_n \to f$ hầu khắp nơi (a.e.) trên $D$.
+
+> [!prf] 
+> 
+> **Bước 1: Xác định tập hợp "xấu" và áp dụng Bất đẳng thức Markov**
+> Cố định một số thực $\delta > 0$ bất kỳ. Ta định nghĩa $A_n(\delta)$ là tập hợp các điểm mà tại đó hàm $f_n$ sai lệch so với $f$ từ mức $\delta$ trở lên:
+> $$A_n(\delta) = \{x \in D : |f_n(x) - f(x)| \ge \delta\}$$
+> 
+> Nhận thấy rằng bất phương trình $|f_n(x) - f(x)| \ge \delta$ tương đương với $|f_n(x) - f(x)|^p \ge \delta^p$ (do $\delta > 0$ và $p > 0$).
+> 
+> Áp dụng Bất đẳng thức Markov cho hàm không âm $|f_n - f|^p$ với mức chặn là $\delta^p$, ta có đánh giá:
+> $$\mu(A_n(\delta)) = \mu\left(\{x \in D : |f_n(x) - f(x)|^p \ge \delta^p\}\right) \le \frac{1}{\delta^p} \int_D |f_n - f|^p d\mu$$
+> 
+> Theo giả thiết thứ hai của đề bài, ta tiếp tục chặn trên độ đo này:
+> $$\mu(A_n(\delta)) \le \frac{\varepsilon_n}{\delta^p}$$
+> 
+> **Bước 2: Áp dụng Bổ đề Borel-Cantelli**
+> Lấy tổng độ đo của các tập $A_n(\delta)$ trên toàn bộ dãy $n \in \mathbb{N}$:
+> $$\sum_{n=1}^\infty \mu(A_n(\delta)) \le \sum_{n=1}^\infty \frac{\varepsilon_n}{\delta^p} = \frac{1}{\delta^p} \sum_{n=1}^\infty \varepsilon_n$$
+> 
+> Theo giả thiết thứ nhất, chuỗi $\sum \varepsilon_n$ hội tụ (có tổng hữu hạn), dẫn đến:
+> $$\sum_{n=1}^\infty \mu(A_n(\delta)) < \infty$$
+> 
+> Áp dụng Bổ đề Borel-Cantelli: vì tổng các độ đo hữu hạn, tập giới hạn trên (limsup) của chuỗi các biến cố này sẽ có độ đo bằng $0$. Đặt:
+> $$B_\delta = \limsup_{n \to \infty} A_n(\delta) = \bigcap_{k=1}^\infty \bigcup_{n=k}^\infty A_n(\delta)$$
+> Ý nghĩa của $B_\delta$ là tập hợp các điểm $x$ mà $|f_n(x) - f(x)| \ge \delta$ xảy ra vô số lần. Bổ đề Borel-Cantelli cho ta:
+> $$\mu(B_\delta) = 0$$
+> 
+> **Bước 3: Lập luận đếm được để bao quát toàn miền hội tụ**
+> Để dãy $f_n(x)$ không hội tụ về $f(x)$, chắc chắn phải tồn tại một khoảng mở $\delta > 0$ nào đó sao cho khoảng cách giữa chúng lớn hơn $\delta$ vô số lần. 
+> Ta chọn $\delta$ chạy qua dãy các số hữu tỉ giảm dần $1/k$ với $k \in \mathbb{Z}^+$. Tập hợp các điểm phân kỳ (kí hiệu là $N$) sẽ nằm trọn trong hợp của các tập $B_{1/k}$:
+> $$N = \left\{x \in D : f_n(x) \not\to f(x)\right\} \subset \bigcup_{k=1}^\infty B_{1/k}$$
+> 
+> Áp dụng tính $\sigma$-bán cộng tính của độ đo:
+> $$\mu(N) \le \sum_{k=1}^\infty \mu\left(B_{1/k}\right) = \sum_{k=1}^\infty 0 = 0$$
+> 
+> Vậy tập các điểm mà $f_n$ không hội tụ về $f$ là một tập có độ đo $0$. Kết luận: $f_n \to f$ hầu khắp nơi trên $D$. 
+
+> [!thm] (Hội tụ hầu khắp nơi từ hội tụ trong $L^p$: Cách 2)
+> Cho $(X, \mathfrak{A}, \mu)$ là một không gian độ đo. Cho $f_n$ và $f$ là các hàm nhận giá trị thực mở rộng, đo được trên $D \in \mathfrak{A}$. Giả sử $f$ nhận giá trị thực hữu hạn hầu khắp nơi trên $D$. 
+> Giả sử tồn tại một dãy số dương ${} (\varepsilon_n)_{n \in \mathbb{N}}$ sao cho:
+> 1. $\sum_{n \in \mathbb{N}} \varepsilon_n < \infty$
+> 2. $\int_D |f_n - f|^p d\mu < \varepsilon_n$ với mọi $n \in \mathbb{N}$, với một $p \in (0, \infty)$ cố định.
+> 
+> Chứng minh rằng $f_n \to f$ hầu khắp nơi (a.e.) trên $D$.
+
+> [!prf] 
+> 
+> **Bước 1: Lấy tổng các tích phân sai số**
+> Từ giả thiết thứ hai, ta lấy tổng hai vế cho tất cả $n \in \mathbb{N}$. Kết hợp với giả thiết thứ nhất, ta có chuỗi các tích phân hội tụ:
+> $$\sum_{n \in \mathbb{N}} \left( \int_D |f_n - f|^p d\mu \right) \le \sum_{n \in \mathbb{N}} \varepsilon_n < \infty$$
+> 
+> **Bước 2: Đổi chỗ tổng và tích phân**
+> Vì $|f_n - f|^p \ge 0$ với mọi $n$, ta áp dụng tính $\sigma$-cộng tính của tích phân để hoán vị dấu tổng và dấu tích phân:
+> $$\int_D \left( \sum_{n \in \mathbb{N}} |f_n - f|^p \right) d\mu = \sum_{n \in \mathbb{N}} \left( \int_D |f_n - f|^p d\mu \right) < \infty$$
+> 
+> **Bước 3: Tính hữu hạn a.e của tích phân hàm không âm**
+> Đặt hàm số $g(x) = \sum_{n \in \mathbb{N}} |f_n(x) - f(x)|^p$. Nhận thấy $g(x)$ là một hàm đo được, không âm.
+> Vì tích phân của $g(x)$ trên $D$ là hữu hạn, theo Bổ đề 8.2, hàm $g(x)$ bắt buộc phải nhận giá trị hữu hạn hầu khắp nơi trên $D$.
+> 
+> Mặt khác, theo giả thiết, $f(x)$ cũng nhận giá trị thực hữu hạn hầu khắp nơi. Gọi $N$ là tập hợp chứa các điểm làm cho $g(x) = \infty$ hoặc $f(x)$ vô hạn. Ta có $\mu(N) = 0$. 
+> Với mọi $x \in D \setminus N$, ta có:
+> $$\sum_{n \in \mathbb{N}} |f_n(x) - f(x)|^p < \infty$$
+> 
+> **Bước 4: Sử dụng điều kiện cần của chuỗi số hội tụ**
+> Xét tại một điểm $x \in D \setminus N$ cố định, ta có một chuỗi số thực hội tụ. Theo tính chất cơ bản của chuỗi, nếu một chuỗi hội tụ thì số hạng tổng quát của nó phải tiến về $0$. Do đó:
+> $$\lim_{n \to \infty} |f_n(x) - f(x)|^p = 0$$
+> 
+> **Bước 5: Kết luận**
+> Vì $p \in (0, \infty)$ là một số dương cố định, $|f_n(x) - f(x)|^p \to 0$ tương đương với:
+> $$\lim_{n \to \infty} |f_n(x) - f(x)| = 0 \implies \lim_{n \to \infty} f_n(x) = f(x)$$
+> 
+> Lập luận này đúng với mọi $x \in D \setminus N$ (nơi $\mu(N) = 0$). Vậy ta kết luận dãy hàm $f_n$ hội tụ về $f$ hầu khắp nơi trên $D$. 
+
 # [II] Hội tụ gần đều
 
-> [!def] (Định nghĩa 6.10 - Hội tụ gần đều)
-> Cho không gian đo $(X, \mathcal{A}, \mu)$ và một dãy các hàm $\mathcal{A}$-đo được $f_n$ nhận giá trị thực mở rộng trên tập $D \in \mathfrak{A}$. Cho $f$ là một hàm $\mathfrak{A}$-đo được nhận giá trị thực trên $D$. 
+> [!def] (Định nghĩa 6.10: Hội tụ gần đều)
+> Cho không gian đo $(X, \mathfrak{A}, \mu)$ và một dãy các hàm ${} \mathfrak{A}$-đo được $f_n$ nhận giá trị thực mở rộng trên tập $D \in \mathfrak{A}$. Cho $f$ là một hàm $\mathfrak{A}$-đo được nhận giá trị thực trên $D$. 
 > 
 > Ta nói dãy $f_n$ hội tụ a.u (almost uniformly converges) về $f$ trên $D$ nếu: Với mọi mức dung sai $\eta > 0$ nhỏ tùy ý cho tập hợp, ta luôn tìm được một tập con đo được $E \subset D$ sao cho:
 > 1. $\mu(E) < \eta$ 
@@ -282,8 +406,8 @@
 > Nếu một dãy hội tụ đều trên một tập hợp, thì nó phải hội tụ điểm tại mọi $x$ thuộc tập hợp đó. Tức là $\lim_{n \to \infty} f_n(x) = f(x)$ với mọi $x \in D \setminus E$.
 > Vì điều này đúng với mọi $\eta > 0$, nên thỏa mãn điều kiện của Bổ đề 6.2. Ta kết luận $f_n$ hội tụ về $f$ hầu khắp nơi trên $D$.
 
-> [!thm] (Định lý 6.12 - Định lý Egoroff)
-> Cho không gian đo ${} (X, \mathfrak{A}, \mu) {}$ có độ đo hữu hạn, tức là $\mu(D) < \infty$. Nếu dãy hàm đo được $f_n$ hội tụ về hàm đo được $f$ hầu khắp nơi (a.e) trên $D$, thì dãy $f_n$ hội tụ gần đều (a.u) về $f$ trên $D$.
+> [!thm] (Định lý 6.12:  Định lý Egoroff)
+> Cho không gian đo $(X, \mathfrak{A}, \mu)$ có độ đo hữu hạn, tức là $\mu(D) < \infty$. Nếu dãy hàm đo được $f_n$ hội tụ về hàm đo được $f$ hầu khắp nơi (a.e) trên $D$, thì dãy $f_n$ hội tụ gần đều (a.u) về $f$ trên $D$.
 
 > [!prf]
 > Để chứng minh dãy hàm hội tụ gần đều, ta cần chỉ ra rằng với mọi $\eta > 0$ cho trước, ta luôn có thể tìm được một tập ${} E \in \mathfrak{A} {}$ sao cho $\mu(E) < \eta$ và $f_n$ hội tụ đều về $f$ trên $D \setminus E$. 
