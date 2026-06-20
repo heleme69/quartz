@@ -1,3 +1,4 @@
+
 > [!exr]
 > Viết phương trình sai phân với $n = 5$ để xấp xỉ nghiệm của phương trình có điều kiện biên:
 > $$

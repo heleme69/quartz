@@ -1,3 +1,4 @@
+# 1. Một số Bất đẳng thức
 
 > [!thm] (Bất đẳng thức Markov)
 > Cho không gian độ đo $(X, \mathfrak{A}, \mu)$ và $f$ là một hàm đo được không âm, khả tích Lebesgue trên $X$. Khi đó, với mọi hằng số $a > 0$, ta luôn có bất đẳng thức:
@@ -191,6 +192,8 @@
 > $$\lim_{\lambda \to \infty} \lambda^p \mu(\{x \in X : |f(x)| \ge \lambda\}) = 0$$
 > 
 > Chứng minh hoàn tất. 
+
+# 2. Biểu diễn Layer Cake
 
 > [!thm] Định lý 8.24 (Biểu diễn Layer Cake)
 > Cho $(X, \mathfrak{A}, \mu)$ là một không gian độ đo và $f$ là một hàm đo được không âm, khả tích trên $X$.

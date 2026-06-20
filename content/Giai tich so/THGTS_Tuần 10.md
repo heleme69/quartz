@@ -1,3 +1,4 @@
+
 > [!exr] 
 > Viết phương trình sai phân với $n = 4$ để xấp xỉ nghiệm của phương trình có điều kiện biên bằng phương pháp biến ảo trung tâm:
 > $$y'' + y' - 2y = (1 - x^2)e^{-x}, \quad y(0) = -1, \quad y'(1) = \frac{1}{e}, \quad 0 \le x \le 1$$

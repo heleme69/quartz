@@ -50,7 +50,7 @@ $$
 >    $$
 >    \begin{align*} & \text{Vì } \mu^* \Big( (T \cap A) \cup (T \cap A^c \cap B) \Big) \ge \mu^* \Big( T \cap (A \cup B) \Big) \\ \implies & \mu^* \Big( (T \cap A) \cup (T \cap A^c \cap B) \cup (T \cap(A \cup B)^c) \Big) \\ &\quad = \mu^*(T) \\ &\quad \ge \mu^* \Big( (T \cap(A \cup B)) \cup (T \cap (A \cup B)^c) \Big) \end{align*}
 >    $$
->     - Kết hợp **Observation 1.**  ta kết luận $A \cup B \in \mathfrak{M}$
+>     - Kết hợp Observation 1.  ta kết luận $A \cup B \in \mathfrak{M}$
 
 > [!prp] Cộng tính hữu hạn
 > Với $A, B \in \mathfrak{M}(\mu ^{*})$, và $A \cap B = \emptyset$, ta cần chứng minh $\mu ^{*}(A \cup B) = \mu ^{*}(A) + \mu ^{*}(B)$.

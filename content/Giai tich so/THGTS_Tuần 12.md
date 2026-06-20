@@ -1,8 +1,13 @@
+
 > [!exr] 
 > Sử dụng MATLAB để xấp xỉ các tích phân sau bằng quy tắc Midpoint, Sau đó, sử dụng công thức sai số để tìm chặn trên của sai số. So sánh giá trị xấp xỉ với giá trị xấp xỉ có được từ Quy tắc hình thang (Trapezoidal rule) và quy tắc Simpson.
+> 
 > a) $\int_{-0.25}^{0.25} (\cos x)^2 \, dx$
+> 
 > b) $\int_{-0.5}^{0} x \ln(x + 1) \, dx$
+> 
 > c) $\int_{0.75}^{1.3} ((\sin x)^2 - 2x \sin x + 1) \, dx$
+> 
 > d) $\int_{e}^{e+1} \frac{1}{x \ln x} \, dx$
 
 > [!sol] 

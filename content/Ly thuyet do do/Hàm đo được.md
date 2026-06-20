@@ -13,6 +13,7 @@
 > [!thm] (Prob 4.3)
 > Xét không gian đo được $(\mathbb{R}, \mathcal{B}(\mathbb{R}))$.
 > (a) Chứng minh rằng nếu $E \subset \mathbb{R}$ là một tập đếm được thì $E \in \mathcal{B}(\mathbb{R})$.
+> 
 > (b) Chứng minh rằng mọi hàm nhận giá trị thực mở rộng $f$ xác định trên một tập đếm được $E \subset \mathbb{R}$ đều là hàm $\mathcal{B}(\mathbb{R})$-đo được trên $E$.
 
 > [!prf] 
@@ -46,8 +47,11 @@
 >Let $(X, \mathfrak{A})$ be a measurable space and $f$ be an extended real-valued function defined on $D \in \mathfrak{A}$. Then the following conditions are all equivalent: 
 >
 > (i) $\{x \in D : f(x) \le \alpha\} \in \mathfrak{A}$, that is, $f^{-1}([-\infty, \alpha]) \in \mathfrak{A}$, for every $\alpha \in \mathbb{R}$,
+> 
 > (ii) $\{x \in D : f(x) > \alpha\} \in \mathfrak{A}$, that is, $f^{-1}((\alpha, \infty]) \in \mathfrak{A}$, for every $\alpha \in \mathbb{R}$,
+> 
 > (iii) $\{x \in D : f(x) \ge \alpha\} \in \mathfrak{A}$, that is, $f^{-1}([\alpha, \infty]) \in \mathfrak{A}$, for every $\alpha \in \mathbb{R}$,
+> 
 > (iv) $\{x \in D : f(x) < \alpha\} \in \mathfrak{A}$, that is, $f^{-1}([-\infty, \alpha)) \in \mathfrak{A}$, for every $\alpha \in \mathbb{R}$.
 
 > [!prf] 
@@ -106,6 +110,39 @@
 > - Sai: Nếu mọi tập $\{f = \alpha\} \in \mathfrak{A} \implies f$ đo được. 
 > Lưu ý: một hàm hằng $f(x) = c$ luôn đo được không phải vì tập $\{f = c\}$ của nó đo được, mà vì tập $\{f \le \alpha\}$ của nó luôn rơi vào các trường hợp tầm thường: hoặc là tập rỗng $\emptyset$, hoặc là toàn bộ không gian $D$ - là các tập đo được
 
+> [!exm] Phản ví dụ: Chiều ngược lại của Hệ quả 4.5 (a) không đúng
+> Thiết lập không gian: Xét không gian đo được Lebesgue trên đoạn $D = [0, 1]$, ký hiệu là $([0, 1], \mathfrak{A})$, với $\mathfrak{A}$ là $\sigma$-đại số các tập đo được Lebesgue.
+> 
+> Bước 1: Xây dựng hàm số dựa trên tập không đo được
+> Gọi $A \subset [0, 1]$ là một tập không đo được Lebesgue bất kỳ (ví dụ như tập Vitali giao với $[0, 1]$). Như vậy $A \notin \mathfrak{A}$.
+> Ta xét hàm số $f: [0, 1] \to \mathbb{R}$ được định nghĩa bởi:
+> $f(x) = x$ nếu $x \in A$
+> $f(x) = -x$ nếu $x \notin A$
+> 
+> Bước 2: Kiểm tra điều kiện $\{f = \alpha\} \in \mathfrak{A}$ với mọi $\alpha \in \mathbb{R}$
+> Ta xét các trường hợp của $\alpha$:
+> - Nếu $\alpha < 0$: 
+>   Vì miền xác định của ta chỉ là các số thực không âm $x \in [0, 1]$, nhánh vế trên $f(x) = x \ge 0$ không thể bằng $\alpha$. Nhánh vế dưới $f(x) = -x$ có thể bằng $\alpha$ tại duy nhất điểm $x = -\alpha$. 
+>   Điểm này chỉ thỏa mãn nếu nó không thuộc $A$. Do đó, tập nghiệm $\{f = \alpha\}$ hoặc là tập rỗng $\emptyset$, hoặc chỉ chứa đúng một điểm $\{-\alpha\}$.
+> - Nếu $\alpha = 0$: 
+>   Phương trình $f(x) = 0$ chỉ có duy nhất một nghiệm $x = 0$ trên đoạn $[0, 1]$. Do đó tập nghiệm là $\{0\}$.
+> - Nếu $\alpha > 0$: 
+>   Nhánh vế dưới $f(x) = -x \le 0$ không thể bằng $\alpha$. Nhánh vế trên $f(x) = x$ bằng $\alpha$ tại duy nhất điểm $x = \alpha$. 
+>   Điểm này chỉ thỏa mãn nếu nó thuộc $A$. Do đó, tập nghiệm $\{f = \alpha\}$ hoặc là tập rỗng $\emptyset$, hoặc chỉ chứa đúng một điểm $\{\alpha\}$.
+> 
+> Nhận xét: Trong mọi trường hợp của $\alpha$, tập $\{f = \alpha\}$ luôn là tập rỗng hoặc là một tập chỉ chứa một điểm. Vì không gian Lebesgue đầy đủ luôn chứa các điểm cô lập, các tập này thuộc $\mathfrak{A}$. Vậy điều kiện vế trái được thỏa mãn.
+> 
+> Bước 3: Chứng minh hàm $f$ không đo được
+> Ta xét tập ảnh ngược của tia mở $(0, \infty)$, tức là tập hợp các điểm $\{x \in [0, 1] : f(x) > 0\}$.
+> - Với những điểm $x \in A$ (và $x \neq 0$), ta có $f(x) = x > 0$, thỏa mãn điều kiện.
+> - Với những điểm $x \notin A$, ta có $f(x) = -x \le 0$, không thỏa mãn điều kiện.
+> - Tại điểm $x = 0$, $f(0) = 0$, không thỏa mãn điều kiện lớn hơn hẳn 0.
+> 
+> Như vậy, ngoại trừ điểm 0 không ảnh hưởng đến tính chất cấu trúc, tập hợp các điểm thỏa mãn $f(x) > 0$ chính là tập $A \setminus \{0\}$.
+> Vì $A$ là tập không đo được Lebesgue, tập $A \setminus \{0\}$ cũng là tập không đo được Lebesgue (không thuộc $\mathfrak{A}$).
+> 
+> Kết luận: Mọi tập $\{f = \alpha\}$ đều đo được, nhưng tập $\{f > 0\}$ lại không đo được. Điều này chứng tỏ hàm số $f$ không phải là hàm đo được. Phản ví dụ hoàn thành. 
+
 > [!thm] (Định lý 4.6a)
 > Let $(X,\mathfrak{A})$ be a measure space and let $f$ be a real-valued function on a set $D \in \mathfrak{A}$. Consider the measureable space ${} (\mathbb{R}, \mathcal{B}(\mathbb{R})) {}$ :
 > $f: D \to \mathbb{R}$ is $\mathfrak{A}$-measureable on $D$ if and only if $f$ is a ${} \mathfrak{A} /\mathcal{B}(\mathbb{R}) {}$-measureable mapping of $D$ into $\mathbb{R}$, that is, $f^{-1}(\mathcal{B}(\mathbb{R}))\subset \mathfrak{A}$.
@@ -144,7 +181,9 @@
 
 > [!lem] Bổ đề 4.7
 > Let $(X, \mathfrak{A})$ be a measurable space.
+> 
 > (a) If $f$ is an extended real-valued $\mathcal{A}$-measurable function on a set ${} D \in \mathfrak{A} {}$, then for every $D_0 \subset D$ such that ${} D_0 \in \mathfrak{A} {}$, the restriction of $f$ to $D_0$ is a ${} \mathfrak{A} {}$-measurable function on $D_0$.
+> 
 > (b) Let $(D_n : n \in \mathbb{N})$ be a sequence in ${} \mathfrak{A} {}$ and let $D = \bigcup_{n \in \mathbb{N}} D_n$. Let $f$ be an extended real-valued function on $D$. If the restriction of $f$ to $D_n$ is ${} \mathfrak{A} {}$-measurable on $D_n$ for every $n \in \mathbb{N}$, then $f$ is ${} \mathfrak{A} {}$-measurable on $D$.
 
 > [!prf] 
@@ -169,8 +208,11 @@
 > Ký hiệu $\mathfrak{D}(f)$ (Domain) dùng để chỉ miền xác định của hàm số.
 > 
 > (a) Với $c \in \mathbb{R}$, tập xác định $\mathfrak{D}(cf) \in \mathfrak{A}$ và hàm $cf: \mathfrak{D}(cf) \subset D \to \overline{\mathbb{R}}$ là hàm $\mathfrak{A}$-đo được trên miền $\mathfrak{D}(cf)$.
+> 
 > (b) Tập xác định $\mathfrak{D}(f+g) \in \mathfrak{A}$ và hàm tổng $f+g: \mathfrak{D}(f+g) \to \overline{\mathbb{R}}$ là hàm $\mathfrak{A}$-đo được.
+> 
 > (c) Tập xác định $\mathfrak{D}(fg) \in \mathfrak{A}$ và hàm tích $fg: \mathfrak{D}(fg) \to \overline{\mathbb{R}}$ là hàm $\mathfrak{A}$-đo được.
+> 
 > (d) Tập xác định $\mathfrak{D}(g/f) \in \mathfrak{A}$ và hàm thương $g/f: \mathfrak{D}(g/f) \to \overline{\mathbb{R}}$ là hàm $\mathfrak{A}$-đo được.
 
 > [!prf] 
@@ -274,8 +316,11 @@
 > [!thm] (Định lý 4.16)
 > Cho $(X, \mathfrak{A})$ là một không gian đo được và $f, g$ là hai hàm nhận giá trị thực mở rộng $\mathfrak{A}$-đo được trên tập $D \in \mathfrak{A}$. Khi đó các tập hợp sau đây đều thuộc $\mathfrak{A}$:
 > (1) $\{x \in D : f(x) = g(x)\}$
+> 
 > (2) $\{x \in D : f(x) < g(x)\}$
+> 
 > (3) $\{x \in D : f(x) \le g(x)\}$
+> 
 > (4) $\{x \in D : f(x) \neq g(x)\}$
 
 > [!prf] 
@@ -302,6 +347,73 @@
 > $$\{f \neq g\} = D \setminus \{f = g\}$$
 > Do $\mathfrak{A}$ là $\sigma$-đại số nên nó đóng kín với phép lấy phần bù. Vì $\{f = g\} \in \mathfrak{A}$ (theo ý 1), ta suy ra tập $\{f \neq g\}$ cũng thuộc $\mathfrak{A}$.
 
+> [!def] (Định nghĩa: Hàm đặc trưng)
+> Cho không gian đo được $(X, \mathfrak{A})$ và một tập con $E \subset X$. Hàm đặc trưng của $E$, ký hiệu là $\chi_E: X \to \mathbb{R}$, được định nghĩa bởi:
+> 
+> $\chi_E(x) = 1$ nếu $x \in E$
+> 
+> $\chi_E(x) = 0$ nếu $x \notin E$
+
+> [!thm] (Mệnh đề về tính đo được của hàm đặc trưng)
+> Hàm đặc trưng $\chi_E$ là một hàm số $\mathfrak{A}$-đo được khi và chỉ khi tập hợp $E$ là một tập đo được (tức là $E \in \mathfrak{A}$).
+
+> [!prf] Chứng minh Mệnh đề
+> Chiều thuận (${} \implies {}$): Giả sử $\chi_E$ là hàm đo được. 
+> Theo định nghĩa của hàm đo được, ảnh ngược của một tập mở bất kỳ trên trục thực phải là một tập đo được thuộc $\mathfrak{A}$.
+> Ta chọn khoảng mở $I = (\frac{1}{2}, \frac{3}{2})$. Khoảng mở này chứa số 1 nhưng không chứa số 0.
+> Khi đó, ảnh ngược của khoảng $I$ qua hàm $\chi_E$ chính là tập hợp tất cả các điểm $x$ sao cho $\chi_E(x) = 1$.
+> Theo định nghĩa hàm đặc trưng, tập các điểm này chính là tập $E$.
+> Do $\chi_E$ đo được, ta suy ra ngay $E = \chi_E^{-1}(I) \in \mathfrak{A}$.
+> 
+> Chiều đảo ($\impliedby$): Giả sử $E \in \mathfrak{A}$.
+> Ta cần chứng minh ảnh ngược của các tia $\{x \in X : \chi_E(x) < \alpha\}$ luôn thuộc $\mathfrak{A}$ với mọi số thực $\alpha$. Ta xét các trường hợp của $\alpha$:
+> - Nếu $\alpha \le 0$: Không có điểm nào có giá trị hàm nhỏ hơn $\alpha$ (vì hàm chỉ nhận giá trị 0 và 1). Tập thu được là tập rỗng $\emptyset \in \mathfrak{A}$.
+> - Nếu $0 < \alpha \le 1$: Các điểm có giá trị hàm nhỏ hơn $\alpha$ chỉ có thể nhận giá trị 0. Tập các điểm này chính là phần bù của $E$, tức là $X \setminus E$. Vì $E \in \mathfrak{A}$ nên phần bù của nó cũng thuộc $\mathfrak{A}$.
+> - Nếu $\alpha > 1$: Tất cả các điểm trong không gian $X$ đều thỏa mãn vì giá trị hàm (0 hoặc 1) luôn nhỏ hơn $\alpha$. Tập thu được là toàn bộ không gian $X \in \mathfrak{A}$.
+> Trong mọi trường hợp, các tập ảnh ngược đều thuộc $\mathfrak{A}$, chứng tỏ $\chi_E$ là hàm đo được.
+
+> [!cor] (Cách xây dựng hàm không đo được tổng quát)
+> Từ mệnh đề trên, để chỉ ra một hàm số không đo được trên một không gian đo được $(X, \mathfrak{A})$ ta có thể làm theo các bước:
+> 
+> 1. Trích xuất tập hợp: Chọn một tập con $E \subset X$ sao cho $E \notin \mathfrak{A}$ (sự tồn tại của tập này được đảm bảo nếu $\mathfrak{A}$ không phải là đại số trên $X$).
+> 2. Thiết lập ánh xạ: Đặt $f = \chi_E$ là hàm đặc trưng của tập $E$ đó.
+> 
+> Kết luận: Vì $E$ là tập không đo được, hàm đặc trưng $f = \chi_E$ sinh ra từ nó mặc nhiên trở thành một hàm số không đo được trên $X$.
+
+> [!exm]
+> Xét một không gian đo được $(X, \mathfrak{A})$, trong đó $\mathfrak{A}$ không phải là đại số (tức là tồn tại ít nhất một tập con $E \subset X$ sao cho $E \notin \mathfrak{A}$). 
+> 
+> Ta định nghĩa hàm số $f: X \to \mathbb{R}$ là hàm đặc trưng của tập $E$:
+> $$f(x) = \chi_E(x) = \begin{cases} 1 & \text{nếu } x \in E \\ 0 & \text{nếu } x \notin E \end{cases}$$
+> 
+> Để chứng minh $f$ không đo được, ta chỉ cần tìm ra một khoảng mở trên trục số thực sao cho ảnh ngược của nó không thuộc $\mathfrak{A}$.
+> 
+> Ta chọn khoảng mở $I = (0.5, 1.5)$.
+> Ta đi tìm tập ảnh ngược $f^{-1}(I) = \{x \in X : f(x) \in (0.5, 1.5)\}$.
+> 
+> Vì hàm $f$ chỉ nhận hai giá trị là 0 và 1, nên giá trị duy nhất của hàm số nằm trong khoảng mở $(0.5, 1.5)$ chính là $1$.
+> Theo định nghĩa của hàm $f$, tập hợp tất cả các điểm $x$ để hàm số nhận giá trị bằng $1$ chính là tập $E$:
+> $$f^{-1}(I) = \{x \in X : f(x) = 1\} = E$$
+> 
+> Vì $E \notin \mathfrak{A}$ (theo giả thiết ban đầu), ảnh ngược của khoảng mở $I$ không phải là một tập đo được. 
+> Theo định nghĩa, một hàm số được coi là đo được nếu ảnh ngược của mọi khoảng mở đều phải thuộc $\mathfrak{A}$. Ở đây điều kiện đó đã bị vi phạm.
+> 
+> Kết luận: Hàm số $f = \chi_E$ là một hàm số không đo được trên $X$. 
+
+> [!rem] (Nhớ lại)
+> **Cấu trúc được bảo toàn qua ảnh ngược:**
+> 
+> Hàm liên tục: Bảo toàn cấu trúc Tô-pô. Ảnh ngược của một tập mở/đóng là một tập mở/đóng.
+>   
+> Hàm đo được: Bảo toàn cấu trúc Đại số tập hợp. Ảnh ngược của một tập thuộc không gian đích (Borel/Lebesgue) phải là một tập đo được ở không gian nguồn.
+> 
+> **Tính vượt trội của hàm đo được:**
+> 
+> Hàm liên tục bị gãy: Giới hạn hội tụ điểm của một dãy hàm liên tục chưa chắc là một hàm liên tục.
+> 
+> Hàm đo được đóng kín: Giới hạn hội tụ điểm của một dãy hàm đo được luôn là một hàm đo được. Tính chất bảo toàn qua giới hạn này biến nó thành công cụ hoàn hảo để xây dựng các định lý hội tụ trong giải tích và xác suất (như Monotone hay Dominated Convergence).
+>
+
 # [III] Bằng nhau hầu khắp nơi 
 
 > [!def] (Định nghĩa 4.17)
@@ -314,8 +426,10 @@
 > Lưu ý (Remark 4.19): Việc bằng nhau hầu khắp nơi phụ thuộc vào độ đo $\mu$ và $\sigma$-đại số $\mathfrak{A}$ đang xét.
 
 > [!obs] (Không gian đo đầy đủ)
-> Giả sử $(X, \mathfrak{A}, \mu)$ là một không gian độ đo đầy đủ.
+> Giả sử $(X, \mathfrak{A}, \mu)$ là một không gian độ đo đầy đủ:
+> 
 > (a) Mọi hàm $f$ xác định trên một tập null $N$ đều là hàm đo được trên $N$.
+> 
 > (b) Giả sử hai hàm $f, g$ thỏa mãn $f = g$ a.e. trên $D$. Nếu $f$ đo được trên $D$ thì $g$ cũng đo được trên $D$.
 > 
 > Ý nghĩa: Trong một không gian đầy đủ, tính đo được có thể được truyền từ hàm này sang hàm khác nếu chúng bằng nhau hầu khắp nơi.

@@ -1,4 +1,4 @@
-# Độ đo ngoài Lebesuge
+# 1. Độ đo ngoài Lebesuge
 
 > [!def] (Các khoảng trên $\mathbb{R}$)
 > Cho $\mathfrak{J_{o}}$ là họ bao gồm tập rỗng $\emptyset$ và tất cả các khoảng mở trong $\mathbb{R}$ có dạng $(a,b)$. Tương tự, ta định nghĩa $\mathfrak{J_{co}}, \mathfrak{J_{oc}}, \mathfrak{J_{c}}$ lần lượt là là khoảng nửa mở - nửa đóng khoảng đóng. Quy ước $(a, \infty)$ và $(\infty, a)$ cũng nằm trong họ tương ứng. Gọi $\mathfrak{J}$ là hợp của tất cả các họ này, tức là mọi khoảng trên $\mathbb{R}$.
@@ -176,7 +176,7 @@
 > \mathcal{B}(\mathbb{R}) \subset \mathfrak{M}_{L}
 > $$
 
-# Độ đo Lebesuge
+# 2. Độ đo Lebesuge
 
 > [!thm] (Prob 3.5: Tính triệt tiêu của họ không đếm được các tập rời nhau)
 > 1. Phát biểu chính (Dạng hầu khắp nơi): Xét $\{E_t\}_{t \in I}$ là một họ các tập đo được Lebesgue rời nhau đôi một, với $I$ là tập chỉ số không đếm được. Khi đó, $\mu_L(E_t) = 0$ ngoại trừ tối đa đếm được các chỉ số $t \in I$.

@@ -15,7 +15,7 @@
 > $$f_n(x) = \frac{1}{n} \chi_{[0, n]}(x)$$
 > Chọn hàm giới hạn: $f(x) = 0$ với mọi $x \in \mathbb{R}$.
 > 
-> Xét khoảng cách sai số theo chuẩn (supremum norm) giữa $f_n$ và $f$ trên toàn bộ $\mathbb{R}$:
+> Xét khoảng cách sai số theo chuẩn $\sup$ giữa $f_n$ và $f$ trên toàn bộ $\mathbb{R}$:
 > $$\sup_{x \in \mathbb{R}} |f_n(x) - f(x)| = \sup_{x \in \mathbb{R}} \left| \frac{1}{n} \chi_{[0, n]}(x) - 0 \right| = \frac{1}{n}$$
 > Lấy giới hạn khi $n \to \infty$:
 > $$\lim_{n \to \infty} \left( \sup_{x \in \mathbb{R}} |f_n(x) - f(x)| \right) = \lim_{n \to \infty} \frac{1}{n} = 0$$

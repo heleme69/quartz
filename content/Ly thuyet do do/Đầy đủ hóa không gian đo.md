@@ -55,11 +55,11 @@ Tập Cantor (hay còn gọi là tập Cantor tam phân - Cantor Ternary Set) đ
 
 > [!prf]
 > 
-> - (a) **$T$ là một tập null trong không gian độ đo Borel $(\mathbb{R}, \mathcal{B}(\mathbb{R}), \mu_L)$.**
+> (a) **$T$ là một tập null trong không gian độ đo Borel $(\mathbb{R}, \mathcal{B}(\mathbb{R}), \mu_L)$.**
 > 
 > Tại mỗi bước xây dựng thứ $n$, tập $T_n$ bao gồm $2^n$ đoạn đóng rời nhau, và độ dài của mỗi đoạn là $\frac{1}{3^n}$. Do đó, độ đo Lebesgue của tập $T_n$ là: $$ \mu_L(T_n) = 2^n \cdot \frac{1}{3^n} = \left(\frac{2}{3}\right)^n $$ Vì $T = \bigcap_{n=0}^{\infty} T_n$ và dãy các tập hợp $(T_n)$ là một dãy giảm ($T_{n+1} \subset T_n$) với độ đo hữu hạn, theo tính chất liên tục từ trên xuống của độ đo, ta có: $$ \mu_L(T) = \lim_{n \to \infty} \mu_L(T_n) = \lim_{n \to \infty} \left(\frac{2}{3}\right)^n = 0 $$ Vì $\mu_L(T) = 0$, $T$ là một tập null (tập có độ đo không).
 > 
-> - (b) **$G = [0, 1] \setminus T$ là hợp của vô số đếm được các khoảng mở rời nhau; $G$ trù mật trong $[0, 1]$ và $\mu_L(G) = 1$.**
+> (b) **$G = [0, 1] \setminus T$ là hợp của vô số đếm được các khoảng mở rời nhau; $G$ trù mật trong $[0, 1]$ và $\mu_L(G) = 1$.**
 > 
 > _Cấu trúc của $G$:_ Trong quá trình xây dựng $T$, tại mỗi bước $n \ge 1$, ta cắt bỏ đi phần mở ở giữa của các đoạn trong $T_{n-1}$. Gọi họ các khoảng mở bị cắt bỏ ở bước $n$ là $G_n$. Khi đó $G_n$ gồm $2^{n-1}$ khoảng mở rời nhau, mỗi khoảng có độ dài $\frac{1}{3^n}$. Tập $G$ chính là hợp của tất cả các khoảng mở đó: $$ G = \bigcup_{n=1}^{\infty} G_n $$ Vì đây là hợp của các họ đếm được các khoảng mở, nên $G$ là hợp của vô số đếm được các khoảng mở rời nhau trong $\mathbb{R}$.
 > 
@@ -67,7 +67,7 @@ Tập Cantor (hay còn gọi là tập Cantor tam phân - Cantor Ternary Set) đ
 > 
 > _Tính trù mật của $G$:_ Để chứng minh $G$ trù mật trong $[0,1]$, ta cần chứng minh mọi khoảng mở $(a, b) \subset [0, 1]$ với $a < b$ đều giao với $G$. Độ dài của khoảng mở này là $L = b - a > 0$. Ta chọn một số tự nhiên $n$ đủ lớn sao cho $\frac{1}{3^n} < L$. Tại bước thứ $n$, tập $T_n$ chỉ còn lại các đoạn đóng có độ dài $\frac{1}{3^n}$. Vì khoảng $(a, b)$ dài hơn $\frac{1}{3^n}$, nó không thể nằm trọn vẹn bên trong bất kỳ đoạn đóng nào của $T_n$. Do đó, $(a, b)$ bắt buộc phải chứa ít nhất một điểm thuộc phần đã bị cắt bỏ, tức là $(a, b) \cap G \neq \emptyset$. Vậy $G$ trù mật trong $[0, 1]$.
 > 
-> - (c) **$T$ là một tập không đếm được.**
+> (c) **$T$ là một tập không đếm được.**
 > 
 > Ta tiến hành chứng minh bằng phản chứng. Giả sử tập Cantor $T$ là một tập đếm được. Khi đó, ta có thể liệt kê toàn bộ các phần tử của $T$ thành một dãy vô hạn: $T = \{x_1, x_2, x_3, \dots, x_n, \dots\}$. Như đã giới thiệu, mọi số $x \in T$ đều có thể được biểu diễn duy nhất dưới dạng chuỗi tam phân chỉ chứa các chữ số $0$ và $2$. Ta viết khai triển tam phân cho từng phần tử trong dãy trên: 
 > $$
@@ -87,7 +87,7 @@ Tập Cantor (hay còn gọi là tập Cantor tam phân - Cantor Ternary Set) đ
 > - Tổng quát, $y \neq x_n$ vì ở vị trí thứ $n$, chúng có chữ số khác nhau ($b_n \neq a_{nn}$). 
 > Điều này có nghĩa là $y$ không trùng với bất kỳ phần tử nào trong danh sách $\{x_1, x_2, \dots, x_n, \dots\}$. Suy ra việc liệt kê trên là không đầy đủ, hay nói cách khác, giả thiết $T$ là tập đếm được đã dẫn đến mâu thuẫn. Vậy tập Cantor $T$ phải là một tập không đếm được.
 > 
-> - (d) **$T$ là một tập compact trong $\mathbb{R}$.**
+> (d) **$T$ là một tập compact trong $\mathbb{R}$.**
 > 
 > Theo định lý Heine-Borel trong $\mathbb{R}$, một tập hợp là compact khi và chỉ khi nó đóng và bị chặn.
 > 
@@ -96,7 +96,7 @@ Tập Cantor (hay còn gọi là tập Cantor tam phân - Cantor Ternary Set) đ
 > 
 > Kết hợp hai điều trên, ta có $T$ là một tập compact.
 > 
-> - (e) **$T$ là một tập hoàn toàn (perfect set) trong $\mathbb{R}$.**
+> (e) **$T$ là một tập hoàn toàn (perfect set) trong $\mathbb{R}$.**
 > 
 > Một tập hợp được gọi là hoàn toàn (perfect) nếu nó đóng và không chứa bất kỳ điểm cô lập nào (tức là mọi điểm của tập hợp đều là điểm tụ của chính nó). Ta đã biết $T$ đóng (từ phần (d)). Việc còn lại là chứng minh $T$ không có điểm cô lập.
 > 
@@ -104,7 +104,7 @@ Tập Cantor (hay còn gọi là tập Cantor tam phân - Cantor Ternary Set) đ
 > 
 > Khoảng cách giữa $x_n$ và $x$ chỉ sinh ra từ sự khác biệt ở vị trí thứ $n$: $$ |x_n - x| = \frac{|2 - 0|}{3^n} = \frac{2}{3^n} $$ Vì $\frac{2}{3^n} > 0$, ta có $x_n \neq x$. Khi $n \to \infty$, khoảng cách $|x_n - x| = \frac{2}{3^n} \to 0$, nghĩa là dãy $(x_n)$ hội tụ về $x$. Vậy trong mọi lân cận của $x$, ta luôn tìm được một điểm $x_n \in T$ khác $x$. Điều này chứng tỏ $x$ không phải là điểm cô lập. Do đó $T$ là tập hoàn toàn.
 > 
-> - (f) **$T$ là tập không đâu trù mật (nowhere dense) trong $\mathbb{R}$.**
+> (f) **$T$ là tập không đâu trù mật (nowhere dense) trong $\mathbb{R}$.**
 > 
 > Một tập là không đâu trù mật nếu phần trong của bao đóng của nó là rỗng ($(\overline{T})^\circ = \emptyset$). Vì $T$ là tập đóng (đã chứng minh ở phần (d)), nên bao đóng của $T$ bằng chính nó: $\overline{T} = T$. Ta chỉ cần chứng minh phần trong của $T$ là rỗng ($\mathring{T} = \emptyset$).
 > 
@@ -151,15 +151,15 @@ Vì $\tau_0$ liên tục đều trên $G$, theo tính chất của không gian m
 
 > [!prf] Chứng minh
 > 
-> - (a) **Tính liên tục của $\tau(x)$ trên $[0, 1]$** được xây dựng dựa trên Định lý Mở rộng liên tục trong không gian metric.
+> (a) **Tính liên tục của $\tau(x)$ trên $[0, 1]$** được xây dựng dựa trên Định lý Mở rộng liên tục trong không gian metric.
 > 
 >    Thật vậy, ta đã chứng minh $G$ là một tập con trù mật trong đoạn $[0, 1]$, và $\tau_0$ là một hàm liên tục đều trên $G$. Lấy một điểm tùy ý $x \in [0, 1] \setminus G$ (tức $x \in \mathcal{C}$). Do tính trù mật của $G$, luôn tồn tại một dãy $(x_n) \subset G$ sao cho $\lim_{n \to \infty} x_n = x$.
 > 
 >    Vì dãy $(x_n)$ hội tụ nên nó là một dãy Cauchy. Vì $\tau_0$ liên tục đều trên $G$, nó bảo toàn tính chất Cauchy; do đó $(\tau_0(x_n))$ là một dãy Cauchy trong không gian metric $\mathbb{R}$. Vì $\mathbb{R}$ là một không gian đầy đủ, dãy này chắc chắn hội tụ về một giới hạn duy nhất. Ta định nghĩa giá trị của hàm mở rộng là: $$ \tau(x) := \lim_{n \to \infty} \tau_0(x_n) $$ Do tính duy nhất của giới hạn này tại mọi điểm thuộc bao đóng $\overline{G} = [0,1]$, hàm mở rộng $\tau(x)$ được xác định tốt và liên tục trên toàn bộ không gian $[0, 1]$.
 > 
-> - (b) **Tính tăng và các giá trị biên:** Để chứng minh $\tau$ tăng trên $[0, 1]$, lấy hai điểm bất kỳ $x', x'' \in [0, 1]$ sao cho $x' < x''$. Vì $G$ là tập trù mật trong $[0, 1]$, ta luôn có thể chọn được hai dãy điểm $(a_n)$ và $(b_n)$ nằm hoàn toàn trong $G$ sao cho $a_n < b_n$ với mọi $n$, và $a_n \to x'$, $b_n \to x''$ khi $n \to \infty$. Do $\tau_0$ là hàm tăng trên $G$, ta có $\tau_0(a_n) \le \tau_0(b_n)$. Lấy giới hạn hai vế và sử dụng tính liên tục của hàm mở rộng $\tau$, ta thu được: $$ \lim_{n \to \infty} \tau(a_n) \le \lim_{n \to \infty} \tau(b_n) \implies \tau(x') \le \tau(x'') $$ Vậy $\tau$ là hàm tăng không ngặt. Để tính $\tau(0)$, ta xét các dãy điểm là trung điểm của khoảng mở đầu tiên bên trái $I_{k,1} = \left( \frac{1}{3^{k}}, \frac{2}{3^{k}} \right)$: chọn $x_{k} = \frac{1.5}{3^{k}} \in I_{k,1}$. Khi $k \to \infty$ thì $x_{k} \to 0$. Theo định nghĩa, ta có $\tau_0(x_{k}) = \frac{1}{2^{k}}$. Do đó $\tau$ liên tục tại $0$ dẫn tới: $$ \tau(0) = \lim_{k \to \infty} \tau(x_{k}) = \lim_{k \to \infty} \frac{1}{2^{k}} = 0 $$ Hoàn toàn tương tự, bằng cách xét các khoảng mở tận cùng bên phải $I_{k, 2^{k-1}}$, ta có $\tau(x_k) = \frac{2^k - 1}{2^k} = 1 - \frac{1}{2^k}$. Cho $k \to \infty$, ta thu được $\tau(1) = 1$.
+> (b) **Tính tăng và các giá trị biên:** Để chứng minh $\tau$ tăng trên $[0, 1]$, lấy hai điểm bất kỳ $x', x'' \in [0, 1]$ sao cho $x' < x''$. Vì $G$ là tập trù mật trong $[0, 1]$, ta luôn có thể chọn được hai dãy điểm $(a_n)$ và $(b_n)$ nằm hoàn toàn trong $G$ sao cho $a_n < b_n$ với mọi $n$, và $a_n \to x'$, $b_n \to x''$ khi $n \to \infty$. Do $\tau_0$ là hàm tăng trên $G$, ta có $\tau_0(a_n) \le \tau_0(b_n)$. Lấy giới hạn hai vế và sử dụng tính liên tục của hàm mở rộng $\tau$, ta thu được: $$ \lim_{n \to \infty} \tau(a_n) \le \lim_{n \to \infty} \tau(b_n) \implies \tau(x') \le \tau(x'') $$ Vậy $\tau$ là hàm tăng không ngặt. Để tính $\tau(0)$, ta xét các dãy điểm là trung điểm của khoảng mở đầu tiên bên trái $I_{k,1} = \left( \frac{1}{3^{k}}, \frac{2}{3^{k}} \right)$: chọn $x_{k} = \frac{1.5}{3^{k}} \in I_{k,1}$. Khi $k \to \infty$ thì $x_{k} \to 0$. Theo định nghĩa, ta có $\tau_0(x_{k}) = \frac{1}{2^{k}}$. Do đó $\tau$ liên tục tại $0$ dẫn tới: $$ \tau(0) = \lim_{k \to \infty} \tau(x_{k}) = \lim_{k \to \infty} \frac{1}{2^{k}} = 0 $$ Hoàn toàn tương tự, bằng cách xét các khoảng mở tận cùng bên phải $I_{k, 2^{k-1}}$, ta có $\tau(x_k) = \frac{2^k - 1}{2^k} = 1 - \frac{1}{2^k}$. Cho $k \to \infty$, ta thu được $\tau(1) = 1$.
 >     
-> - (c) **Đạo hàm $\tau'(x) = 0$ hầu khắp nơi:** Theo cách xây dựng, trên mỗi khoảng mở $I_{k,j} \subset G$, hàm $\tau(x)$ nhận một giá trị hằng số $c_{k,j} = \frac{2j-1}{2^k}$. Vì đạo hàm của một hằng số bằng $0$, nên $\tau'(x) = 0$ tại mọi điểm $x \in G$. Hơn nữa, ta đã chứng minh tổng độ đo Lebesgue của tập $G$ là $\mu_L(G) = 1$. Vậy đạo hàm $\tau'(x) = 0$ hầu khắp nơi trên $[0,1]$.
+> (c) **Đạo hàm $\tau'(x) = 0$ hầu khắp nơi:** Theo cách xây dựng, trên mỗi khoảng mở $I_{k,j} \subset G$, hàm $\tau(x)$ nhận một giá trị hằng số $c_{k,j} = \frac{2j-1}{2^k}$. Vì đạo hàm của một hằng số bằng $0$, nên $\tau'(x) = 0$ tại mọi điểm $x \in G$. Hơn nữa, ta đã chứng minh tổng độ đo Lebesgue của tập $G$ là $\mu_L(G) = 1$. Vậy đạo hàm $\tau'(x) = 0$ hầu khắp nơi trên $[0,1]$.
 >     
 
 ## Phép đồng phôi và sự không đầy đủ của $\sigma$-đại số Borel
@@ -176,10 +176,10 @@ Mục tiêu của phần này là thông qua các tính chất giải tích củ
 
 > [!prf] 
 > 
-> - (i) **Tính liên tục:** Vì hàm Cantor-Lebesgue $\tau(x)$ và hàm đồng nhất $x$ đều liên tục trên đoạn $[0,1]$, tổng của chúng $\varphi(x)$ là một hàm liên tục trên $[0,1]$.
-> - (ii) **Tính đơn ánh:** $\tau(x)$ là hàm tăng không ngặt, trong khi $x$ là hàm tăng ngặt trên $\mathbb{R}$. Do đó, $\varphi(x)$ bắt buộc phải là một hàm tăng ngặt. Hệ quả kéo theo $\varphi$ là một đơn ánh.
-> - (iii) **Tính toàn ánh:** Ta có $\varphi(0) = \tau(0) + 0 = 0$ và $\varphi(1) = \tau(1) + 1 = 2$. Do $\varphi$ liên tục trên tập liên thông $[0,1]$, theo Định lý giá trị trung gian, tập giá trị của $\varphi$ là toàn bộ đoạn $[0,2]$. Vậy $\varphi$ là một toàn ánh.
-> - (iv) **Tính liên tục của hàm ngược**: Ta có tính chất: _Một hàm số tăng ngặt và liên tục trên một đoạn $[a,b]$ thì sẽ có hàm ngược cũng tăng ngặt và liên tục trên miền giá trị của nó._
+> (i) **Tính liên tục:** Vì hàm Cantor-Lebesgue $\tau(x)$ và hàm đồng nhất $x$ đều liên tục trên đoạn $[0,1]$, tổng của chúng $\varphi(x)$ là một hàm liên tục trên $[0,1]$.
+> (ii) **Tính đơn ánh:** $\tau(x)$ là hàm tăng không ngặt, trong khi $x$ là hàm tăng ngặt trên $\mathbb{R}$. Do đó, $\varphi(x)$ bắt buộc phải là một hàm tăng ngặt. Hệ quả kéo theo $\varphi$ là một đơn ánh.
+> (iii) **Tính toàn ánh:** Ta có $\varphi(0) = \tau(0) + 0 = 0$ và $\varphi(1) = \tau(1) + 1 = 2$. Do $\varphi$ liên tục trên tập liên thông $[0,1]$, theo Định lý giá trị trung gian, tập giá trị của $\varphi$ là toàn bộ đoạn $[0,2]$. Vậy $\varphi$ là một toàn ánh.
+> (iv) **Tính liên tục của hàm ngược**: Ta có tính chất: _Một hàm số tăng ngặt và liên tục trên một đoạn $[a,b]$ thì sẽ có hàm ngược cũng tăng ngặt và liên tục trên miền giá trị của nó._
 > 
 > Vậy $\varphi$ song ánh và cả $\varphi$ lẫn $\varphi^{-1}$ đều liên tục, nên $\varphi$ là phép đồng phôi từ $[0,1]$ lên $[0,2]$.
 
@@ -245,9 +245,9 @@ Mục tiêu cuối cùng của quy trình này là thiết lập sự thống nh
 > [!def] (Sự mở rộng đầy đủ và sự đầy đủ hóa) 
 > Cho $(X, \mathfrak{A}, \mu)$ và $(X, \mathfrak{F}, \nu)$ là các không gian đo. Ta nói $(X, \mathfrak{F}, \nu)$ là một _mở rộng đầy đủ_ của $(X, \mathfrak{A}, \mu)$ nếu các điều kiện sau được thỏa mãn:
 > 
-> - (i) $\mathfrak{A} \subset \mathfrak{F}$.
-> - (ii) $\nu(A) = \mu(A)$ với mọi $A \in \mathfrak{A}$.
-> - (iii) $(X, \mathfrak{F}, \nu)$ là một không gian đo đầy đủ.
+> (i) $\mathfrak{A} \subset \mathfrak{F}$.
+> (ii) $\nu(A) = \mu(A)$ với mọi $A \in \mathfrak{A}$.
+> (iii) $(X, \mathfrak{F}, \nu)$ là một không gian đo đầy đủ.
 > 
 > Nếu $\mathfrak{F}$ là $\sigma$-đại số nhỏ nhất thỏa mãn các điều kiện trên, ta gọi $(X, \mathfrak{F}, \nu)$ là _sự đầy đủ hóa_ của không gian đo $(X, \mathfrak{A}, \mu)$. Với mỗi không gian đo tùy ý $(X, \mathfrak{A}, \mu)$, sự đầy đủ hóa nếu tồn tại thì nó là duy nhất.
 
@@ -272,14 +272,15 @@ Trước khi dùng $\overline{\mathfrak{A}}$ để xây dựng không gian đo, 
 > 
 > Ta kiểm tra 3 tiên đề của một $\sigma$-đại số.
 > 
-> - (i) **$\overline{\mathfrak{A}}$ chứa không gian $X$.** Vì $\emptyset \in \mathfrak{N}$ và $\emptyset \in \overline{\mathfrak{N}}$, ta có $X = X \cup \emptyset$ với $X \in \mathfrak{A}$ và $\emptyset \in \overline{\mathfrak{N}}$, suy ra $X \in \overline{\mathfrak{A}}$.
-> - (ii) **$\overline{\mathfrak{A}}$ đóng dưới phép lấy phần bù.** Giả sử $E \in \overline{\mathfrak{A}}$, viết $E = A \cup C$ với $A \in \mathfrak{A}$ và $C \subset B$ cho một tập null $B \in \mathfrak{N}$. Ta có: $$ E^c = A^c \cap C^c. $$ Vì $C \subset B$, áp dụng luật De Morgan ta được $C^c = B^c \cup (B \setminus C)$, do đó: $$ E^c = A^c \cap \bigl[B^c \cup (B \setminus C)\bigr] = \underbrace{(A^c \cap B^c)}_{\in, \mathfrak{A}} \cup \underbrace{\bigl[A^c \cap (B \setminus C)\bigr]}_{\subset, B, \in, \mathfrak{N}}. $$ Thành phần thứ nhất thuộc $\mathfrak{A}$ (vì $\mathfrak{A}$ đóng với phép bù và giao). Thành phần thứ hai là tập con của $B \in \mathfrak{N}$, nên thuộc $\overline{\mathfrak{N}}$. Vậy $E^c \in \overline{\mathfrak{A}}$.
-> - (iii) **$\overline{\mathfrak{A}}$ đóng dưới phép hợp đếm được.** Cho dãy $E_n = A_n \cup C_n \in \overline{\mathfrak{A}}$ với $A_n \in \mathfrak{A}$ và $C_n \subset B_n \in \mathfrak{N}$. Ta có: $$ \bigcup_{n \in \mathbb{N}} E_n = \underbrace{\bigcup_{n \in \mathbb{N}} A_n}_{\in, \mathfrak{A}} \cup \underbrace{\bigcup_{n \in \mathbb{N}} C_n}_{\subset, \bigcup_{n} B_n, \in, \mathfrak{N}}. $$ Hợp đếm được của các tập null vẫn là tập null, nên $\bigcup_n B_n \in \mathfrak{N}$ và $\bigcup_n C_n \in \overline{\mathfrak{N}}$. Suy ra $\bigcup_{n \in \mathbb{N}} E_n \in \overline{\mathfrak{A}}$.
+> (i) **$\overline{\mathfrak{A}}$ chứa không gian $X$.** Vì $\emptyset \in \mathfrak{N}$ và $\emptyset \in \overline{\mathfrak{N}}$, ta có $X = X \cup \emptyset$ với $X \in \mathfrak{A}$ và $\emptyset \in \overline{\mathfrak{N}}$, suy ra $X \in \overline{\mathfrak{A}}$.
+> (ii) **$\overline{\mathfrak{A}}$ đóng dưới phép lấy phần bù.** Giả sử $E \in \overline{\mathfrak{A}}$, viết $E = A \cup C$ với $A \in \mathfrak{A}$ và $C \subset B$ cho một tập null $B \in \mathfrak{N}$. Ta có: $$ E^c = A^c \cap C^c. $$ Vì $C \subset B$, áp dụng luật De Morgan ta được $C^c = B^c \cup (B \setminus C)$, do đó: $$ E^c = A^c \cap \bigl[B^c \cup (B \setminus C)\bigr] = \underbrace{(A^c \cap B^c)}_{\in, \mathfrak{A}} \cup \underbrace{\bigl[A^c \cap (B \setminus C)\bigr]}_{\subset, B, \in, \mathfrak{N}}. $$ Thành phần thứ nhất thuộc $\mathfrak{A}$ (vì $\mathfrak{A}$ đóng với phép bù và giao). Thành phần thứ hai là tập con của $B \in \mathfrak{N}$, nên thuộc $\overline{\mathfrak{N}}$. Vậy $E^c \in \overline{\mathfrak{A}}$.
+> (iii) **$\overline{\mathfrak{A}}$ đóng dưới phép hợp đếm được.** Cho dãy $E_n = A_n \cup C_n \in \overline{\mathfrak{A}}$ với $A_n \in \mathfrak{A}$ và $C_n \subset B_n \in \mathfrak{N}$. Ta có: $$ \bigcup_{n \in \mathbb{N}} E_n = \underbrace{\bigcup_{n \in \mathbb{N}} A_n}_{\in, \mathfrak{A}} \cup \underbrace{\bigcup_{n \in \mathbb{N}} C_n}_{\subset, \bigcup_{n} B_n, \in, \mathfrak{N}}. $$ Hợp đếm được của các tập null vẫn là tập null, nên $\bigcup_n B_n \in \mathfrak{N}$ và $\bigcup_n C_n \in \overline{\mathfrak{N}}$. Suy ra $\bigcup_{n \in \mathbb{N}} E_n \in \overline{\mathfrak{A}}$.
 > 
 > **Phần 2: $\overline{\mathfrak{A}} = \sigma(\mathfrak{A} \cup \overline{\mathfrak{N}})$.**
 > 
-> - $(\subset)$ **Chiều $\sigma(\mathfrak{A} \cup \overline{\mathfrak{N}}) \subset \overline{\mathfrak{A}}$:** Với $A \in \mathfrak{A}$, viết $A = A \cup \emptyset \in \overline{\mathfrak{A}}$; với $C \in \overline{\mathfrak{N}}$, viết $C = \emptyset \cup C \in \overline{\mathfrak{A}}$. Vậy $\mathfrak{A} \cup \overline{\mathfrak{N}} \subset \overline{\mathfrak{A}}$. Do $\overline{\mathfrak{A}}$ là một $\sigma$-đại số (Phần 1), ta có $\sigma(\mathfrak{A} \cup \overline{\mathfrak{N}}) \subset \overline{\mathfrak{A}}$.
-> - $(\supset)$ **Chiều $\overline{\mathfrak{A}} \subset \sigma(\mathfrak{A} \cup \overline{\mathfrak{N}})$:** Giả sử $\mathfrak{F}$ là một $\sigma$-đại số bất kỳ chứa $\mathfrak{A} \cup \overline{\mathfrak{N}}$. Với mỗi $E = A \cup C \in \overline{\mathfrak{A}}$, ta có $A \in \mathfrak{F}$ và $C \in \mathfrak{F}$, suy ra $E \in \mathfrak{F}$. Vậy $\overline{\mathfrak{A}} \subset \mathfrak{F}$ với mọi $\mathfrak{F}$ như vậy, tức là $\overline{\mathfrak{A}} \subset \sigma(\mathfrak{A} \cup \overline{\mathfrak{N}})$.
+> $(\subset)$ **Chiều $\sigma(\mathfrak{A} \cup \overline{\mathfrak{N}}) \subset \overline{\mathfrak{A}}$:** Với $A \in \mathfrak{A}$, viết $A = A \cup \emptyset \in \overline{\mathfrak{A}}$; với $C \in \overline{\mathfrak{N}}$, viết $C = \emptyset \cup C \in \overline{\mathfrak{A}}$. Vậy $\mathfrak{A} \cup \overline{\mathfrak{N}} \subset \overline{\mathfrak{A}}$. Do $\overline{\mathfrak{A}}$ là một $\sigma$-đại số (Phần 1), ta có $\sigma(\mathfrak{A} \cup \overline{\mathfrak{N}}) \subset \overline{\mathfrak{A}}$.
+> 
+> $(\supset)$ **Chiều $\overline{\mathfrak{A}} \subset \sigma(\mathfrak{A} \cup \overline{\mathfrak{N}})$:** Giả sử $\mathfrak{F}$ là một $\sigma$-đại số bất kỳ chứa $\mathfrak{A} \cup \overline{\mathfrak{N}}$. Với mỗi $E = A \cup C \in \overline{\mathfrak{A}}$, ta có $A \in \mathfrak{F}$ và $C \in \mathfrak{F}$, suy ra $E \in \mathfrak{F}$. Vậy $\overline{\mathfrak{A}} \subset \mathfrak{F}$ với mọi $\mathfrak{F}$ như vậy, tức là $\overline{\mathfrak{A}} \subset \sigma(\mathfrak{A} \cup \overline{\mathfrak{N}})$.
 > 
 > Kết hợp hai chiều, ta thu được đẳng thức cần chứng minh.
 
@@ -306,15 +307,15 @@ Hai kết quả sau đây làm rõ thêm tính chất của không gian đầy �
 > [!rem] 
 > Xét sự đầy đủ hóa $(X, \overline{\mathfrak{A}}, \overline{\mu})$ của một không gian đo $(X, \mathfrak{A}, \mu)$.
 > 
-> - (a) Mọi tập rỗng trong $(X, \overline{\mathfrak{A}}, \overline{\mu})$ là tập con của một tập rỗng trong $(X, \mathfrak{A}, \mu)$.
-> - (b) Gọi $\overline{\overline{\mathfrak{A}}}$ là sự đầy đủ hóa của $\sigma$-đại số $\overline{\mathfrak{A}}$ đối với độ đo $\overline{\mu}$. Khi đó $\overline{\overline{\mathfrak{A}}} = \overline{\mathfrak{A}}$.
+> (a) Mọi tập rỗng trong $(X, \overline{\mathfrak{A}}, \overline{\mu})$ là tập con của một tập rỗng trong $(X, \mathfrak{A}, \mu)$.
+> (b) Gọi $\overline{\overline{\mathfrak{A}}}$ là sự đầy đủ hóa của $\sigma$-đại số $\overline{\mathfrak{A}}$ đối với độ đo $\overline{\mu}$. Khi đó $\overline{\overline{\mathfrak{A}}} = \overline{\mathfrak{A}}$.
 
 > [!prf] 
 >  _(a):_
-> - Giả sử $E$ là tập rỗng trong $(X, \overline{\mathfrak{A}}, \overline{\mu})$, viết $E = A \cup C$ với $A \in \mathfrak{A}$, $C \subset B \in \mathfrak{N}$ và $\overline{\mu}(E) = \mu(A) = 0$. Khi đó $A \cup B \in \mathfrak{N}$ và $E \subset A \cup B$, chứng tỏ $E$ là tập con của tập rỗng $A \cup B$ trong $(X, \mathfrak{A}, \mu)$.
+> Giả sử $E$ là tập rỗng trong $(X, \overline{\mathfrak{A}}, \overline{\mu})$, viết $E = A \cup C$ với $A \in \mathfrak{A}$, $C \subset B \in \mathfrak{N}$ và $\overline{\mu}(E) = \mu(A) = 0$. Khi đó $A \cup B \in \mathfrak{N}$ và $E \subset A \cup B$, chứng tỏ $E$ là tập con của tập rỗng $A \cup B$ trong $(X, \mathfrak{A}, \mu)$.
 >   
 >  _(b):_
-> - Theo định nghĩa, mỗi phần tử của $\overline{\overline{\mathfrak{A}}}$ có dạng $A \cup C$ với $A \in \overline{\mathfrak{A}}$ và $C$ là tập con của một tập rỗng trong $(X, \overline{\mathfrak{A}}, \overline{\mu})$. Do $(X, \overline{\mathfrak{A}}, \overline{\mu})$ đầy đủ, $C \in \overline{\mathfrak{A}}$, suy ra $A \cup C \in \overline{\mathfrak{A}}$, tức là $\overline{\overline{\mathfrak{A}}} \subset \overline{\mathfrak{A}}$. Chiều ngược lại hiển nhiên vì $\overline{\overline{\mathfrak{A}}}$ là mở rộng của $\overline{\mathfrak{A}}$. Vậy $\overline{\overline{\mathfrak{A}}} = \overline{\mathfrak{A}}$.
+> Theo định nghĩa, mỗi phần tử của $\overline{\overline{\mathfrak{A}}}$ có dạng $A \cup C$ với $A \in \overline{\mathfrak{A}}$ và $C$ là tập con của một tập rỗng trong $(X, \overline{\mathfrak{A}}, \overline{\mu})$. Do $(X, \overline{\mathfrak{A}}, \overline{\mu})$ đầy đủ, $C \in \overline{\mathfrak{A}}$, suy ra $A \cup C \in \overline{\mathfrak{A}}$, tức là $\overline{\overline{\mathfrak{A}}} \subset \overline{\mathfrak{A}}$. Chiều ngược lại hiển nhiên vì $\overline{\overline{\mathfrak{A}}}$ là mở rộng của $\overline{\mathfrak{A}}$. Vậy $\overline{\overline{\mathfrak{A}}} = \overline{\mathfrak{A}}$.
 
 Vì $\mathfrak{A} \subset \overline{\mathfrak{A}}$, một hàm đo được theo $\overline{\mathfrak{A}}$ trên một tập $D \in \mathfrak{A}$ có thể không đo được theo $\mathfrak{A}$ trên $D$. Định lý sau chỉ ra rằng sự khác biệt này chỉ xảy ra trên một tập rỗng, tức là tại hầu khắp nơi, hàm vẫn có tính đo được theo nghĩa ban đầu.
 
@@ -333,17 +334,17 @@ Phần tổng kết này sẽ hợp nhất hai luồng tư tưởng trên: Áp d
 > [!thm] (Sự đầy đủ hóa của không gian Borel) 
 > Xét $\sigma$-đại số Lebesgue $\mathfrak{M}_L$ và $\sigma$-đại số Borel $\mathcal{B}(\mathbb{R})$ trên $\mathbb{R}$.
 > 
-> - (a) Cho $E \in \mathfrak{P}(\mathbb{R})$. Khi đó $E \in \mathfrak{M}_L$ khi và chỉ khi $E = A \cup C$, trong đó $A \in \mathcal{B}(\mathbb{R})$ và $C$ là tập con của một tập $B \in \mathcal{B}(\mathbb{R})$ với $\mu_L(B) = 0$.
-> - (b) Không gian độ đo Lebesgue $(\mathbb{R}, \mathfrak{M}_L, \mu_L)$ chính là sự đầy đủ hóa của không gian độ đo Borel $(\mathbb{R}, \mathcal{B}(\mathbb{R}), \mu_L)$.
+> (a) Cho $E \in \mathfrak{P}(\mathbb{R})$. Khi đó $E \in \mathfrak{M}_L$ khi và chỉ khi $E = A \cup C$, trong đó $A \in \mathcal{B}(\mathbb{R})$ và $C$ là tập con của một tập $B \in \mathcal{B}(\mathbb{R})$ với $\mu_L(B) = 0$.
+> (b) Không gian độ đo Lebesgue $(\mathbb{R}, \mathfrak{M}_L, \mu_L)$ chính là sự đầy đủ hóa của không gian độ đo Borel $(\mathbb{R}, \mathcal{B}(\mathbb{R}), \mu_L)$.
 
 > [!prf] 
 > _(a):_
 > 
-> - $(\Rightarrow)$ Giả sử $E \in \mathfrak{M}_L$. Theo các tính chất xấp xỉ của độ đo Lebesgue (kết quả có được trong bài: Regularity of Lebesgue Outer Measure), tồn tại một tập $G_\delta$ ký hiệu là $G \supset E$ sao cho $\mu_L(G \setminus E) = 0$, và tồn tại một tập $F_\sigma$ ký hiệu là $F \subset E$ sao cho $\mu_L(E \setminus F) = 0$.
+> $(\Rightarrow)$ Giả sử $E \in \mathfrak{M}_L$. Theo các tính chất xấp xỉ của độ đo Lebesgue (kết quả có được trong bài: Regularity of Lebesgue Outer Measure), tồn tại một tập $G_\delta$ ký hiệu là $G \supset E$ sao cho $\mu_L(G \setminus E) = 0$, và tồn tại một tập $F_\sigma$ ký hiệu là $F \subset E$ sao cho $\mu_L(E \setminus F) = 0$.
 >     
 >     Khi đó ta có $F \subset E \subset G$ và: $$ \mu_L(G \setminus F) = \mu_L(G \setminus E) + \mu_L(E \setminus F) = 0 $$ Ta có thể biểu diễn $E$ dưới dạng: $E = F \cup (E \setminus F)$. Rõ ràng $F$ là tập $F_\sigma$ nên $F \in \mathcal{B}(\mathbb{R})$. Thành phần còn lại $E \setminus F$ là tập con của $G \setminus F$. Vì $G$ và $F$ đều là các tập Borel, nên $G \setminus F \in \mathcal{B}(\mathbb{R})$ và có độ đo bằng $0$. Đặt $A = F$, $C = E \setminus F$ và $B = G \setminus F$, ta có điều phải chứng minh.
 >     
-> - $(\Leftarrow)$ Ngược lại, giả sử $E = A \cup C$, trong đó $A \in \mathcal{B}(\mathbb{R})$ và $C$ là tập con của một tập $B \in \mathcal{B}(\mathbb{R})$ với $\mu_L(B) = 0$. Vì $\mathcal{B}(\mathbb{R}) \subset \mathfrak{M}_L$, ta có $A, B \in \mathfrak{M}_L$. Vì $C \subset B \in \mathfrak{M}_L$ với $\mu_L(B)=0$, mà không gian Lebesgue $(\mathbb{R}, \mathfrak{M}_L, \mu_L)$ là một không gian đầy đủ, nên bắt buộc $C \in \mathfrak{M}_L$. Do đó, $E = A \cup C \in \mathfrak{M}_L$. Khẳng định (a) được chứng minh trọn vẹn.
+> $(\Leftarrow)$ Ngược lại, giả sử $E = A \cup C$, trong đó $A \in \mathcal{B}(\mathbb{R})$ và $C$ là tập con của một tập $B \in \mathcal{B}(\mathbb{R})$ với $\mu_L(B) = 0$. Vì $\mathcal{B}(\mathbb{R}) \subset \mathfrak{M}_L$, ta có $A, B \in \mathfrak{M}_L$. Vì $C \subset B \in \mathfrak{M}_L$ với $\mu_L(B)=0$, mà không gian Lebesgue $(\mathbb{R}, \mathfrak{M}_L, \mu_L)$ là một không gian đầy đủ, nên bắt buộc $C \in \mathfrak{M}_L$. Do đó, $E = A \cup C \in \mathfrak{M}_L$. Khẳng định (a) được chứng minh trọn vẹn.
 >     
 > 
 > _(b):_
