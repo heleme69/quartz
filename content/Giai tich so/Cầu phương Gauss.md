@@ -59,7 +59,7 @@ Việc sử dụng thuật toán Gram-Schmidt rất chặt chẽ về lý thuy�
 > $$a_n = \frac{\langle x \pi_{n-1}, \pi_{n-1} \rangle}{\langle \pi_{n-1}, \pi_{n-1} \rangle}$$
 > $$b_n = \frac{\langle x \pi_{n-1}, \pi_{n-2} \rangle}{\langle \pi_{n-2}, \pi_{n-2} \rangle} = \frac{\langle \pi_{n-1}, \pi_{n-1} \rangle}{\langle \pi_{n-2}, \pi_{n-2} \rangle} > 0$$
 
-> [!prf] Chứng minh Bổ đề 2
+> [!prf] 
 > Xét đa thức $\pi_n(x) - x\pi_{n-1}(x)$. Vì cả hai đều là đa thức monic bậc $n$, hiệu của chúng là một đa thức có bậc tối đa là $n-1$.
 > Do đó, có thể biểu diễn hiệu này qua cơ sở trực giao:
 > $$x\pi_{n-1}(x) - \pi_n(x) = \sum_{j=0}^{n-1} c_j \pi_j(x)$$
@@ -72,6 +72,29 @@ Việc sử dụng thuật toán Gram-Schmidt rất chặt chẽ về lý thuy�
 > Suy ra $c_{n-2} = \frac{\langle x\pi_{n-1}, \pi_{n-2} \rangle}{\langle \pi_{n-2}, \pi_{n-2} \rangle} = b_n$.
 > Để chứng minh hệ thức rút gọn cho $b_n$, ta nhận xét rằng $x\pi_{n-2}(x)$ là đa thức monic bậc $n-1$, nó có thể được biểu diễn dưới dạng $\pi_{n-1}(x) + q(x)$ với $q \in \Pi_{n-2}$. Khi đó $\langle x\pi_{n-1}, \pi_{n-2} \rangle = \langle \pi_{n-1}, x\pi_{n-2} \rangle = \langle \pi_{n-1}, \pi_{n-1} + q \rangle = \langle \pi_{n-1}, \pi_{n-1} \rangle$. Do đó $b_n = \frac{\langle \pi_{n-1}, \pi_{n-1} \rangle}{\langle \pi_{n-2}, \pi_{n-2} \rangle}$, đây là tỷ số của hai norm nên luôn dương.
 > Với các $j < n-2$, $\langle x\pi_{n-1}, \pi_j \rangle = \langle \pi_{n-1}, x\pi_j \rangle$. Vì đa thức $x\pi_j$ có bậc $j+1 < n-1$, theo Bổ đề 1 thì tích trong này bằng $0$. Do đó tất cả các hệ số $c_j$ với $j < n-2$ đều bằng $0$, hoàn tất việc chứng minh.
+
+> [!algo] Thuật toán sinh Cơ sở trực chuẩn bằng Hệ thức Monic (Giải tay)
+> Cho không gian hàm $L_w^2([a, b])$ với hệ đơn thức chính tắc $\{1, x, x^2, \dots, x^{n-1}\}$. Quy trình tìm cơ sở trực chuẩn $\{e_0, e_1, \dots, e_{n-1}\}$ gồm 2 giai đoạn:
+> 
+> **1. Khởi tạo 2 phần tử đầu tiên:**
+> * $\pi_0(x) = 1 \implies \|\pi_0\|^2 = \int_a^b w(x) dx$
+> * $\pi_1(x) = x - a_1 \quad \text{với } a_1 = \frac{\langle x\pi_0, \pi_0 \rangle}{\|\pi_0\|^2} \implies \text{Tính } \|\pi_1\|^2 = \int_a^b [\pi_1(x)]^2 w(x) dx$
+> 
+> **2. Vòng lặp truy hồi bậc cao (Tính từ bậc $k = 2$ đến $n-1$):**
+> Đa thức trực giao kế tiếp được xác định bằng công thức:
+> $$\pi_k(x) = (x - a_k)\pi_{k-1}(x) - b_k \pi_{k-2}(x)$$
+> 
+> Trong đó, các hệ số tính tay cực nhanh bằng tỷ số tích trong:
+> * Hệ số $a_k = \frac{\langle x\pi_{k-1}, \pi_{k-1} \rangle}{\|\pi_{k-1}\|^2} = \frac{\int_a^b x [\pi_{k-1}(x)]^2 w(x) dx}{\|\pi_{k-1}\|^2}$
+>   *(Mẹo: $a_k = 0$ nếu miền đối xứng qua $0$ và trọng số chẵn).*
+> * Hệ số $b_k = \frac{\|\pi_{k-1}\|^2}{\|\pi_{k-2}\|^2}$ *(Lấy ngay 2 kết quả bình phương norm ở các bước trước chia cho nhau).*
+> 
+> Sau khi có $\pi_k(x)$, tính luôn bình phương độ dài để làm bàn đạp cho bước sau:
+> $$\|\pi_k\|^2 = \int_a^b [\pi_k(x)]^2 w(x) dx$$
+> 
+> Sau khi đã thu được đầy đủ họ đa thức trực giao $\{\pi_0, \pi_1, \dots, \pi_{n-1}\}$, ta tiến hành rút căn các giá trị bình phương norm và trích xuất ra cơ sở trực chuẩn cần tìm:
+> $$e_k(x) = \frac{\pi_k(x)}{\|\pi_k\|} \quad \text{với mọi } k = 0, 1, \dots, n-1$$
+
 
 ## 4. Tính chất nghiệm của đa thức trực giao
 
@@ -98,7 +121,6 @@ Việc sử dụng thuật toán Gram-Schmidt rất chặt chẽ về lý thuy�
 > 1. **Các nút tích phân (Nodes / Mốc nội suy):** Tập hợp $\{x_1, x_2, \dots, x_n\}$ gồm $n$ điểm thực phân biệt nằm hoàn toàn trong khoảng mở $(a, b)$, được chọn cố định là $n$ nghiệm của đa thức trực giao $\pi_n(x)$ tương ứng với hàm trọng số $w(x)$.
 > 2. **Các hệ số trọng lượng (Weights / Trọng số):** Tập hợp $\{c_1, c_2, \dots, c_n\}$ gồm $n$ số thực dương thực sự ($c_i > 0$), được tính toán thông qua tích phân của họ đa thức cơ sở Lagrange $l_i(x)$ gắn với các mốc $x_i$:
 >    $$c_i = \int_a^b l_i(x)w(x) dx = \int_a^b \left( \prod_{\substack{j=1 \\ j \neq i}}^n \frac{x - x_j}{x_i - x_j} \right) w(x) dx$$
-
 
 Nhiệm vụ của cầu phương Gauss là tìm $n$ điểm mốc $x_i$ và các hệ số trọng lượng $c_i$ sao cho công thức xấp xỉ tích phân đạt độ chính xác cao nhất:
 $$\int_a^b f(x)w(x) dx \approx \sum_{i=1}^n c_i f(x_i)$$
@@ -165,68 +187,72 @@ Thay vì đi qua không gian đa thức trực giao, ta có thể xây dựng c�
 
 > [!algo] Phương pháp Hệ số bất định
 > Bài toán đặt ra là tìm $n$ mốc nội suy $x_i \in (a, b)$ và $n$ hệ số trọng lượng $w_i$ sao cho công thức:
-> $$\int_a^b f(x)w(x)dx \approx \sum_{i=1}^n w_i f(x_i)$$
+> $$\int_a^b f(x)w(x)dx \approx \sum_{i=1}^n c_i f(x_i)$$
 > chính xác tuyệt đối với mọi đa thức $f \in \Pi_{2n-1}$.
 > 
 > Thay vì lấy một đa thức bất kỳ, ta chọn tập cơ sở chính tắc của không gian $\Pi_{2n-1}$ là $\{1, x, x^2, \dots, x^{2n-1}\}$. Do tích phân là một toán tử tuyến tính, công thức sẽ đúng với mọi đa thức nếu và chỉ nếu nó đúng với từng hàm cơ sở. 
 > 
 > Ta thiết lập hệ phương trình phi tuyến gồm $2n$ phương trình sau:
-> $$\sum_{i=1}^n w_i = \int_a^b w(x) dx$$
-> $$\sum_{i=1}^n w_i x_i = \int_a^b x w(x) dx$$
+> $$\sum_{i=1}^n c_i = \int_a^b w(x) dx$$
+> $$\sum_{i=1}^n c_i x_i = \int_a^b x w(x) dx$$
 > $$\dots$$
-> $$\sum_{i=1}^n w_i x_i^{2n-1} = \int_a^b x^{2n-1} w(x) dx$$
+> $$\sum_{i=1}^n c_i x_i^{2n-1} = \int_a^b x^{2n-1} w(x) dx$$
 > Giải hệ phương trình phi tuyến này sẽ cung cấp đồng thời cấu trúc mốc và trọng số của phương pháp Gauss.
 
 Sự tồn tại tập nghiệm của hệ phương trình phi tuyến này không hề hiển nhiên. Tuy nhiên, định lý sau đây sẽ là cầu nối thống nhất giữa Phương pháp Hệ số bất định và Phương pháp Đa thức trực giao, chứng minh rằng hai cách làm này thực chất chỉ là một.
 
 > [!thm] Định lý 6: Sự tương đương của hai phương pháp
-> Cặp nghiệm $(x_i, w_i)$ là nghiệm của hệ phương trình hệ số bất định bậc $2n-1$ khi và chỉ khi các mốc $x_i$ là tập hợp nghiệm của đa thức trực giao bậc $n$ ứng với hàm trọng số $w(x)$.
+> Cặp nghiệm $(x_i, c_i)$ là nghiệm của hệ phương trình hệ số bất định bậc $2n-1$ khi và chỉ khi các mốc $x_i$ là tập hợp nghiệm của đa thức trực giao bậc $n$ ứng với hàm trọng số $w(x)$.
 
-> [!prf] 
-> Chiều thuận (Giả sử hệ phương trình có nghiệm): Giả sử ta đã tìm được các mốc $x_i$ và trọng số $w_i$ thỏa mãn hệ phương trình, nghĩa là công thức tính đúng với mọi đa thức bậc $\le 2n-1$.
+> [!prf] Chứng minh Định lý 6
+> Chiều thuận (Giả sử hệ phương trình có nghiệm): Giả sử ta đã tìm được các mốc $x_i$ và trọng số $c_i$ thỏa mãn hệ phương trình, nghĩa là công thức tính đúng với mọi đa thức bậc $\le 2n-1$.
 > Ta thiết lập một đa thức phụ trợ bậc $n$ nhận các mốc $x_i$ này làm nghiệm:
 > $$P_n(x) = (x - x_1)(x - x_2)\dots(x - x_n)$$
-> Xét một đa thức $q(x)$ bất kỳ có bậc nhỏ hơn $n$ ($q \in \Pi_{n-1}$). Khi đó, tích $P_n(x)q(x)$ là một đa thức có bậc $\le 2n-1$.
+> Xét một đa thức $q(x)$ bất kỳ có bậc nhỏ hơn $n$ ($q \in \Pi_{n-1}$). Khi đó, tích $P_n(x) [x q(x)]$ (ở đây ta xét đa thức $P_n(x)q(x)$) là một đa thức có bậc $\le 2n-1$.
 > Do công thức cầu phương chính xác tuyệt đối đối với các đa thức bậc $\le 2n-1$, ta áp dụng công thức cho hàm $f(x) = P_n(x)q(x)$:
-> $$\int_a^b P_n(x)q(x)w(x)dx = \sum_{i=1}^n w_i P_n(x_i)q(x_i)$$
+> $$\int_a^b P_n(x)q(x)w(x)dx = \sum_{i=1}^n c_i P_n(x_i)q(x_i)$$
 > Vì $x_i$ là nghiệm của $P_n(x)$ nên $P_n(x_i) = 0$ tại mọi $i$. Suy ra:
 > $$\int_a^b P_n(x)q(x)w(x)dx = 0$$
 > Điều này đúng với mọi đa thức $q(x) \in \Pi_{n-1}$. Theo định nghĩa của không gian tích trong, đa thức $P_n(x)$ vừa thiết lập chính xác là đa thức trực giao bậc $n$ đối với hàm trọng số $w(x)$. Từ đó kết luận các mốc $x_i$ bắt buộc phải là nghiệm của đa thức trực giao. Chiều đảo chính là nội dung của Định lý 3 đã được chứng minh ở phần trước.
 
-## 7. Ví dụ áp dụng
+## 7. Áp dụng cho cầu phương Gauss-Legendre
 
-> [!exm] Xây dựng công thức Gauss-Legendre với n = 2
-> Bài toán: Tìm mốc và trọng lượng cho phương pháp cầu phương Gauss trên đoạn $[-1, 1]$ với hàm trọng số $w(x) = 1$ sử dụng $n=2$ điểm. Đạt bậc chính xác tối đa là $2n - 1 = 3$.
+Để áp dụng cầu phương Gauss cho một miền $[a, b]$ bất kỳ (ta bàn tới phương pháp giải tay, thực tế sẽ dùng thuật khác), quy trình thực hiện luôn tuân theo hai giai đoạn: xác định các thông số trên miền chuẩn và thực hiện phép ánh xạ tuyến tính về miền thực tế.
 
-> [!sol]
-> **Cách 1: Phương pháp Lý thuyết (Đa thức trực giao)**
-> Dựa theo lý thuyết đã xây dựng, đa thức trực giao ứng với $w(x) = 1$ trên $[-1, 1]$ là đa thức Legendre.
-> Đa thức đơn khởi bậc 2 là $\pi_2(x) = x^2 - \frac{1}{3}$.
-> Các mốc nội suy $x_i$ là nghiệm của phương trình $\pi_2(x) = 0$:
-> $$x_1 = -\frac{1}{\sqrt{3}} \quad \text{và} \quad x_2 = \frac{1}{\sqrt{3}}$$
-> Các trọng số $w_i$ được tính thông qua tích phân của đa thức cơ sở Lagrange $l_i(x)$:
-> $$w_1 = \int_{-1}^1 \frac{x - x_2}{x_1 - x_2} dx = \int_{-1}^1 \frac{x - 1/\sqrt{3}}{-2/\sqrt{3}} dx = \left[ -\frac{\sqrt{3}}{2} \left( \frac{x^2}{2} - \frac{x}{\sqrt{3}} \right) \right]_{-1}^1 = 1$$
-> $$w_2 = \int_{-1}^1 \frac{x - x_1}{x_2 - x_1} dx = \int_{-1}^1 \frac{x + 1/\sqrt{3}}{2/\sqrt{3}} dx = 1$$
-> Vậy công thức cầu phương thu được là:
-> $$\int_{-1}^1 f(x) dx \approx 1 \cdot f\left(-\frac{1}{\sqrt{3}}\right) + 1 \cdot f\left(\frac{1}{\sqrt{3}}\right)$$
+> [!algo] Bước 1: Xác định bộ trọng số trên miền chuẩn $[-1, 1]$
+> Giả sử ta đã tìm được $n$ mốc nội suy $x_i$ (chính là $n$ nghiệm của đa thức trực giao Legendre bậc $n$). Để xác định $n$ trọng lượng $c_i$ tương ứng, ta áp dụng phương pháp hệ số bất định,  ép công thức xấp xỉ phải đúng đối với các đơn thức cơ sở từ bậc $0$ đến bậc $n-1$:
+> $$\sum_{i=1}^n c_i x_i^k = \int_{-1}^1 x^k dx \quad \text{với } k = 0, 1, \dots, n-1$$
 > 
-> **Cách 2: Phương pháp Hệ số bất định (Đại số)**
-> Ta cần giải hệ phương trình phi tuyến để tìm $(x_1, x_2)$ và $(w_1, w_2)$ sao cho công thức chính xác với $f(x) = 1, x, x^2, x^3$.
-> Thiết lập hệ phương trình trên đoạn $[-1, 1]$:
-> Với $f(x) = 1$: $\quad w_1 + w_2 = \int_{-1}^1 1 dx = 2$
-> Với $f(x) = x$: $\quad w_1 x_1 + w_2 x_2 = \int_{-1}^1 x dx = 0$
-> Với $f(x) = x^2$: $\quad w_1 x_1^2 + w_2 x_2^2 = \int_{-1}^1 x^2 dx = \frac{2}{3}$
-> Với $f(x) = x^3$: $\quad w_1 x_1^3 + w_2 x_2^3 = \int_{-1}^1 x^3 dx = 0$
+> Tích phân ở vế phải (gọi là moment thứ $k$, ký hiệu là $\mu_k$) được tính dựa vào tính chẵn lẻ của hàm số trên miền đối xứng:
+> * Nếu $k$ lẻ: $\mu_k = \int_{-1}^1 x^k dx = 0$
+> * Nếu $k$ chẵn: $\mu_k = \int_{-1}^1 x^k dx = \frac{2}{k+1}$
 > 
-> Tiến hành giải hệ:
-> Từ phương trình thứ 2, ta có $w_1 x_1 = -w_2 x_2$.
-> Thế vào phương trình thứ 4: $x_1^2(w_1 x_1) + w_2 x_2^3 = 0 \implies x_1^2(-w_2 x_2) + w_2 x_2^3 = 0 \implies w_2 x_2 (x_2^2 - x_1^2) = 0$.
-> Vì $x_2 \neq 0$ và $w_2 > 0$ (theo Nhận xét 4), ta bắt buộc phải có $x_1^2 = x_2^2$. Do hai mốc phân biệt, suy ra $x_1 = -x_2$.
-> Thế $x_1 = -x_2$ ngược lại vào phương trình thứ 2, ta thu được $-w_1 x_2 + w_2 x_2 = 0 \implies w_1 = w_2$.
-> Kết hợp với phương trình thứ 1 ($w_1 + w_2 = 2$), ta giải được ngay trọng số:
-> $$w_1 = w_2 = 1$$
-> Thế giá trị trọng số vào phương trình thứ 3:
-> $$1 \cdot x_1^2 + 1 \cdot x_2^2 = \frac{2}{3} \implies 2x_2^2 = \frac{2}{3} \implies x_2^2 = \frac{1}{3}$$
-> Trích xuất nghiệm (chọn $x_1 < x_2$), ta thu được:
-> $$x_1 = -\frac{1}{\sqrt{3}}, \quad x_2 = \frac{1}{\sqrt{3}}$$
-> Kết quả hoàn toàn trùng khớp với phương pháp dùng đa thức trực giao.
+> Hệ phương trình tuyến tính này được biểu diễn dưới dạng cấu trúc ma trận Vandermonde:
+> $$\begin{pmatrix} 
+> 1 & 1 & \dots & 1 \\ 
+> x_1 & x_2 & \dots & x_n \\ 
+> x_1^2 & x_2^2 & \dots & x_n^2 \\ 
+> \vdots & \vdots & \ddots & \vdots \\ 
+> x_1^{n-1} & x_2^{n-1} & \dots & x_n^{n-1} 
+> \end{pmatrix} 
+> \begin{pmatrix} c_1 \\ c_2 \\ c_3 \\ \vdots \\ c_n \end{pmatrix} 
+> = 
+> \begin{pmatrix} 2 \\ 0 \\ \frac{2}{3} \\ \vdots \\ \mu_{n-1} \end{pmatrix}$$
+> 
+> Giải hệ phương trình đại số tuyến tính này, ta thu được bộ trọng lượng chuẩn $c_{\text{chuẩn}, i}$ tương ứng với các mốc chuẩn $x_{\text{chuẩn}, i}$ trên miền đơn giản $[-1, 1]$.
+
+> [!algo] Bước 2: Đổi biến Affine về miền thực tế $[a, b]$
+> Do toàn bộ các mốc nội suy và trọng số ở bước trên chỉ có giá trị sử dụng trên miền chuẩn, để tính toán tích phân trên miền $[a, b]$ của bài toán gốc, ta thực hiện phép biến đổi tuyến tính (ánh xạ Affine) tọa độ:
+> $$x = \frac{b-a}{2}t + \frac{b+a}{2} \quad \text{với } t \in [-1, 1] \text{ và } x \in [a, b]$$
+> 
+> Khi lấy vi phân hai vế, ta thu được hệ số giãn:
+> $$dx = \frac{b-a}{2}dt$$
+> 
+> Đại lượng tính sau khi qua phép ánh xạ theo công thức trên:
+> 1. Mốc nội suy thực tế: $x_{\text{thực}, i} = \frac{b-a}{2}x_{\text{chuẩn}, i} + \frac{b+a}{2}$
+> 2. Trọng lượng thực tế: $c_{\text{thực}, i} = \frac{b-a}{2}c_{\text{chuẩn}, i}$
+> 
+> Giá trị xấp xỉ tích phân cuối cùng được xác định thông qua tổng cầu phương Gauss:
+> $$I = \int_a^b f(x)dx \approx \sum_{i=1}^n c_{\text{thực}, i} f(x_{\text{thực}, i})$$
+
+

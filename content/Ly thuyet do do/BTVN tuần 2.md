@@ -1,6 +1,6 @@
 # [III] Generation of $\sigma$ - algebras
 
-> [!thm] (1.14)
+> [!thm] (Định lý 1.14)
 > Let f be a mapping of a set X to Y. Then for an arbitrary collection of $\mathfrak{C}$ of subset of Y, we have $\sigma(f^{-1}(\mathfrak{C}))=f^{-1}(\sigma(\mathfrak{C}))$
 
 > [!prf] 
@@ -34,7 +34,7 @@
 >     - Lấy $\{ B_{n} \}_{n=1}^{\infty}$ là họ các tập trong $\mathfrak{M}_{A}$, ta có mỗi $B_{n} = E_{n} \cap A$, với $E_{n} \in \sigma(\mathfrak{C})$, ta có $\bigcup_{n=1}^{\infty}B_{n} = \bigcup_{n=1}^{\infty}(E_{n}\cap A) = (\bigcup_{n=1}^{\infty} E_{n}) \cap A$, mà vì $E_{n} \in \sigma(\mathfrak{C})$ nên $\bigcup_{n=1}^{\infty} E_{n} \in \sigma(\mathfrak{C})$, vậy $\bigcup_{n=1}^{\infty}B_{n} \in \mathfrak{M}_{A}$
 >     Vậy $\sigma(\mathfrak{C})\cap A$ là $\sigma$ - đại số trên A
 
-> [!thm] (1.15) 
+> [!thm] (Định lý 1.15) 
 > Let $\mathfrak{C}$ be an arbitrary collection of subset of a set $X$ and let $A \subset X$. Then $\sigma_{A}(\mathfrak{C} \cap A)=\sigma(\mathfrak{C})\cap A$
 
 > [!prf] 
@@ -49,14 +49,14 @@
 > i^{-1}(\sigma(\mathfrak{C})) = \sigma(\mathfrak{C} )\cap A
 > $$
 > 
-> - Áp dụng **Theorem 1.14**: 
+> - Áp dụng **Định lý 1.14:**
 > $$
 > \sigma_{A}(\mathfrak{C}\cap A) = \sigma_{A}(i^{-1}(\mathfrak{C}))=i^{-1}(\sigma_{A}(\mathfrak{C})) =\sigma(C) \cap A
 > $$
 
 # [V] Measure on a $\sigma$ - algebra
 
-> [!Prp] (1.23) 
+> [!Prp] (Mệnh đề 1.23) 
 > Let $\gamma$ be a nonnegative extended real-valued set function on a algebra $\mathfrak{A}$ of subset of a set $X$. If $\gamma$ is additive and countably subadditive on $\mathfrak{A}$ then $\gamma$ is countably additive on $\mathfrak{A}$
 
 > [!prf] 
@@ -66,7 +66,7 @@
 > - Từ tính $\sigma$ - dưới cộng tính, ta có $\gamma\left(  \bigcup_{n=1}^{\infty} E_{n} \right) \le \sum_{n=1}^{\infty}\gamma(E_{n})$
 > Vậy $\gamma\left( \bigcup _{n=1}^{\infty} E_{n}\right)= \sum_{n=1}^{\infty} \gamma(E_{n})$ hay $\gamma$ là $\sigma$ - cộng tính
 
-> [!def] (1.26) Continuous from Below
+> [!def] Continuous from Below
 >  If $\{ A_{n} \}_{n=1}^{\infty}$ is an increasing sequence of sets in $\mathfrak{A}$, $(A_{1}\subseteq A_{2}\subseteq\dots)$ and $A = \bigcup_{n=1}^{\infty}A_{n} \in \mathfrak{A}$, then:
 > $$
 > \mu\left( \bigcup_{n=1}^{\infty} A_{n} \right) = \lim_{ n \to \infty } \mu(A_{n})

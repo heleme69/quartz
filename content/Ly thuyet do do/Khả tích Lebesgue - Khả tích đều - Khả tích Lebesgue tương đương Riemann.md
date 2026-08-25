@@ -13,9 +13,65 @@
 >    $$\int_D f d\mu = \int_D f^+ d\mu - \int_D f^- d\mu$$
 > 
 > 2. Tính khả tích (Integrable):
->    Ta nói $f$ khả tích Lebesgue trên $D$ đối với độ đo $\mu$, ký hiệu là $f \in \mathfrak{L}^1(D, \mu)$, khi và chỉ khi:
+>    Ta nói $f$ khả tích Lebesgue trên $D$ đối với độ đo $\mu$, ký hiệu là ${} f \in L^1(D, \mu) {}$, khi và chỉ khi:
 >    $$\int_D f d\mu \in \mathbb{R}$$
 >    *(Điều này xảy ra khi và chỉ khi cả hai tích phân thành phần đều hữu hạn, tương đương với điều kiện kiện khả tích tuyệt đối: $\int_D |f| d\mu < \infty$).*
+
+> [!prp] (Mệnh đề 9.2)
+> Cho $(X, \mathfrak{A}, \mu)$ là một không gian độ đo và tập đo được $D \in \mathfrak{A}$. Giả sử $f: D \to \overline{\mathbb{R}}$ là một hàm số đo được nhận giá trị thực mở rộng. Khi đó:
+> 
+> (e) Hàm số $f$ khả tích trên $D$ khi và chỉ khi hàm số $|f|$ khả tích trên $D$.
+> 
+> (f) Nếu hàm số $f$ khả tích trên $D$ thì $|f| < \infty$ hầu khắp nơi (a.e.) trên $D$, nghĩa là $f$ nhận giá trị thực hầu khắp nơi trên $D$.
+
+> [!prf] Chứng minh
+> 
+> Chứng minh tính chất (e)
+> 
+> Chiều thuận: Giả sử hàm số $f$ khả tích trên $D$. 
+> 
+> Theo định nghĩa của tích phân Lebesgue cho hàm nhận giá trị thực mở rộng, một hàm số được gọi là khả tích nếu cả tích phân phần dương và phần âm của nó đều là các số thực hữu hạn. Do đó:
+> $$\int_D f^+ d\mu < \infty \quad \text{và} \quad \int_D f^- d\mu < \infty$$
+> 
+> Ta phân tách được ${} |f| {}$:
+> $$|f(x)| = f^+(x) + f^-(x)$$
+> 
+> Vì $f^+$ và $f^-$ đều là các hàm số đo được và không âm, áp dụng tính tuyến tính của tích phân:
+> $$\int_D |f| d\mu = \int_D (f^+ + f^-) d\mu = \int_D f^+ d\mu + \int_D f^- d\mu$$
+> 
+> Do tổng của hai số thực hữu hạn chắc chắn là một số thực hữu hạn, ta suy ra:
+> $$\int_D |f| d\mu < \infty$$
+> 
+> Vì $|f|$ là một hàm không âm và có tích phân hữu hạn, theo định nghĩa, hàm số $|f|$ khả tích trên $D$. Chiều thuận được chứng minh.
+> 
+> Chiều nghịch: Ngược lại, giả sử hàm trị tuyệt đối $|f|$ khả tích trên $D$, điều này đồng nghĩa với:
+> $$\int_D |f| d\mu < \infty$$
+> 
+> Dựa trên định nghĩa của phần dương và phần âm, ta thiết lập được các bất đẳng thức tại mọi $x \in D$:
+> $$0 \le f^+(x) \le |f(x)| \quad \text{và} \quad 0 \le f^-(x) \le |f(x)|$$
+> 
+> Vì $f^+$, $f^-$ và $|f|$ đều là các hàm số đo được không âm, ta sử dụng tính đơn điệu của tích phân Lebesgue (tính chất (e) của Bổ đề 8.2):
+> $$\int_D f^+ d\mu \le \int_D |f| d\mu < \infty$$
+> $$\int_D f^- d\mu \le \int_D |f| d\mu < \infty$$
+> 
+> Vì tích phân phần dương và phần âm của $f$ đều hữu hạn, theo đúng định nghĩa, hàm $f$ khả tích trên $D$. Chiều nghịch được chứng minh hoàn tất.
+> 
+> Chứng minh tính chất (f)
+> 
+> Giả sử hàm số $f$ khả tích trên tập $D$. 
+> 
+> Áp dụng tính chất (e) vừa chứng minh, ta khẳng định hàm trị tuyệt đối $|f|$ cũng là một hàm số khả tích trên $D$, nghĩa là tích phân của nó thỏa mãn:
+> $$\int_D |f| d\mu < \infty$$
+> 
+> Ta xét hàm $h(x) = |f(x)|$. Hàm $h$ này thỏa mãn đầy đủ hai điều kiện: là một hàm số đo được không âm trên $D$, và có tích phân hữu hạn trên $D$. 
+> 
+> Điều này cho phép ta áp dụng tính chất (a) của Bổ đề 8.2 cho hàm không âm $h$:
+> $$h < \infty \quad \text{hầu khắp nơi (a.e.) trên } D$$
+> 
+> Thế ngược định nghĩa $h(x)$, ta thu được kết luận:
+> $$|f| < \infty \quad \text{hầu khắp nơi (a.e.) trên } D$$
+> 
+> Điều này đồng nghĩa tập hợp các điểm $x \in D$ mà tại đó $f(x) = \infty$ hoặc $f(x) = -\infty$ có độ đo Lebesgue bằng 0. Nói cách khác, hàm số $f$ nhận giá trị thực hầu khắp nơi trên $D$. Vậy mệnh đề được hoàn tất.
 
 # 2. Khả tích đều
 
@@ -49,6 +105,22 @@
 > $$\int_A \varphi < N_\varepsilon \cdot \left(\frac{\varepsilon}{2 N_\varepsilon}\right) + \frac{\varepsilon}{2} = \varepsilon$$
 > Bổ đề đã được chứng minh.
 
+> [!cor] (Prob 9.9: Hệ quả dãy của tính liên tục tuyệt đối của tích phân)
+> Cho hàm $f$ khả tích trên $X$ và dãy tập đo được $\{E_n\}_{n=1}^\infty$ thỏa mãn $\lim_{n \to \infty} \mu(E_n) = 0$. Chứng minh $\lim_{n \to \infty} \int_{E_n} f \, d\mu = 0$.
+
+> [!prf]
+> Lấy $\epsilon > 0$ tùy ý cho trước.  Do $f$ khả tích trên $X$, theo tính liên tục tuyệt đối của tích phân, tồn tại một số $\delta > 0$ sao cho với mọi tập đo được $E$ thỏa mãn $\mu(E) < \delta$, ta luôn có:
+>    $$\int_E |f| \, d\mu < \epsilon$$
+> 
+> Mặt khác, ta có dãy độ đo $\mu(E_n)$ hội tụ về $0$ khi $n \to \infty$. Theo định nghĩa giới hạn, ứng với $\delta > 0$ ở trên, ta tìm được chỉ số $N_0 \in \mathbb{N}^*$ sao cho:
+>    $$\forall n \ge N_0 \implies \mu(E_n) < \delta$$
+> 
+> Kết hợp hai điều trên, với mọi $n \ge N_0$, vì $\mu(E_n) < \delta$ nên ta thu được đánh giá:
+>    $$\left| \int_{E_n} f \, d\mu \right| \le \int_{E_n} |f| \, d\mu < \epsilon$$
+> 
+> Theo định nghĩa giới hạn của dãy số thực, điều này tương đương $\lim_{n \to \infty} \int_{E_n} f \, d\mu = 0$. 
+
+
 > [!lem] (Tính "chặt" của tích phân Lebesgue)
 > Cho $\varphi \in L^1(D, \mathfrak{A}, \mu)$. Khi đó:
 > $$\forall \varepsilon > 0, \exists B_\varepsilon \in \mathfrak{A}, \mu(B_\varepsilon) < \infty \Rightarrow \int_{B_\varepsilon^c} |\varphi| < \varepsilon$$
@@ -75,6 +147,45 @@
 > 
 > Chọn $B_\varepsilon = A_N$. Khi đó ta có $\mu(B_\varepsilon) < \infty$ và $\int_{B_\varepsilon^c} \varphi < \varepsilon$. 
 > Bổ đề đã được chứng minh.
+
+> [!cor] (Prob 9.12: Hệ quả dãy của tính chặt của tích phân)  
+> Cho không gian độ đo $(X, \mathcal{A}, \mu)$ và hàm số $f \in L^1(X, \mu)$.  
+> Giả sử $\{E_n\}_{n=1}^{\infty}$ là một dãy các tập đo được tăng dần $(E_1 \subset E_2 \subset \ldots)$ và bao phủ toàn bộ không gian (hoặc bao phủ hầu khắp nơi), tức là:  
+> $$
+> \lim_{n \to \infty} E_n = \bigcup_{n=1}^{\infty} E_n = X.
+> $$  
+> Khi đó ta có:  
+> $$
+> \lim_{n \to \infty} \int_{E_n} f \, d\mu = \int_X f \, d\mu,
+> $$  
+> và tương đương  
+> $$
+> \lim_{n \to \infty} \int_{E_n^c} f \, d\mu = 0.
+> $$
+
+> [!prf] 
+> Không mất tính tổng quát, giả sử $f \ge 0$ (với $f$ bất kì ta có thể phân tách thành phần âm $f^-$ và dương $f^+$ và chứng minh tương tự). Lấy $\epsilon > 0$ tùy ý.
+> 
+> Theo Tính chặt của tích phân, tồn tại một tập $B_\epsilon \in \mathfrak{A}$ có độ đo hữu hạn $\mu(B_\epsilon) < \infty$, sao cho tích phân phần đuôi rất nhỏ:
+>    $$\int_{B_\epsilon^c} f \, d\mu < \frac{\epsilon}{2}$$
+> 
+> Do dãy tập $E_n \uparrow X$, lấy giao $B_\epsilon$ ta thu được $(E_n \cap B_\epsilon) \uparrow B_\epsilon$. 
+> Với mọi điểm $x \in B_\epsilon$, vì $B_\epsilon \subset X = \bigcup_{n=1}^\infty E_n$, theo tính chất Archimedes, điểm $x$ bắt buộc phải lọt vào một tập $E_n$ nào đó kể từ một chỉ số $N$ đủ lớn trở đi. Điều này có nghĩa khi $n \to \infty$, không một điểm $x$ nào của $B_\epsilon$ có thể ở ngoài $E_n$ mãi. Do đó :
+> $$
+> (B_\epsilon \setminus E_n) \downarrow \emptyset \quad \text{khi } n \to \infty
+> $$
+> Áp dụng tính liên tục từ trên của độ đo $\mu$ cho dãy tập giảm dần về rỗng, ta có:
+>$$
+> \lim_{n \to \infty} \mu(B_\epsilon \setminus E_n) = \mu(\emptyset) = 0
+> $$
+> 
+> Theo định nghĩa giới hạn, ta tìm chỉ số $N_0 \in \mathbb{N}^*$ đủ lớn sao cho với mọi $n \ge N_0$:
+>    $$\int_{B_\epsilon \setminus E_n} f \, d\mu < \frac{\epsilon}{2}$$
+> 
+> Ta phân tách được miền ban đầu: $E_n^c \subset (B_\epsilon \setminus E_n) \cup B_\epsilon^c$. Áp dụng tính đơn điệu:
+>    $$\int_{E_n^c} f \, d\mu \le \int_{B_\epsilon \setminus E_n} f \, d\mu + \int_{B_\epsilon^c} f \, d\mu < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$$
+> 
+> Điều này đúng với mọi $n \ge N_0$, khẳng định rằng $\lim_{n \to \infty} \int_{E_n^c} f \, d\mu = 0$. 
 
 > [!rem] (Điều kiện cần cho Hội tụ Vitali)
 > Tính chất 1: Khả tích đều (Uniform Integrability / Uniform Absolute Continuity)
@@ -218,7 +329,7 @@
 > [!rem] (Nhận xét 3: Mở rộng Định lý trên các miền xác định bất kỳ)
 > Mối liên hệ cấu trúc "Khả tích Lebesgue + Liên tục đều $\implies$ Tính chất 1 + Tính chất 2" có thể mở rộng cho một tập đo được $D \subseteq \mathbb{R}$ bất kỳ dựa vào tính chất hình học của biên:
 > 
-> 2. Trên miền hữu hạn bất kỳ (Ví dụ: $D = [a, b]$, $D = (a, b)$, hoặc các khoảng hữu hạn)
+> 4. Trên miền hữu hạn bất kỳ (Ví dụ: $D = [a, b]$, $D = (a, b)$, hoặc các khoảng hữu hạn)
 > Nếu $D$ là một khoảng hữu hạn (độ đo $\mu_L(D) < \infty$), thì điều kiện Liên tục đều trở nên cực kỳ mạnh:
 > - Tính chất 1 (Khả tích đều): Tự động thỏa mãn. Vì $f$ liên tục đều trên miền hữu hạn nên $f$ bắt buộc phải bị chặn ($|f(x)| \le M, \forall x \in D$). Khi hàm bị chặn trên miền có độ đo hữu hạn, nó luôn khả tích đều (chọn $\delta = \frac{\varepsilon}{M}$).
 > - Tính chất 2 (Tính chặt): Luôn đúng theo Nhận xét 2. Ta chỉ việc chọn ngay tập hữu hạn $B_\varepsilon = D$, khi đó tập bù $B_\varepsilon^c = \emptyset$, kéo theo tích phân đuôi bằng $0 < \varepsilon$.
@@ -379,7 +490,7 @@
 > Bất đẳng thức này đúng với mọi $\delta > 0$. Do đó, khi lấy $\sup$ theo $\delta > 0$ ở vế trái và lấy $\inf$ theo $\delta > 0$ ở vế phải, bất đẳng thức vẫn được bảo toàn:
 > $$f_*(x_0) = \sup_{\delta > 0} \inf_{U(x_0, \delta) \cap D} f \le f(x_0) \le \inf_{\delta > 0} \sup_{U(x_0, \delta) \cap D} f = f^*(x_0)$$
 > 
-> 1. Chứng minh $f$ liên tục tại $x_0 \iff f_*(x_0) = f^*(x_0)$
+> 2. Chứng minh $f$ liên tục tại $x_0 \iff f_*(x_0) = f^*(x_0)$
 > 
 > $(\implies)$ Giả sử $f$ liên tục tại $x_0$:
 > Theo định nghĩa liên tục $\varepsilon-\delta$, với mọi $\varepsilon > 0$, tồn tại $\delta > 0$ sao cho với mọi $x \in U(x_0, \delta) \cap D$, ta có:

@@ -20,7 +20,9 @@
 > \mu _{L} ^{*}(E) = \inf\left\{  \sum_{n \in \mathbb{N}} \ell(I_{n}): (I_{n}: n \in \mathbb{N}) \subset \mathfrak{J_{o}}, \bigcup_{n \in \mathbb{N}} I_{n} \supset E   \right\}
 > $$
 > , với mọi $E \in \mathfrak{B}(\mathbb{R})$.
+> 
 > Vì $\mu_{L} ^{*}$ là độ đo ngoài, nó thỏa các tính chất: $\mu_{L}^{*} (\emptyset) = 0$, đơn điệu $(A \subset B \implies \mu_{L}^{*}(A) \le \mu_{L}^{*} (B))$, tính $\sigma$ - dưới cộng tính.
+> 
 > Ý nghĩa trực quan: ta cố gắng phủ một tập  $E$ bất kì bằng vô hạn đếm được các khoảng mở, tổng chiều dài các phủ này sẽ là cận trên cho kích thước của $E$. Độ đo ngoài $\mu_{L}^{*}(E)$ chính là giới hạn dưới đúng (infimum) của tất cả các tổng chiều dài bao phủ đó.
 
 > [!def] (Tính đo được theo tiêu chuẩn *Caratheodory*).
@@ -57,9 +59,9 @@
 
 > [!prf]
 > a) Chứng minh $\sigma(\mathfrak{J_{o}}) = \mathcal{B}(\mathbb{R})$
-> Theo định nghĩa, $\mathcal{B}(R)$ là $\sigma$ - đại số sinh bởi tất cả các tập mở trên $\mathbb{R}$. Gọi $\mathcal{O}$ là họ các tập mở đó, ta có $\mathcal{B}(\mathbb{R}) = \sigma(\mathcal{O})$.
 > 
-> - Chiều thứ nhất ${} (\subset)$: Mọi khoảng mở trong $\mathfrak{J_{o}}$ hiển nhiên là một tập mở trong $\mathcal{O}$. Do đó $\mathfrak{J_{o}} \subset \mathcal{O} \subset \sigma(\mathcal{O}) = \mathcal{B}(\mathbb{R})$. Vì $\mathcal{B}(\mathbb{R})$ là một $\sigma$ - đại số nhỏ nhất chứa $\mathfrak{J_{o}}$ mà ${} \sigma(\mathfrak{J_{o}})$ lại là $\sigma$- đại số nhỏ nhất chứa $\mathfrak{J_{o}}$, ta có tính chất: 
+> Theo định nghĩa, $\mathcal{B}(R)$ là $\sigma$ - đại số sinh bởi tất cả các tập mở trên $\mathbb{R}$. Gọi $\mathcal{O}$ là họ các tập mở đó, ta có $\mathcal{B}(\mathbb{R}) = \sigma(\mathcal{O})$.
+> - Chiều thứ nhất $(\subset)$: Mọi khoảng mở trong $\mathfrak{J_{o}}$ hiển nhiên là một tập mở trong $\mathcal{O}$. Do đó $\mathfrak{J_{o}} \subset \mathcal{O} \subset \sigma(\mathcal{O}) = \mathcal{B}(\mathbb{R})$. Vì $\mathcal{B}(\mathbb{R})$ là một $\sigma$ - đại số nhỏ nhất chứa $\mathfrak{J_{o}}$ mà ${} \sigma(\mathfrak{J_{o}})$ lại là $\sigma$- đại số nhỏ nhất chứa $\mathfrak{J_{o}}$, ta có tính chất: 
 > $$
 > \sigma(\mathfrak{J_{o}}) \subset \mathcal{B}(\mathbb{R})
 > $$
@@ -74,6 +76,7 @@
 > Vậy ta kết luận được $\sigma(\mathfrak{J_{o}}) = \mathcal{B}(\mathbb{R})$.
 > 
 > b) Chứng minh $\mathcal{B}(\mathbb{R}) \subset \mathfrak{M}_{L}$
+> 
 > Trước tiên, ta chứng minh mọi khoảng mở  $E = (a,b)$ đều là tập Lebesgue đo được. Theo mệnh đề **Theorem 1.** (Tiêu chuẩn *Caratheodory* cho họ tập cơ sở), thay vì xét một tập $A \in \mathfrak{B}(\mathbb{R})$, ta chỉ cần chứng minh điều kiện đo được thỏa mãn với khoảng mở $I \in \mathfrak{J_{o}}$:
 > $$
 > \mu_{L}^{*}(I) = \mu_{L}^{*}(I \cap E) + \mu_{L}^{*}(I \cap E ^{c}) 
@@ -85,13 +88,15 @@
 > $$
 > I \cap E ^{c} = (c,d) \setminus (a,b) = [(c,d) \cap (-\infty, a]] \cup [(c,d) \cap [b, \infty)]  
 > $$
-> Ta thấy $I \cap E$ và $I \cap E^{c}$ là các khoảng rời nhau, và hợp bằng chính tập $I$ ban đầu, do đó theo định nghĩa, ta có $\ell(I) = \ell(I \cap E) + \ell(I \cap E ^{c})$. Ta sử dụng bổ đề **Lemma 1.**, ta được:
+> Ta thấy $I \cap E$ và $I \cap E^{c}$ là các khoảng rời nhau, và hợp bằng chính tập $I$ ban đầu, do đó theo định nghĩa, ta có $\ell(I) = \ell(I \cap E) + \ell(I \cap E ^{c})$. Ta sử dụng bổ đề Lemma 1, ta được:
 > $$
 > \mu_{L}^{*}(I) = \mu_{L}^{*}(I \cap E) + \mu_{L}^{*}(I \cap E ^{c})
 > $$
 > Vậy ta có $E = (a,b) \in \mathfrak{M}_{L}$, ta suy ra $\mathfrak{J_{o}} \subset \mathfrak{M}_{L}$. Mà ta đã biết $\mathfrak{M}_{L}$ là một $\sigma$ - đại số, theo định nghĩa thì $\sigma(\mathfrak{J_{o}})$ phải là $\sigma$ - đại số nhỏ nhất chứa sinh bởi họ $\mathfrak{J_{o}}$, vậy suy ra $\sigma(\mathfrak{J_{o}}) \subset \mathfrak{M}_{L}$.
+> 
 > Ta đã chứng minh được $\mathcal{B}(\mathbb{R}) = \sigma(\mathfrak{J_{o}})$ ở ý a), từ chứng minh trên, ta kết luận:
 > $$
 > \mathcal{B}(\mathbb{R}) \subset \mathfrak{M}_{L}
 > $$
 
+$\xi$

@@ -174,6 +174,40 @@
 > $$\lim_{N \to \infty} \sum_{n=1}^N \int_D f_n d\mu = \sum_{n=1}^\infty \int_D f_n d\mu$$
 > So sánh hai vế, ta thu được điều phải chứng minh. 
 
+> [!thm] Tiêu chuẩn Tích phân Cauchy-Maclaurin (Integral Test)
+> Cho $f: [1, \infty) \to [0, \infty)$ là một hàm số đo được, không âm và giảm đơn điệu. Xét chuỗi số thực vô hạn $\sum_{n=1}^\infty f(n)$.
+> Khi đó, chuỗi số và tích phân suy rộng hoặc cùng hội tụ hoặc cùng phân kỳ:
+> $$\sum_{n=1}^\infty f(n) < \infty \iff \int_1^\infty f(x) \, d\mu_L < \infty$$
+
+> [!prf] 
+> Ta phân hoạch miền xác định $[1, \infty)$ thành các đoạn rời $[n, n+1)$ với $n \in \mathbb{N}^*$. Trên mỗi đoạn, ta dựng hai dãy hàm bậc thang không âm dựa trên các mốc giá trị nguyên:
+> * Dãy hàm chặn trên: $g_n(x) = f(n) \cdot \chi_{[n, n+1)}(x) \ge 0$
+> * Dãy hàm chặn dưới: $h_n(x) = f(n+1) \cdot \chi_{[n, n+1)}(x) \ge 0$
+> 
+> Ta có tích phân của từng hàm thành phần:
+> * $\int_1^\infty g_n(x) \, d\mu_L = f(n) \cdot \mu_L([n, n+1)) = f(n)$
+> * $\int_1^\infty h_n(x) \, d\mu_L = f(n+1) \cdot \mu_L([n, n+1)) = f(n+1)$
+> 
+> Do giả thiết hàm số $f(x)$ giảm đơn điệu, trên mỗi khoảng nửa mở $x \in [n, n+1)$, ta có bất đẳng thức chặn điểm:
+> $$f(n+1) \le f(x) \le f(n)$$
+> 
+> Nhân thêm hàm chỉ thị không âm $\chi_{[n, n+1)}(x)$ và lấy tổng vô hạn từ $n=1$ đến $\infty$, ta có hệ thức kẹp trên miền $[1, \infty)$:
+> $$\sum_{n=1}^\infty h_n(x) \le f(x) \le \sum_{n=1}^\infty g_n(x)$$
+> 
+> Do $g_n(x)$ và $h_n(x)$ là các dãy hàm đo được không âm, ta hoán đổi trực tiếp dấu tổng vô hạn và dấu tích phân Lebesgue mà không cần xét qua giới hạn của tổng riêng phần:
+> $$\int_1^\infty \left( \sum_{n=1}^\infty h_n(x) \right) d\mu_L \le \int_1^\infty f(x) \, d\mu_L \le \int_1^\infty \left( \sum_{n=1}^\infty g_n(x) \right) d\mu_L$$
+> $$\implies \sum_{n=1}^\infty \left( \int_1^\infty h_n(x) \, d\mu_L \right) \le \int_1^\infty f(x) \, d\mu_L \le \sum_{n=1}^\infty \left( \int_1^\infty g_n(x) \, d\mu_L \right)$$
+> 
+> Thay thế các giá trị tích phân đã tính ở Bước 1 vào chuỗi bất đẳng thức:
+> $$\sum_{n=1}^\infty f(n+1) \le \int_1^\infty f(x) \, d\mu_L \le \sum_{n=1}^\infty f(n)$$
+> $$\implies \sum_{n=2}^\infty f(n) \le \int_1^\infty f(x) \, d\mu_L \le \sum_{n=1}^\infty f(n)$$
+> 
+> Do tính chất của chuỗi số và tích phân không âm (chỉ có thể hội tụ về số thực hoặc phân kỳ ra $+\infty$):
+>   * Nếu chuỗi $\sum_{n=1}^\infty f(n)$ hội tụ $\implies \int_1^\infty f(x) \, d\mu_L \le \sum_{n=1}^\infty f(n) < \infty \implies$ Tích phân hội tụ.
+>   * Nếu tích phân $\int_1^\infty f(x) \, d\mu_L$ hội tụ $\implies \sum_{n=2}^\infty f(n) \le \int_1^\infty f(x) \, d\mu_L < \infty \implies$ Chuỗi hội tụ.
+> 
+> Định lý được chứng minh hoàn toàn tất
+
 > [!thm] (Hệ quả 2: Tính $\sigma$-cộng tính trên tập hợp - Tích phân như một độ đo)
 > Cho $f$ là một hàm đo được không âm trên không gian $X$. Giả sử $\{A_n\}_{n=1}^\infty$ là một họ đếm được các tập hợp đo được rời nhau đôi một, và $A = \bigcup_{n=1}^\infty A_n$. Khi đó:
 > $$\int_A f d\mu = \sum_{n=1}^\infty \int_{A_n} f d\mu$$
@@ -444,7 +478,7 @@
 > Vì cận dưới và cận trên bằng nhau, giới hạn bắt buộc phải tồn tại và hội tụ đúng về giá trị đó:
 > $$\lim_{n \to \infty} \int_E f_n d\mu = \int_E f d\mu$$ 
 
-> [!thm] (Định lý 8.14 - Prob 9.25: Hội tụ với dãy bị chặn trên bởi giới hạn)
+> [!thm] (Định lý 8.14 - Prob 9.25: Hội tụ với dãy (không đơn điệu) bị chặn trên bởi giới hạn)
 > Cho không gian độ đo $(X, \mathfrak{A}, \mu)$ và $(f_n)_{n \in \mathbb{N}}$ là một dãy các hàm đo được, không âm trên tập $D \in \mathfrak{A}$.
 > Giả sử $\lim_{n \to \infty} f_n = f$ tồn tại hầu khắp nơi (a.e.) trên $D$ và $f_n \le f$ hầu khắp nơi trên $D$ với mọi $n \in \mathbb{N}$. Khi đó, ta có:
 > $$\int_D f d\mu = \lim_{n \to \infty} \int_D f_n d\mu$$
@@ -615,7 +649,6 @@
 > 2. Bị chặn bởi hàm khả tích (Dominated): Tồn tại một hàm khả tích $g$ (tức là $\int_\Omega |g| d\mu < \infty$) sao cho:
 > $$|f_n(x)| \le g(x) \quad \text{hầu khắp nơi, với mọi } n \ge 1$$
 > 
-> Khi đó, hàm giới hạn $f$ cũng khả tích, và ta được phép đưa giới hạn qua dấu tích phân:
 > $$\lim_{n \to \infty} \int_\Omega f_n d\mu = \int_\Omega f d\mu$$
 > Hệ quả tương đương: $\lim_{n \to \infty} \int_\Omega |f_n - f| d\mu = 0$
 

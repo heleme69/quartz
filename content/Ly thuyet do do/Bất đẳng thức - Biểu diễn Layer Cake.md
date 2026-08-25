@@ -99,7 +99,7 @@
 > Suy ra $\mu(A) = \mu(\{x \in D : f(x) < 0\}) = 0$. Điều này khẳng định $f \ge 0$ hầu khắp nơi (a.e.) trên $D$. 
 
 > [!thm] (Bổ đề 8.2a)
-> Cho không gian độ đo $(X, \mathfrak{A}, \mu)$ và $f$ là hàm khả tích trên $X$ (tức là $\int_{X} fd\mu < \infty$). Đặt $A = \{ x \in X: f(x)< \infty\}$. Chứng minh rằng $\mu(X \setminus A) = 0$.
+> Cho không gian độ đo $(X, \mathfrak{A}, \mu)$ và hàm $f$ không âm khả tích trên $X$ (tức là $\int_{X} fd\mu < \infty$). Đặt $A = \{ x \in X: f(x)< \infty\}$. Chứng minh rằng $\mu(X \setminus A) = 0$.
 
 > [!prf]
 > Tập hợp cần chứng minh có độ đo bằng $0$ là phần bù của $A$, ký hiệu là $E$: 
